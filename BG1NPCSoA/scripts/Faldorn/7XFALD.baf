@@ -1,0 +1,100 @@
+IF
+!InParty("7XFALD")
+Global("FaldornCreated","GLOBAL",0) 
+!Global("DestroyTrademeet","GLOBAL",7) 
+!Global("DestroyTrademeet","GLOBAL",10)
+See([PC])
+OR(2)
+AreaCheck("AR1400")
+AreaCheck("AR1404")
+
+THEN
+  RESPONSE #100
+    StartDialogNoSet(Player1)
+END
+
+IF
+!InParty("7XFALD")
+Global("FaldornCreated","GLOBAL",0)
+AreaCheck("AR2000")
+Global("DestroyTrademeet","GLOBAL",2)
+CombatCounter(0)
+See([PC])
+
+THEN
+  RESPONSE #100
+    StartDialogNoSet(Player1)
+END
+
+// Battle
+IF
+AreaCheck("AR2000")
+Global("FaldornCreated","GLOBAL",1)
+Global("DestroyTrademeet","GLOBAL",3)
+CombatCounter(0)
+See([PC])
+Dead("TRGRD03")
+Dead("TRGRD02")
+Dead("TRGRD01")
+Dead("TRFUED06")
+Dead("TRFUED02")
+THEN
+  RESPONSE #100
+  SetGlobal("DestroyTrademeet","GLOBAL",5)
+  ClearAllActions()
+  ChangeEnemyAlly(Myself,NEUTRAL)
+  Wait(1)
+  StartDialogNoSet(Player1)
+END
+
+IF
+    !InParty("7XFALD")
+	AreaCheck("AR2000")
+	Global("FaldornCreated","GLOBAL",1)
+    Global("DestroyTrademeet","GLOBAL",3)
+	!See([ENEMY])
+THEN
+	RESPONSE #100
+	MoveToObject(Player1)
+END
+
+
+IF
+AreaCheck("AR1900")
+Global("FaldornCreated","GLOBAL",0) 
+Global("DestroyTrademeet","GLOBAL",7)
+CombatCounter(0)
+See([PC])
+THEN
+  RESPONSE #100
+    StartDialogNoSet(Player1)
+END
+
+
+// Lockdown
+
+IF
+AreaCheck("AR2000")
+Global("FaldornCreated","GLOBAL",1)
+Global("DestroyTrademeet","GLOBAL",10)
+Global("DestroyTrademeetTalk","AR2000",0)
+CombatCounter(0)
+See([PC])
+THEN
+  RESPONSE #100
+  SetGlobal("DestroyTrademeetTalk","AR2000",1)
+  ClearAllActions()
+  Wait(1)
+  StartDialogNoSet(Player1)
+END
+
+IF
+AreaCheck("AR1900")
+Global("FaldornCreated","GLOBAL",0) 
+Global("DestroyTrademeet","GLOBAL",10)
+CombatCounter(0)
+See([PC])
+THEN
+  RESPONSE #100
+    StartDialogNoSet(Player1)
+END

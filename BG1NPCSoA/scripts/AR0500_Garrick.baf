@@ -1,0 +1,10 @@
+IF
+Global("SILKEFight","GLOBAL",2)
+
+THEN
+  RESPONSE #100
+CreateCreature("COWLED",[3436.2079],0)
+CreateCreature("COWLED",[3000.2151],11)
+SetGlobal("SILKEFight","GLOBAL",3)
+Continue()
+END
