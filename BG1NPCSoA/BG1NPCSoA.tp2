@@ -2691,44 +2691,6 @@ INCLUDE ~BG1NPCSoA/lib/a7_tools.tpa~
 
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
   // Enhanced Edition game detected
-
-  // Retrieve full path to tile2ee binary
-  // Note: Not needed if "tile2ee" is using the default folder structure and 
-  //       can be found in "%MOD_FOLDER%/tools/tile2ee" as seen above.
-  LAF GET_TOOL_BINARY
-    STR_VAR
-      tool_name = ~tile2ee~
-    RET
-      tool_binary
-  END
-
-  // Find contiguous block of unused pvrz indices for MOS files
-  LAF FIND_FREE_PVRZ_INDEX
-    INT_VAR
-      num_to_reserve = 50   // Let's reserve 50 indices 
-    RET
-      free_index
-  END
-  ACTION_IF (free_index < 0) BEGIN
-    FAIL ~Error: Unable to find free pvrz indices for MOS V2 files.~
- END
-    // Convert MOS files
-  LAF HANDLE_TILE2EE
-    INT_VAR
-      pvrz_index    = free_index
-    STR_VAR
-      input_path    = ~BG1NPCSoA/areas/mos/~
-      // can be skipped if tile2ee is located in default path (see above)
-      tile2ee_path  = EVAL ~%tool_binary%~
-      output_path   = ~override~
-    RET
-      num_converted
-  END
-  ACTION_IF (num_converted < 11) BEGIN
-    OUTER_SET skipped = 11 - num_converted
-    FAIL ~Error: Failed to convert %skipped% out of 11 graphics files.~
-  END
-
 COPY ~BG1NPCSoA/areas/EE-tis~ ~override~ // Copy TIS files for EE version
 
 END ELSE BEGIN  // GAME_IS ~bg2 tob tutu bgt~
@@ -9742,48 +9704,8 @@ OUTER_SET QuayleFaldornInterjection1 = STATE_WHICH_SAYS 139 IN ~BG1NPCSoA\tra\%s
 COMPILE EVALUATE_BUFFER ~BG1NPCSoA/crossbanter/ICT/ICT_quayle-faldorn.d~ USING ~BG1NPCSoA\tra\%LANGUAGE%\7xquayb.tra~
 END 
 
-INCLUDE ~BG1NPCSoA/lib/a7_tools.tpa~
-
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-  // Enhanced Edition game detected
-
-  // Retrieve full path to tile2ee binary
-  // Note: Not needed if "tile2ee" is using the default folder structure and 
-  //       can be found in "%MOD_FOLDER%/tools/tile2ee" as seen above.
-  LAF GET_TOOL_BINARY
-    STR_VAR
-      tool_name = ~tile2ee~
-    RET
-      tool_binary
-  END
-
-  // Find contiguous block of unused pvrz indices for MOS files
-  LAF FIND_FREE_PVRZ_INDEX
-    INT_VAR
-      num_to_reserve = 50   // Let's reserve 50 indices 
-    RET
-      free_index
-  END
-  ACTION_IF (free_index < 0) BEGIN
-    FAIL ~Error: Unable to find free pvrz indices for MOS V2 files.~
- END
-    // Convert MOS files 
-  LAF HANDLE_TILE2EE
-    INT_VAR
-      pvrz_index    = free_index
-    STR_VAR
-      input_path    = ~BG1NPCSoA/areas/TIAX-QUAYLE/mos/~
-      // can be skipped if tile2ee is located in default path (see above)
-      tile2ee_path  = EVAL ~%tool_binary%~
-      output_path   = ~override~
-    RET
-      num_converted
-  END
-  ACTION_IF (num_converted < 3) BEGIN
-    OUTER_SET skipped = 3 - num_converted
-    FAIL ~Error: Failed to convert %skipped% out of 3 graphics files.~	
-  END
-COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/EE-tis~ ~override~ // Copy TIS files for EE version
+  // Enhanced Edition game detectedCOPY ~BG1NPCSoA/areas/TIAX-QUAYLE/EE-tis~ ~override~ // Copy TIS files for EE version
 END ELSE BEGIN  // GAME_IS ~bg2 tob tutu bgt~
   // vanilla Infinity Engine game detected
 
