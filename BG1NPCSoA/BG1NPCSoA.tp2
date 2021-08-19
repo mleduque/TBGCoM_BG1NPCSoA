@@ -2806,8 +2806,6 @@ END ELSE BEGIN
 END
 END
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
-
 
 BEGIN @1902 DESIGNATED 2
 GROUP ~Main Mod~
@@ -3829,15 +3827,15 @@ SAY INITIAL_MEETING ~~
   SAY COMPLIMENT1 ~~
 
 
-// Создаем персонажа-невидимку (для квеста Гаррика)
-COPY_EXISTING ~COPGREET.CRE~ ~override/7xnekto.cre~ //используем существующий файл (портрет и имя уже прописаны)
-	FOR ( i = 0xa4 ; i < 0x234 ; i = i + 0x4 ) BEGIN WRITE_LONG i "-1" END //удаляем все звуки на всякий случай
-	WRITE_ASCII 0x248 ~7xnekto~ (40) //удаляем все скрипты и в override прописываем 7xnekto
+// Г‘Г®Г§Г¤Г ГҐГ¬ ГЇГҐГ°Г±Г®Г­Г Г¦Г -Г­ГҐГўГЁГ¤ГЁГ¬ГЄГі (Г¤Г«Гї ГЄГўГҐГ±ГІГ  ГѓГ Г°Г°ГЁГЄГ )
+COPY_EXISTING ~COPGREET.CRE~ ~override/7xnekto.cre~ //ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГ¬ Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГЁГ© ГґГ Г©Г« (ГЇГ®Г°ГІГ°ГҐГІ ГЁ ГЁГ¬Гї ГіГ¦ГҐ ГЇГ°Г®ГЇГЁГ±Г Г­Г»)
+	FOR ( i = 0xa4 ; i < 0x234 ; i = i + 0x4 ) BEGIN WRITE_LONG i "-1" END //ГіГ¤Г Г«ГїГҐГ¬ ГўГ±ГҐ Г§ГўГіГЄГЁ Г­Г  ГўГ±ГїГЄГЁГ© Г±Г«ГіГ·Г Г©
+	WRITE_ASCII 0x248 ~7xnekto~ (40) //ГіГ¤Г Г«ГїГҐГ¬ ГўГ±ГҐ Г±ГЄГ°ГЁГЇГІГ» ГЁ Гў override ГЇГ°Г®ГЇГЁГ±Г»ГўГ ГҐГ¬ 7xnekto
 	WRITE_ASCII 0x280 ~7xnekto~ (32) //script_name
 	WRITE_ASCII 0x2cc ~7xnekto~ (8)  //dialog
-	REMOVE_CRE_ITEMS //удаляем все предметы на всякий случай
-	LPF ADD_CRE_EFFECT INT_VAR opcode=315 target=1 parameter2=1 timing=9 END //убираем анимацию
-	LPF ADD_CRE_EFFECT INT_VAR opcode=287 target=1 timing=9 END //убираем круг под ногами
+	REMOVE_CRE_ITEMS //ГіГ¤Г Г«ГїГҐГ¬ ГўГ±ГҐ ГЇГ°ГҐГ¤Г¬ГҐГІГ» Г­Г  ГўГ±ГїГЄГЁГ© Г±Г«ГіГ·Г Г©
+	LPF ADD_CRE_EFFECT INT_VAR opcode=315 target=1 parameter2=1 timing=9 END //ГіГЎГЁГ°Г ГҐГ¬ Г Г­ГЁГ¬Г Г¶ГЁГѕ
+	LPF ADD_CRE_EFFECT INT_VAR opcode=287 target=1 timing=9 END //ГіГЎГЁГ°Г ГҐГ¬ ГЄГ°ГіГЈ ГЇГ®Г¤ Г­Г®ГЈГ Г¬ГЁ
 
 COPY ~BG1NPCSoA/cre/MISC/7Xbard1.cre~ ~override/7Xbard1.cre~
 SAY NAME1 @1838
@@ -3876,22 +3874,22 @@ EXTEND_TOP ~AR0406.bcs~ ~BG1NPCSoA/scripts/misc/AR0406.baf~
 EXTEND_TOP ~AR0020.bcs~ ~BG1NPCSoA/scripts/misc/AR0020garrick.baf~
 EXTEND_TOP ~AR0022.bcs~ ~BG1NPCSoA/scripts/misc/AR0022garrick.baf~
 
-// Добавляем скрипт локации Пяти Графинов
+// Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г±ГЄГ°ГЁГЇГІ Г«Г®ГЄГ Г¶ГЁГЁ ГЏГїГІГЁ ГѓГ°Г ГґГЁГ­Г®Гў
 COPY_EXISTING ~AR0509.are~ ~override~
-	SPRINT ~scrp~ ~%SOURCE_RES%~ //сохранение в переменную имени локации
-	READ_ASCII 0x94 are_script (8) NULL //сохранение в переменную имени скрипта локации
-	PATCH_IF ( ~%are_script%~ STR_EQ ~~ ) OR // если имя скрипта пустое
-	         ( ~%are_script%~ STR_EQ ~None~ ) BEGIN //или None
-		WRITE_EVALUATED_ASCII 0x94 ~%scrp%~ (8) // то записывается в имя скрипта имя локации
-		SPRINT are_script ~%scrp%~ // сохранение в переменную нового имени скрипта
+	SPRINT ~scrp~ ~%SOURCE_RES%~ //Г±Г®ГµГ°Г Г­ГҐГ­ГЁГҐ Гў ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ ГЁГ¬ГҐГ­ГЁ Г«Г®ГЄГ Г¶ГЁГЁ
+	READ_ASCII 0x94 are_script (8) NULL //Г±Г®ГµГ°Г Г­ГҐГ­ГЁГҐ Гў ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ ГЁГ¬ГҐГ­ГЁ Г±ГЄГ°ГЁГЇГІГ  Г«Г®ГЄГ Г¶ГЁГЁ
+	PATCH_IF ( ~%are_script%~ STR_EQ ~~ ) OR // ГҐГ±Г«ГЁ ГЁГ¬Гї Г±ГЄГ°ГЁГЇГІГ  ГЇГіГ±ГІГ®ГҐ
+	         ( ~%are_script%~ STR_EQ ~None~ ) BEGIN //ГЁГ«ГЁ None
+		WRITE_EVALUATED_ASCII 0x94 ~%scrp%~ (8) // ГІГ® Г§Г ГЇГЁГ±Г»ГўГ ГҐГІГ±Гї Гў ГЁГ¬Гї Г±ГЄГ°ГЁГЇГІГ  ГЁГ¬Гї Г«Г®ГЄГ Г¶ГЁГЁ
+		SPRINT are_script ~%scrp%~ // Г±Г®ГµГ°Г Г­ГҐГ­ГЁГҐ Гў ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ Г­Г®ГўГ®ГЈГ® ГЁГ¬ГҐГ­ГЁ Г±ГЄГ°ГЁГЇГІГ 
 	END
 	BUT_ONLY_IF_IT_CHANGES
 
-//если baf файл имеет такое же имя
+//ГҐГ±Г«ГЁ baf ГґГ Г©Г« ГЁГ¬ГҐГҐГІ ГІГ ГЄГ®ГҐ Г¦ГҐ ГЁГ¬Гї
 ACTION_IF FILE_EXISTS_IN_GAME ~%are_script%.bcs~ BEGIN
-	EXTEND_TOP ~%are_script%.bcs~ ~%MOD_FOLDER%/scripts/MISC/AR0509.baf~ EVALUATE_BUFFER //если скрипт существует, добавляем сверху или снизу
+	EXTEND_TOP ~%are_script%.bcs~ ~%MOD_FOLDER%/scripts/MISC/AR0509.baf~ EVALUATE_BUFFER //ГҐГ±Г«ГЁ Г±ГЄГ°ГЁГЇГІ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ, Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ Г±ГўГҐГ°ГµГі ГЁГ«ГЁ Г±Г­ГЁГ§Гі
 END ELSE BEGIN
-	COMPILE ~%MOD_FOLDER%/scripts/MISC/AR0509.baf~ EVALUATE_BUFFER //если не существует, то создаем новый
+	COMPILE ~%MOD_FOLDER%/scripts/MISC/AR0509.baf~ EVALUATE_BUFFER //ГҐГ±Г«ГЁ Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ, ГІГ® Г±Г®Г§Г¤Г ГҐГ¬ Г­Г®ГўГ»Г©
 END
 
 
@@ -5522,7 +5520,6 @@ OUTER_SPRINT ~tob_var~ ~SAFANASummonedTOB~
 EXTEND_TOP ~7XSAFA.bcs~ ~fix_tob_script.baf~ EVALUATE_BUFFER
 END
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~ 
 
 BEGIN @704 DESIGNATED 25
 GROUP ~Main Mod~
@@ -5725,7 +5722,6 @@ END ELSE BEGIN
 COPY ~BG1NPCSoA/portraits/Alora/vanilla-portraits~ ~override~
 END
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
 
 
 
@@ -8024,7 +8020,6 @@ OUTER_SPRINT ~tob_var~ ~KagainSummonedToB~
 EXTEND_TOP ~7Xkaga.bcs~ ~fix_tob_script.baf~ EVALUATE_BUFFER
 END
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
 
 
 BEGIN @1436 DESIGNATED 35
@@ -8342,7 +8337,6 @@ OUTER_SPRINT ~tob_var~ ~KagainSummonedToB~
 EXTEND_TOP ~7Xkaga.bcs~ ~fix_tob_script.baf~ EVALUATE_BUFFER
 END
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
 /////////////////////////////////
 
 BEGIN @1437 DESIGNATED 40
@@ -9190,7 +9184,6 @@ OUTER_SPRINT ~tob_var~ ~MONTISummonedTOB~
 END
 
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
 
 
 BEGIN @1594 DESIGNATED 50
@@ -9854,7 +9847,6 @@ OUTER_SPRINT ~tob_override~ ~7XQUAY25~
 OUTER_SPRINT ~tob_var~ ~QuayleSummonedTOB~
 END
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
 
 
 // Optional component 
