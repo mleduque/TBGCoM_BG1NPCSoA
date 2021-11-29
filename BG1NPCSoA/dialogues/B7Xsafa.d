@@ -294,9 +294,10 @@ Global("7XSafaJaheira1","GLOBAL",0)~ THEN BJAHEIR 7XSafaJaheiraBanter
 EXIT
 
 CHAIN
-IF ~InParty("Jan")InParty("7XSAFA")See("7XSAFA")!StateCheck("7XSAFA",CD_STATE_NOTVALID)
-Global("7XSafaJan1","GLOBAL",0)~ THEN BJAN 7XSafaJanBanter
-@189 DO ~SetGlobal("7XSafaJan1","GLOBAL",1)~
+IF ~InParty("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)
+InParty("7XSAFA")See("7XSAFA")!StateCheck("7XSAFA",CD_STATE_NOTVALID)
+Global("7XSafaJan","GLOBAL",0)~ THEN BJAN 7XSafaJanBanter1
+@189 DO ~SetGlobal("7XSafaJan","GLOBAL",1)~
 ==B7Xsafa
 @190
 =
@@ -538,4 +539,20 @@ OR(2) AreaCheck("AR1600") AreaCheck("AR0300")
 == BKELDOR @301
 = @202
 == B7Xsafa @303
+EXIT
+
+CHAIN
+IF ~InParty("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)
+See("7XSAFA")
+InParty("7XSAFA")!StateCheck("7XSAFA",CD_STATE_NOTVALID)
+Global("7XSafaJan","GLOBAL",1)~ THEN BJAN 7XSafaJanBanter2
+@304 DO ~SetGlobal("7XSafaJan","GLOBAL",2)~
+==B7Xsafa @305
+==BJAN @306
+==B7Xsafa @307
+==BJAN @308
+=@309
+==B7Xsafa @310
+==BJAN @311
+==B7Xsafa @312
 EXIT

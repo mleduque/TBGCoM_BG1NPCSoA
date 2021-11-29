@@ -795,7 +795,7 @@ This spell causes the air about a target area of 15' in radius to compress aroun
 @538  = ~Mind Blank 
 (Abjuration)
 Level: 8
-Range: Special
+Range: 0
 Duration: 1 Day
 Casting Time: 1
 Area of Effect: 1 Creature
@@ -1716,7 +1716,16 @@ Made of iron, these shields not only protect the user, they can also be used to 
 @965  = ~Orc Berserker Battle Helmet~
 @966  = ~Orc Berserker Battle Helmet
 
-These are the helmets used by Orc Berserker tribesmen. It takes a while to get used to the smell, but they do protect well against attacks.~
+These are the helmets used by Orc Berserker tribesmen. It takes a while to get used to the smell, but they do protect well against attacks.
+
+STATISTICS:
+
+Equipment properties:
+- HP: +10
+- Armor class: +1
+- When health points are reduced below 25%, the effect of "Berserker Rage" is applied to the wearer for 1 turn
+
+Weight: 2~
 @967  = ~Diamond Sword~
 @968  = ~Diamond Sword
 
@@ -1797,7 +1806,17 @@ This sword was enchanted by an unknown mage for the doctor turned skald known as
 @1001 = ~Dragon Helm~
 @1002 = ~Dragon Helm
 
-This helm was made from the scales of a dragon. The downward slope of the scales helps deflect blows away from the head.~
+It took 500 years of the shadow dragon's life to make the head of the next adventurer feel better under the blows of small creatures of their own kind.
+
+STATISTICS:
+
+Equipment properties:
+- Armor class: +1
+- Saving Throws against death: +1
+- Resistance to acid: + 10%
+- Immunity to disease and poisoning
+
+Weight: 0~
 @1003 = ~Invulnerable Coat of Arnd~
 @1004 = ~Invulnerable Coat of Arnd
 
@@ -3336,7 +3355,9 @@ This spell will allow the caster to travel a short distance in their dream state
 
 This spells allows the user to turn into a Slayer.~
 
-@1726 = ~Bullet of Screaming
+@1726 = ~Bullet of Screaming +3
+
+These bullets, completely quiet in a calm state, with a set of speed begin to emit more and more noise, which, when hitting the victim, reaches such a level that she can lose hearing for a short time.
 
 STATISTICS:
 
@@ -3811,6 +3832,10 @@ Many adventures lay ahead of her, but traveling with <CHARNAME> hardened her cha
 @8016 = ~After parting with <CHARNAME>, Nalia and Garrick wandered the roads of Faerun for a long time, doing good deeds, gaining experience and improving each one in their skills. Afterwards, in the end, they returned to Athkatla, they already had something to present to this spoiled city of luxury and power. Nalia d'Arnise reached great heights in the art of magic, but she did not cease to worry about issues of social injustice, and she took up politics. Soon, Nalia gained respect and weight in society, especially since Garrick, already a renowned bard, did not spare bright colors, or singing the praises of his beloved. The title of archmage and the ascent to the heights of power awaited her. Yet, these lovers still found the highest happiness in each other's company. They lived happily ever after.~
 
 @8017 = ~After parting with <CHARNAME>, Garrick and Nalia wandered the roads of Faerun for a long time, doing good deeds, gaining experience, and improving each one in their skills. When, in the end, they returned to Athkatla, they already had something to present to this spoiled city of luxury and power. Garrick's dream came true; he became a very famous writer and poet. His book, surprisingly truthful (Not without the influence of Nalia) describing the adventures of the Child of Bhaal, was a huge success. No less popular were Garrick's sonnets, in which he, having finally mastered the art of real love poetry, sincerely and with inspiration sang to his beloved Nalia d'Arnise. Nalia herself by that time had become a strong magician, gained respect and weight in society and took up politics. Yet, these lovers still found the greatest happiness in each other's company. They lived happily ever after.~
+
+@8018  = ~With Deekin's travel with the Bhaalspawn finished, he was gifted <CHARNAME>'s journal entries of all their adventures from that one fateful night outside Candlekeep to the final battle at the Throne of Bhaal. Deekin would use this manuscript to ensure that tale of the Bhaalspawn and companions would go down in history in a set of books detailing their many adventures. 
+
+After leaving the original Journal in the halls of Candlekeep, Deekin traveled north to the city of Neverwinter were he would set up a small store selling both his books and wares collected from his numerous journeys to aspiring adventurers. It was in this role Deekin would meet the young captain of Crossroad Keep and experience the events of the war of Shadows the would follow. This would however be Deekin's last adventure as the now elderly kobold was listed amongst the dead during the King of Shadows attack on both Keep and the city that followed. Like many bards Deekins works would far out live him and his works would be preserved in libraries all over Faerun for future scholars to study over. One set of his works is said to be displayed in a bedroom of certain former resident of Candlekeep. Even in death at his boss's side.~
 
 @9000  = ~Hey, what's the joke? Where did he go?~
 

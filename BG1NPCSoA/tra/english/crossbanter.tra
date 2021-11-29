@@ -679,3 +679,30 @@ With King Cole and his fiddlers three!~
 @640 = ~Safana, you must be happy to travel with us, you are so adventurous! Can you talk about your life on a pirate ship?~ [GARRICKS]
 @641 = ~Ha! I really have a lot to remember. What do you want to know? How did we fight storms and sink ships, or about hot nights in the captain's cabin? I assure you, there were those other adventures too...~
 @642 = ~Oh, Safana, I get it. Any man should think three times before asking you a question. ~
+
+// NEW (v.13)
+// Faldorn - Skie
+@643 = ~Skie, have you learned anything from that Eldoth affair?~
+@644 = ~Yes, I realized that I need to be careful and not to believe everything the man says.~
+@645 = ~In time, you will realize that you cannot trust anyone at all but yourself. ~
+@646 = ~Not all men are like Eldoth. There are still many that are honest and kind among them, and I still believe that true love exists.~
+@647 = ~*Sighs* For all passes in this world save one thing only; a woman's folly does not ever perish.~
+@648 = ~I could hope that you will then love the man who will make you happy, but that sort of man has not yet been found.~
+
+// Deekin - Montaron
+@649 = ~I don’t like to talk a lot, I don’t like to whine and snot, I try to keep my cool in everything, even something as worthless as our party.~
+@650 = ~However, I am, dammit, very interested in one question; Why, in the name of all the gods, is there KOBOLD hanging with us?!~ [MONTY41]
+@651 = ~Deekin is a bard, Deekin sings songs and helps heroes do good. ~
+@652 = ~Usually heroes kill kobolds and do good to the world by doing so. I'm not a hero, but even I hate kobolds and try to carve out as many skulls of those worthless, smelly creatures as possible.~
+@653 = ~Deekin has maaaaany bad kinsmen, but Deekin is not like them. Deekin wants to help the heroes do good and sing songs about their adventures. Deekin can sing about the good halflings to Montaron... ~
+@654 = ~Oh, no, don't start talking to me about the damn good nonsense about the halflings! I seriously don't understand why I have to hang out with kobolds, hamsters, insane necromancers, children, grandchildren, grand-nephews of dead gods, what am I even doing here?!~ [MONTY28]
+@655 = ~How did you all get to me?! *With a look of frustration, Montaron convulsively pulls out a dagger with a sharpening stone, stops talking and starts sharpening his knives*~
+
+// Deekin - Xzar 2
+@656 = ~So, kobold, rumor has it that you lived with a dragon?~
+@657 = ~Yes, Deekin lived with a dragon, and Deekin sang to the dragon so that the dragon wouldn't eat Deekin. ~
+@658 = ~What kind of paws did that dragon have? Like rabbits, perhaps?~
+@659 = ~Deekin doesn't remember the exact size of a dragon's paw, but Deekin thinks he had dragon paws. ~
+@660 = ~So, the dragon had the paws of the dragon? Then tell me, the kobold who lived with the dragon: WHY DO RABBITS HAVE PAWS LIKE DRAGONS!!!???~ [XZAR33]
+@661 = ~*Shrugs to the side* Deekin doesn't know. Deekin saw few rabbits and does not remember their paws at all. Deekin is afraid of this loud necromancer.~
+@662 = ~Hmm, okay, we need to catch more rabbits so I can get a better look at their paws. The fate of the multiverse has always been strongly tied to the rabbit's paws. I can’t just leave this mystery alone... All the more that Mommy would not approve of it.~ [XZAR23]

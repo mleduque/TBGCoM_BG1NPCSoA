@@ -26,7 +26,7 @@ IF WEIGHT #-99~Global("XzarAR1515","AR1515",2) AreaCheck("AR1515") RealGlobalTim
 IF ~~ THEN DO ~SetGlobal("XzarAR1515","AR1515",3)~ EXIT
 END
 
-// HaperLair
+// HarperLair
 IF WEIGHT #-99~Global("XzarAR0308","AR0308",2)AreaCheck("AR0308") RealGlobalTimerExpired("XzarAR0308TalkTimer","GLOBAL") ~ THEN BEGIN XzarHaperLair
   SAY @7 
 IF ~~ THEN DO ~SetGlobal("XzarAR0308","AR0308",3)~ EXIT

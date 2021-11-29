@@ -1,6 +1,6 @@
 BACKUP ~BG1NPCSoA/backup~
 SUPPORT ~http://www.baldursgatemods.com/forums/index.php?board=133.0~
-VERSION ~12.8~
+VERSION ~13~
 
 AUTO_TRA ~BG1NPCSoA/tra/%s~
 
@@ -175,6 +175,10 @@ APPEND ~interdia.2da~
     WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~7XDEEK~ #8
   BUT_ONLY_IF_IT_CHANGES
 
+// Deekin's Epilogue
+EXTEND_TOP ~AR6200.bcs~ ~BG1NPCSoA/epilogues/Deekin/AR6200.baf~
+COPY ~BG1NPCSoA/epilogues/Deekin/DeekEp.2da~ ~override/DeekEp.2da~
+REPLACE ~99999~ @8018
 
 // EET Fate Spirit Deeking
 
@@ -2687,8 +2691,6 @@ EXTEND_TOP ~Ar0700.bcs~ ~BG1NPCSoA/scripts/MISC/AR0700.baf~
 EXTEND_TOP ~Ar0400.bcs~ ~BG1NPCSoA/scripts/AR0400.baf~
 EXTEND_TOP ~Ar0400.bcs~ ~BG1NPCSoA/scripts/ARENA/AR0400.baf~
 
-INCLUDE ~BG1NPCSoA/lib/a7_tools.tpa~
-
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
   // Enhanced Edition game detected
 COPY ~BG1NPCSoA/areas/EE-tis~ ~override~ // Copy TIS files for EE version
@@ -2805,8 +2807,6 @@ END ELSE BEGIN
     UNLESS ~BIMOEN2~
 END
 END
-
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
 
 
 BEGIN @1902 DESIGNATED 2
@@ -5522,7 +5522,6 @@ OUTER_SPRINT ~tob_var~ ~SAFANASummonedTOB~
 EXTEND_TOP ~7XSAFA.bcs~ ~fix_tob_script.baf~ EVALUATE_BUFFER
 END
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~ 
 
 BEGIN @704 DESIGNATED 25
 GROUP ~Main Mod~
@@ -5724,8 +5723,6 @@ COPY ~BG1NPCSoA/portraits/Alora/EE-portraits/~ ~override~
 END ELSE BEGIN
 COPY ~BG1NPCSoA/portraits/Alora/vanilla-portraits~ ~override~
 END
-
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
 
 
 
@@ -8024,8 +8021,6 @@ OUTER_SPRINT ~tob_var~ ~KagainSummonedToB~
 EXTEND_TOP ~7Xkaga.bcs~ ~fix_tob_script.baf~ EVALUATE_BUFFER
 END
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
-
 
 BEGIN @1436 DESIGNATED 35
 GROUP ~Main Mod~
@@ -8342,7 +8337,6 @@ OUTER_SPRINT ~tob_var~ ~KagainSummonedToB~
 EXTEND_TOP ~7Xkaga.bcs~ ~fix_tob_script.baf~ EVALUATE_BUFFER
 END
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
 /////////////////////////////////
 
 BEGIN @1437 DESIGNATED 40
@@ -9190,9 +9184,6 @@ OUTER_SPRINT ~tob_var~ ~MONTISummonedTOB~
 END
 
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
-
-
 BEGIN @1594 DESIGNATED 50
 GROUP ~Main Mod~
 REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee eet~ ~Not support game~
@@ -9854,7 +9845,6 @@ OUTER_SPRINT ~tob_override~ ~7XQUAY25~
 OUTER_SPRINT ~tob_var~ ~QuayleSummonedTOB~
 END
 
-AT_INTERACTIVE_EXIT ~VIEW BG1NPCSoA/readme/BG1readme.pdf~
 
 
 // Optional component 
@@ -10996,4 +10986,12 @@ END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~B7XSafa.dlg~ AND FILE_EXISTS_IN_GAME ~B7XGar.dlg~ BEGIN
 COMPILE ~%MOD_FOLDER%/crossbanter/garrick-safana.d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~7XFALDB.dlg~ AND FILE_EXISTS_IN_GAME ~7XSkiB.dlg~ BEGIN
+COMPILE ~%MOD_FOLDER%/crossbanter/faldorn-skie.d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~BDEEKIN.dlg~ AND FILE_EXISTS_IN_GAME ~7XMONTB.dlg~ BEGIN
+COMPILE ~%MOD_FOLDER%/crossbanter/montaron-deekin.d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
 END

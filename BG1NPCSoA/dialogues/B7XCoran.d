@@ -3,8 +3,10 @@ BEGIN ~B7XCoran~
 /////////////////////////////////////
 
 CHAIN
-IF ~Global("SafanaCoran","GLOBAL",0)InParty("7XCORAN")InParty("7XSAFA")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-See("7XSAFA")!StateCheck("7XSAFA",CD_STATE_NOTVALID)~ THEN B7XSafa SafanaCoran1
+IF ~Global("SafanaCoran","GLOBAL",0)InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("7XCORAN")
+InParty("7XSAFA") !StateCheck("7XSAFA",CD_STATE_NOTVALID)
+CombatCounter(0)~ THEN B7XSafa SafanaCoran1
 @87 
 DO ~SetGlobal("SafanaCoran","GLOBAL",1)~
 == B7XCoran @88
@@ -12,7 +14,7 @@ DO ~SetGlobal("SafanaCoran","GLOBAL",1)~
 EXIT
 
 CHAIN IF ~Global("CoranValTalk","GLOBAL",0)InParty("Valygar")See("Valygar")!StateCheck("Valygar",CD_STATE_NOTVALID)
-OR(2)TimeOfDay(DAY)TimeOfDay(MORNING)OR(2)AreaType(FOREST)AreaType(OUTDOOR)~ THEN B7XCoran CoranValygar1
+OR(2)TimeOfDay(DAY)TimeOfDay(MORNING)OR(2)AreaType(FOREST)AreaType(OUTDOOR) CombatCounter(0)~ THEN B7XCoran CoranValygar1
 @90
 =
 @91
@@ -49,7 +51,7 @@ EXIT
 
 CHAIN
 IF ~Global("TalkWithSafana","GLOBAL",0)InParty("7XCORAN")InParty("7XSAFA")See("7XSAFA")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-!StateCheck("7XSAFA",CD_STATE_NOTVALID)~ THEN B7XCoran LOVEtalk1
+!StateCheck("7XSAFA",CD_STATE_NOTVALID) CombatCounter(0)~ THEN B7XCoran LOVEtalk1
 @111
 DO ~SetGlobal("TalkWithSafana","GLOBAL",1)~
 == B7XSafa @112
@@ -67,7 +69,7 @@ EXIT
 CHAIN IF ~Global("CoranEddie","GLOBAL",0)
 InParty("7XSAFA")See("7XSAFA")!StateCheck("7XSAFA",CD_STATE_NOTVALID)InParty("7XCORAN")
 See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-InParty("Edwin")!StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN BEDWIN Eddie1
+InParty("Edwin")!StateCheck("Edwin",CD_STATE_NOTVALID) CombatCounter(0)~ THEN BEDWIN Eddie1
 @120 DO ~SetGlobal("CoranEddie","GLOBAL",1)~ 
 == B7XCoran @121 
 == BEDWIN @122
@@ -115,9 +117,9 @@ DO ~SetGlobal("MinscChat","GLOBAL",1)~
 EXIT
 
 CHAIN
-IF ~InParty("HaerDalis")See("HaerDalis")!StateCheck("HaerDalis",CD_STATE_NOTVALID)
+IF ~InParty("HaerDalis")!StateCheck("HaerDalis",CD_STATE_NOTVALID)
 Global("CoranDalisTalk","GLOBAL",0)InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)~ THEN BHAERDA DalisCoran01
+See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID) CombatCounter(0)~ THEN BHAERDA DalisCoran01
 @155
 DO ~SetGlobal("CoranDalisTalk","GLOBAL",1)~
 == B7XCoran @156
@@ -158,9 +160,9 @@ DO ~SetGlobal("CoranDalisTalk","GLOBAL",1)~
 EXIT
 
 CHAIN
-IF ~InParty("Aerie")See("Aerie")!StateCheck("Aerie",CD_STATE_NOTVALID)
+IF ~InParty("Aerie")!StateCheck("Aerie",CD_STATE_NOTVALID)
 Global("AerieCoranTalk","GLOBAL",0)InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)~ THEN BAERIE AerieCoran1
+See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID) CombatCounter(0)~ THEN BAERIE AerieCoran1
 @181
 DO ~StartMusic(34,QUICK_FADE)
 SetGlobal("AerieCoranTalk","GLOBAL",1)~
@@ -193,8 +195,8 @@ EXIT
 
 CHAIN
 IF ~AreaType(OUTDOOR) InParty("Jaheira")See("Jaheira")!StateCheck("Jaheira",CD_STATE_NOTVALID)
-Global("JahCoranTalk","GLOBAL",0)InParty("7XCORAN") 
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)~ THEN B7XCoran JahCoran01
+Global("JahCoranTalk","GLOBAL",0)
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID) CombatCounter(0)~ THEN B7XCoran JahCoran01
 @200
 =
 @201
@@ -219,9 +221,11 @@ DO ~StartMusic(36,QUICK_FADE)SetGlobal("JahCoranTalk","GLOBAL",1)~
 EXIT
 
 CHAIN
-IF ~InParty("Jan")See("Jan")!StateCheck("Jan",CD_STATE_NOTVALID)
-Global("JanCoranTalk","GLOBAL",0)InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)~ THEN BJAN JanCoran01
+IF ~InParty("Jan")!StateCheck("Jan",CD_STATE_NOTVALID)
+Global("JanCoranTalk","GLOBAL",0)
+InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("7XCORAN")
+CombatCounter(0)~ THEN BJAN JanCoran01
 @213
 DO ~SetGlobal("JanCoranTalk","GLOBAL",1)~
 == B7XCoran @214
@@ -249,8 +253,9 @@ DO ~SetGlobal("JanCoranTalk","GLOBAL",1)~
 EXIT
 
 CHAIN IF ~InParty("Nalia")See("Nalia")!StateCheck("Nalia",CD_STATE_NOTVALID)InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-Global("CoranNaliaChat","GLOBAL",0)~ THEN B7XCoran naliachat
+!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+Global("CoranNaliaChat","GLOBAL",0)
+CombatCounter(0)~ THEN B7XCoran 7Xnaliachat
 @229
 =
 @230 DO ~SetGlobal("CoranNaliaChat","GLOBAL",1)~
@@ -268,9 +273,11 @@ EXIT
 
 CHAIN
 IF ~InParty("Viconia")See("Viconia")
-!StateCheck("Viconia",CD_STATE_NOTVALID)InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-Global("VicCoranTalk","GLOBAL",0)~ THEN B7XCoran VicBanter
+!StateCheck("Viconia",CD_STATE_NOTVALID)
+InParty("7XCORAN")
+!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+Global("VicCoranTalk","GLOBAL",0)
+CombatCounter(0)~ THEN B7XCoran VicBanter
 @240
 == BVICONI @241
 == B7XCoran @242
@@ -304,8 +311,9 @@ EXIT
 
 
 CHAIN IF~InParty("Imoen2")See("Imoen2")!StateCheck("Imoen2",CD_STATE_NOTVALID)InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-Global("CoranImoen","GLOBAL",0)~ THEN B7XCoran imoenchat1
+!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+Global("CoranImoen","GLOBAL",0) 
+CombatCounter(0)~ THEN B7XCoran 7ximoenchat1
 @259 DO ~SetGlobal("CoranImoen","GLOBAL",1)~
 =
 @260 
@@ -333,7 +341,7 @@ EXIT
 
 CHAIN IF
 ~InParty("Cernd")See("Cernd")!StateCheck("Cernd",CD_STATE_NOTVALID)AreaType(FOREST)
-Global("CoranCernd","GLOBAL",0)InParty("7XCORAN")See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)CombatCounter(0)
+Global("CoranCernd","GLOBAL",0)InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)CombatCounter(0)
 !See([ENEMY])~ THEN B7XCoran CoranCernd1
 @275
 DO ~SetGlobal("CoranCernd","GLOBAL",1)~
@@ -351,8 +359,10 @@ EXIT
 
 
 CHAIN IF
-~IsValidForPartyDialog("Korgan")InParty("Korgan")InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-Global("CoranKorgan","GLOBAL",0)~
+~InParty("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)
+InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("7XCORAN")
+Global("CoranKorgan","GLOBAL",0) CombatCounter(0)~
 THEN BKORGAN TreehuggingElf1
 @283
 =
@@ -390,10 +400,11 @@ THEN BKORGAN TreehuggingElf1
 EXIT
 
 CHAIN IF~
-CombatCounter(0)!See([ENEMY])InParty("Anomen")
-Range("Anomen",30)IsValidForPartyDialog("Anomen")InParty("7XCORAN")
-!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-Global("CoranAnomen","GLOBAL",0)~
+CombatCounter(0)!See([ENEMY])
+InParty("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+Global("CoranAnomen","GLOBAL",0)
+See("Anomen")~
 THEN B7XCoran CoranAnomenBanter1
 @306
 =
@@ -422,12 +433,14 @@ THEN B7XCoran CoranAnomenBanter1
 EXIT
 
 CHAIN
-IF ~InParty("Anomen")See("Anomen")
+IF ~InParty("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)
 OR(2)Global("AnomenRomanceActive","GLOBAL",1)
 Global("AnomenRomanceActive","GLOBAL",2)
-IsValidForPartyDialog("Anomen")InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-Gender(Player1,FEMALE)Global("CoranAnomenRB","GLOBAL",0)~ THEN B7XCoran CoranAnomenRomanceBlocker1
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+Gender(Player1,FEMALE)
+Global("CoranAnomenRB","GLOBAL",0)
+See("Anomen")
+CombatCounter(0)!See([ENEMY])~ THEN B7XCoran CoranAnomenRomanceBlocker1
 @324
 =
 @325
@@ -439,8 +452,9 @@ DO ~SetGlobal("CoranAnomenRB","GLOBAL",1)~
 == B7XCoran @329
 EXIT
 
-CHAIN IF ~InParty("Yoshimo")IsValidForPartyDialog("Yoshimo")InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+CHAIN IF ~InParty("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("Yoshimo")
 CombatCounter(0)
 !See([ENEMY])
 Global("CoranYoshimo","GLOBAL",0)~ THEN B7XCoran CoranYoshimoBanter
@@ -471,10 +485,11 @@ EXIT
 
 
 CHAIN 
-IF ~InParty("Keldorn")See("Keldorn")
-IsValidForPartyDialog("Keldorn")
+IF ~InParty("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)
+See("7XCORAN")
 InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-Global("CoranKeldorn","GLOBAL",0)~ THEN BKELDOR CoranKeldorn1
+Global("CoranKeldorn","GLOBAL",0)
+CombatCounter(0) !See([ENEMY])~ THEN BKELDOR CoranKeldorn1
 @347
 DO ~SetGlobal("CoranKeldorn","GLOBAL",1)~
 == B7XCoran @348
@@ -511,8 +526,11 @@ DO ~SetGlobal("CoranKeldorn","GLOBAL",1)~
 EXIT
 
 
-CHAIN IF~CombatCounter(0)!See([ENEMY])InParty("Anomen")Range("Anomen",30)
-IsValidForPartyDialog("Anomen")InParty("7XCORAN")See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+CHAIN IF~CombatCounter(0)!See([ENEMY])
+InParty("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)
+IsValidForPartyDialog("Anomen")
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("Anomen")
 Global("CoranAnomen","GLOBAL",1)~
 THEN B7XCoran CoranAnomenBanter2
 @370
@@ -535,7 +553,11 @@ THEN B7XCoran CoranAnomenBanter2
 EXIT
 
 CHAIN
-IF ~Global("TalkWithSafana","GLOBAL",1)InParty("7XCORAN")InParty("7XSAFA")See("7XSAFA")!StateCheck("7XSAFA",CD_STATE_NOTVALID)~ THEN B7XCoran LOVEtalk2
+IF ~Global("TalkWithSafana","GLOBAL",1)
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+InParty("7XSAFA") !StateCheck("7XSAFA",CD_STATE_NOTVALID)
+See("7XSAFA")
+CombatCounter(0)!See([ENEMY])~ THEN B7XCoran LOVEtalk2
 @382 DO ~SetGlobal("TalkWithSafana","GLOBAL",2)~
 == B7XSafa @383
 =
@@ -547,9 +569,11 @@ IF ~Global("TalkWithSafana","GLOBAL",1)InParty("7XCORAN")InParty("7XSAFA")See("7
 EXIT
 
 
-CHAIN IF ~InParty("Imoen2")See("Imoen2")InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-!StateCheck("Imoen2",CD_STATE_NOTVALID)Global("CoranImoen","GLOBAL",1)~ THEN B7XCoran imoenchat2
+CHAIN IF ~InParty("Imoen2") !StateCheck("Imoen2",CD_STATE_NOTVALID)
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("Imoen2")
+CombatCounter(0)!See([ENEMY])
+Global("CoranImoen","GLOBAL",1)~ THEN B7XCoran imoenchat2
 @389
 =
 @390 DO ~SetGlobal("CoranImoen","GLOBAL",2)~
@@ -565,11 +589,11 @@ See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
 == B7XCoran @397 
 EXIT
 
-CHAIN IF ~Global("MinscChat","GLOBAL",1)InParty("Minsc")!StateCheck("Minsc",CD_STATE_NOTVALID)
-InParty("7XCORAN")
-See("7XCORAN")
-!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-CombatCounter(0)~ THEN B7XCoran MinscChat_2
+CHAIN IF ~Global("MinscChat","GLOBAL",1)
+InParty("Minsc")!StateCheck("Minsc",CD_STATE_NOTVALID)
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("Minsc")
+CombatCounter(0)!See([ENEMY])~ THEN B7XCoran MinscChat_2
 @398
 =
 @399 
@@ -594,10 +618,11 @@ DO ~SetGlobal("MinscChat","GLOBAL",2)~
 EXIT
 
 CHAIN
-IF ~InParty("Aerie")
-See("Aerie")
-!StateCheck("Aerie",CD_STATE_NOTVALID)
-Global("AerieCoranTalk","GLOBAL",1)InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)~ THEN BAERIE AerieTalk2
+IF ~InParty("Aerie")!StateCheck("Aerie",CD_STATE_NOTVALID)
+Global("AerieCoranTalk","GLOBAL",1)
+InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("7XCORAN")
+CombatCounter(0)!See([ENEMY])~ THEN BAERIE AerieTalk2
 @412
 DO ~SetGlobal("AerieCoranTalk","GLOBAL",2)~
 == B7XCoran
@@ -613,8 +638,11 @@ DO ~SetGlobal("AerieCoranTalk","GLOBAL",2)~
 == B7XCoran @418
 EXIT
 
-CHAIN IF ~InParty("Yoshimo")IsValidForPartyDialog("Yoshimo")CombatCounter(0)!See([ENEMY])
-Global("CoranYoshimo","GLOBAL",1)~ THEN B7XCoran CoranYoshimoBanter2
+CHAIN IF ~InParty("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)
+InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+CombatCounter(0)!See([ENEMY])
+Global("CoranYoshimo","GLOBAL",1)
+See("Yoshimo")~ THEN B7XCoran CoranYoshimoBanter2
 @419
 DO ~SetGlobal("CoranYoshimo","GLOBAL",2)~
 == BYOSHIM @420
@@ -630,12 +658,12 @@ EXIT
 
 CHAIN
 IF
-~InParty("Cernd")See("Cernd")
-!StateCheck("Cernd",CD_STATE_NOTVALID)
+~InParty("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)
+InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
 AreaType(FOREST)
+See("Cernd")
 Global("CoranCernd","GLOBAL",1)
-CombatCounter(0)
-!See([ENEMY])~ THEN B7XCoran CoranCernd2
+CombatCounter(0) !See([ENEMY])~ THEN B7XCoran CoranCernd2
 @427
 DO ~SetGlobal("CoranCernd","GLOBAL",2)~
 == BCERND @428
@@ -659,12 +687,12 @@ DO ~SetGlobal("CoranCernd","GLOBAL",2)~
 EXIT
 
 CHAIN
-IF ~InParty("Jaheira")
+IF ~InParty("Jaheira")!StateCheck("Jaheira",CD_STATE_NOTVALID)
 See("Jaheira")
 AreaType(FOREST)
-!StateCheck("Jaheira",CD_STATE_NOTVALID)
-Global("JahCoranTalk","GLOBAL",1)InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)~ THEN B7XCoran JahCoran02
+Global("JahCoranTalk","GLOBAL",1)
+InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+CombatCounter(0) !See([ENEMY])~ THEN B7XCoran JahCoran02
 @442
 =
 @443
@@ -688,8 +716,11 @@ DO ~SetGlobal("JahCoranTalk","GLOBAL",2)~
 == BJAHEIR @455
 EXIT
 
-CHAIN IF ~Global("CoranValTalk","GLOBAL",1)InParty("Valygar")See("Valygar")!StateCheck("Valygar",CD_STATE_NOTVALID)InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)~ THEN B7XCoran CoranValygar1
+CHAIN IF ~Global("CoranValTalk","GLOBAL",1)
+InParty("Valygar")!StateCheck("Valygar",CD_STATE_NOTVALID)
+InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("Valygar")
+CombatCounter(0) !See([ENEMY])~ THEN B7XCoran CoranValygar1
 @456
 =
 @457
@@ -706,8 +737,11 @@ DO ~SetGlobal("CoranValTalk","GLOBAL",2)~
 EXIT
 
 CHAIN IF
-~IsValidForPartyDialog("Korgan")InParty("Korgan")InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-Global("CoranKorgan","GLOBAL",1)~
+~InParty("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)
+InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
+Global("CoranKorgan","GLOBAL",1)
+CombatCounter(0) !See([ENEMY])
+See("Korgan")~
 THEN ~B7XCoran~ TreehuggingElf2
 @465
 =
@@ -725,10 +759,11 @@ THEN ~B7XCoran~ TreehuggingElf2
 EXIT
 
 CHAIN 
-IF ~InParty("Keldorn")See("Keldorn")
-IsValidForPartyDialog("Keldorn")
+IF ~InParty("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)
 InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-Global("CoranKeldorn","GLOBAL",1)~ THEN BKELDOR CoranKeldorn2
+See("7XCORAN")
+Global("CoranKeldorn","GLOBAL",1)
+CombatCounter(0) !See([ENEMY])~ THEN BKELDOR CoranKeldorn2
 @474
 DO ~SetGlobal("CoranKeldorn","GLOBAL",2)~
 == B7XCoran @475
@@ -747,11 +782,11 @@ DO ~SetGlobal("CoranKeldorn","GLOBAL",2)~
 EXIT
 
 CHAIN
-IF ~InParty("Aerie")
+IF ~InParty("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)
+Global("AerieCoranTalk","GLOBAL",2)
 See("Aerie")
-!StateCheck("Aerie",CD_STATE_NOTVALID)
-Global("AerieCoranTalk","GLOBAL",2)InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)~ THEN B7XCoran AerieCoran3
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+CombatCounter(0) !See([ENEMY])~ THEN B7XCoran AerieCoran3
 @485
 DO ~SetGlobal("AerieCoranTalk","GLOBAL",3)~
 == BAERIE @486
@@ -765,9 +800,11 @@ DO ~SetGlobal("AerieCoranTalk","GLOBAL",3)~
 EXIT
 
 CHAIN IF
-~IsValidForPartyDialog("Korgan")InParty("Korgan")
+~InParty("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)
 InParty("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)
-Global("CoranKorgan","GLOBAL",2)~
+Global("CoranKorgan","GLOBAL",2)
+See("7XCORAN")
+CombatCounter(0) !See([ENEMY])~
 THEN ~BKORGAN~ TreehuggingElf3
 @492
 =
@@ -783,10 +820,11 @@ EXIT
 
 
 CHAIN
-IF ~InParty("Jaheira")
-See("Jaheira")!StateCheck("Jaheira",CD_STATE_NOTVALID)
-Global("JahCoranTalk","GLOBAL",2)InParty("7XCORAN")
-See("7XCORAN")!StateCheck("7XCORAN",CD_STATE_NOTVALID)~ THEN ~BJAHEIR~ JahCoran03
+IF ~InParty("Jaheira")!StateCheck("Jaheira",CD_STATE_NOTVALID)
+Global("JahCoranTalk","GLOBAL",2)
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("7XCORAN")
+CombatCounter(0) !See([ENEMY])~ THEN ~BJAHEIR~ JahCoran03
 @500
 DO ~SetGlobal("JahCoranTalk","GLOBAL",3)~
 == B7XCoran @501
@@ -804,7 +842,10 @@ EXIT
 
 CHAIN
 IF ~Global("TalkWithSafana","GLOBAL",2)
-    InParty("7XCORAN")InParty("7XSAFA")See("7XSAFA")!StateCheck("7XSAFA",CD_STATE_NOTVALID)~ THEN B7XSafa LOVEtalk3
+InParty("7XCORAN")  !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+InParty("7XSAFA") !StateCheck("7XSAFA",CD_STATE_NOTVALID)
+See("7XCORAN")
+CombatCounter(0) !See([ENEMY])~ THEN B7XSafa LOVEtalk3
 @510
 DO ~SetGlobal("TalkWithSafana","GLOBAL",3)~
 == B7XCoran @511
@@ -821,8 +862,11 @@ EXIT
 
 
 
-CHAIN IF ~InParty("Yoshimo")IsValidForPartyDialog("Yoshimo")CombatCounter(0)!See([ENEMY])
-Global("CoranYoshimo","GLOBAL",2)~ THEN B7XCoran CoranYoshimoBanter3
+CHAIN IF ~InParty("Yoshimo")  !StateCheck("Yoshimo",CD_STATE_NOTVALID)
+InParty("7XCORAN")  !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+Global("CoranYoshimo","GLOBAL",2)
+See("Yoshimo")
+CombatCounter(0) !See([ENEMY])~ THEN B7XCoran CoranYoshimoBanter3
 @519
 =
 @520
@@ -841,7 +885,10 @@ EXIT
 
 CHAIN
 IF ~Global("TalkWithSafana","GLOBAL",3)
-    InParty("7XCORAN")InParty("7XSAFA")See("7XSAFA")!StateCheck("7XSAFA",CD_STATE_NOTVALID)~ THEN ~B7XCoran~ LOVEtalk4
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+InParty("7XSAFA") !StateCheck("7XSAFA",CD_STATE_NOTVALID)
+CombatCounter(0) !See([ENEMY])
+See("7XSAFA")~ THEN ~B7XCoran~ LOVEtalk4
 @528
 DO ~SetGlobal("TalkWithSafana","GLOBAL",4)~
 == B7XSafa @529
@@ -859,4 +906,20 @@ DO ~SetGlobal("TalkWithSafana","GLOBAL",4)~
 == B7XSafa @538
 =
 @539
+EXIT
+
+CHAIN
+IF ~InParty("Jan")!StateCheck("Jan",CD_STATE_NOTVALID)
+Global("JanCoranTalk","GLOBAL",1)
+InParty("7XCORAN") !StateCheck("7XCORAN",CD_STATE_NOTVALID)
+See("7XCORAN")
+CombatCounter(0) !See([ENEMY])~ THEN BJAN JanCoran02
+@541 DO ~SetGlobal("JanCoranTalk","GLOBAL",2)~
+== B7XCoran @542
+== BJAN @543
+== B7XCoran @544
+== BJAN @545
+=@546
+== B7XCoran @547
+== BJAN @548
 EXIT

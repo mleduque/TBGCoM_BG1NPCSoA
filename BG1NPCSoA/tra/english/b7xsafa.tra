@@ -248,7 +248,7 @@
 @293  = ~I have been listening to you curse your gods since Baldur's Gate, darling.. I think I might just have picked up a few things here and there.~
 @294  = ~So you are not the air-headed harlot that I took you for.~
 
-// NEW (v.11.7)
+// NEW (v.12)
 @295 = ~Lady Safana! I know you've spent a lot of time at sea in the past. I guess you feel at home here in the port?~
 @296 = ~You're right, knight. For me, the sound of the waves is like music, reminding me of a vivid past. The sea has become a second mother to me.~
 @297 = ~But the sea is not always like that. Our Order often helped widows whose husbands had been taken away by the seas, and whose children had been orphaned by it. For these women the sea was the enemy.~
@@ -258,3 +258,15 @@
 @301 = ~Although that will hardly reassure the wives of those who died. Many of them for the rest of their lives will come ashore in the harbor, looking out into the distance and hoping that their husbands will one day return. I've seen it more than once.~
 @302 = ~Every time their husbands go sailing, the wives say goodbye to them, hiding the fear that torments their hearts.~
 @303 = ~Whoever has tied their fate to the sea will always belong to it.~
+
+// NEW (v.13)
+// Safana - Jan 2
+@304 = ~Safana, you've been tossing and turning all night. Have you had a bad dream?~
+@305 = ~Yes, I dreamed that I was still sailing on the "Exzesus" and we were caught in a storm. The ship was about to sink, and I didn't even have time to get dressed! I had to run out of the boatswain's cabin in a nightgown in front of all the sailors. Then I woke up.~
+@306 = ~What do you think is the meaning of this dream? ~
+@307 = ~Does every dream have to have meaning? In my opinion, dreams are just some kind of mindless images.~
+@308 = ~This is where you are very wrong! Many dreams are prophetic and speak of our future. ~
+@309 = ~For example, I once went to sleep at midnight and saw my grandfather in my dream. I saw my grandfather about to be run over by a cart loaded with turnips, in the middle of the street, where he was waltzing with a clothing dummy. I tried to scream, but when I opened my mouth, the only sound that came out was squeak, and my grandfather was run over. I awoke in a sweat and ran to my grandfather's house and asked him if he had plans to go waltzing with a clothing dummy. He said of course not, although he had contemplated posing as a shepherd so that his creditors won't find him. Relieved, I walked home, but learned later that the old man had slipped on a piece of Sembian cheese and fell out of the window. It's good that he lived on the first floor.~
+@310 = ~What nonsense are you talking about?! This is not a prophetic dream! In general, there are no prophetic dreams! ~
+@311 = ~You're wrong. In general, inexplicable things happen all the time; One man will see spirits, while another will hear voices. How many of us have not at one time or another felt an ice-cold hand on the back of our neck while we were home alone? Not me, thank the gods, but some have.~
+@312 = ~I've had enough! Leave me alone, gnome!~

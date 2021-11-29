@@ -854,3 +854,29 @@ INTERJECT_COPY_TRANS IF_FILE_EXISTS WILSON 15 FaldornWILSON-15
 == 7XFALDJ IF ~InParty("7XFALD") InMyArea("7XFALD") !StateCheck("7XFALD",CD_STATE_NOTVALID)~ THEN @225
 == WILSON @226
 END
+
+APPEND 7XFALDJ
+// Athkatla
+IF WEIGHT #-9 ~Global("7xFaldornCityTalk","GLOBAL",2) RealGlobalTimerExpired("7xFaldornCityTalkTimer","GLOBAL")~ THEN BEGIN 7xFaldornCityTalk1
+  SAY @227 
+IF ~~ THEN DO ~SetGlobal("7xFaldornCityTalk","GLOBAL",3)~ REPLY @228 GOTO 7xFaldornCityTalk2
+IF ~~ THEN DO ~SetGlobal("7xFaldornCityTalk","GLOBAL",3)~ REPLY @229 GOTO 7xFaldornCityTalk2
+IF ~~ THEN DO ~SetGlobal("7xFaldornCityTalk","GLOBAL",3)~ REPLY @230 GOTO 7xFaldornCityTalk2
+IF ~~ THEN DO ~SetGlobal("7xFaldornCityTalk","GLOBAL",3)~ REPLY @231 GOTO 7xFaldornCityTalk2
+IF ~~ THEN DO ~SetGlobal("7xFaldornCityTalk","GLOBAL",3)~ REPLY @232 GOTO 7xFaldornCityTalk2
+END
+
+IF ~~ THEN BEGIN 7xFaldornCityTalk2
+SAY @233
+=@234
+=@235
+=@236
+=@237
+=@238
+IF~~THEN EXIT
+END
+END
+
+INTERJECT_COPY_TRANS TRGYP02 24 FaldornTRGYP02-24
+== 7XFALDJ IF ~InParty("7XFALD") InMyArea("7XFALD") !StateCheck("7XFALD",CD_STATE_NOTVALID)~ THEN @239
+END

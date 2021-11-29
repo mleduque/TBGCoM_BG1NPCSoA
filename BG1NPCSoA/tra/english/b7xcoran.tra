@@ -451,3 +451,14 @@
 @537  = ~You.. complete me.~
 @538  = ~Shut up.~
 @539  = ~Just shut up and kiss me, you silly elf!~
+
+// NEW (v.13)
+// Coran - Jan 2
+@541 = ~Coran, I heard you loved hunting wyverns? ~
+@542 = ~It was a decent activity to pass the time while in the Cloakwood, my friend.~
+@543 = ~However, I bet you never hunted Gobbledygook.~
+@544 = ~I've never heard of a... what?~
+@545 = ~Royal Gobbledygook. A legendary beast with the head of a lion and the body of a lion, though not the same lion. Gobbledygook is reputed to sleep for 1000 years. My great-grandfather was said to have awakened a Gobbledygook after 600 years but found it listless and grouchy, and it begged to remain in bed just 200 more years.~
+@546 = ~Although to meet a Gobbledygook is not good. This usually bodes misfortune for bad news, such as the arrival of a tax collector.~
+@547 = ~You made it all up, gnome! There are no such creatures in Faerun!~
+@548 = ~My great-grandmother said the same thing when my great-grandfather returned home. Although everyone knows that in the Jansen family, no one ever lies. ~
