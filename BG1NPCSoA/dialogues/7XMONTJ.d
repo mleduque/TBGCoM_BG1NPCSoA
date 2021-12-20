@@ -1,16 +1,13 @@
 APPEND ~7XMONTJ~
 
-IF ~OR(3)Global("MontyRomanceActive","GLOBAL",2)Global("PCMontyFlirts","GLOBAL",3)Global("MontyLovetalks","GLOBAL",4)~
+IF ~Global("PCMontyFlirts","GLOBAL",3) Global("MontyRomanceActive","GLOBAL",2)~
 THEN BEGIN RomanceBuzzKill1
 SAY @0
 =
 @1
-IF ~~ THEN REPLY @2 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)
-SetGlobal("PCMontyFlirts","GLOBAL",4)SetGlobal("MontyLovetalks","GLOBAL",5)~ GOTO RomanceBuzzKill4
-IF ~~ THEN REPLY @3 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)
-SetGlobal("PCMontyFlirts","GLOBAL",4)SetGlobal("MontyLovetalks","GLOBAL",5)~ GOTO RomanceBuzzKill3
-IF ~~ THEN REPLY @4 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)
-SetGlobal("PCMontyFlirts","GLOBAL",4)SetGlobal("MontyLovetalks","GLOBAL",5)~ GOTO RomanceBuzzKill2
+IF ~~ THEN REPLY @2 DO ~SetGlobal("PCMontyFlirts","GLOBAL",4)~ GOTO RomanceBuzzKill4
+IF ~~ THEN REPLY @3 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)SetGlobal("PCMontyFlirts","GLOBAL",4)~ GOTO RomanceBuzzKill3
+IF ~~ THEN REPLY @4 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)SetGlobal("PCMontyFlirts","GLOBAL",4)~ GOTO RomanceBuzzKill2
 END
 
 IF ~~ THEN BEGIN RomanceBuzzKill2
@@ -29,13 +26,12 @@ IF ~~ THEN EXIT
 END
 
 
-IF ~OR(3)Global("PCMontyFlirts","GLOBAL",2)Global("MontyLovetalks","GLOBAL",3)
-Global("MontyLovetalks","GLOBAL",2)~ THEN BEGIN MontyLotusTake1
+IF ~Global("PCMontyFlirts","GLOBAL",2) Global("MontyRomanceActive","GLOBAL",0) RealGlobalTimerExpired("MontyBlackLotusTimer","GLOBAL") Global("MontyBlackLotus","LOCALS",1)~ THEN BEGIN MontyLotusTake1
 SAY @8
 =
 @9
-IF ~~ THEN REPLY @10 GOTO MontyLotusTake1-1
-IF ~~ THEN REPLY @11 GOTO MontyLotusTake1-2
+IF ~~ THEN DO ~SetGlobal("MontyBlackLotus","LOCALS",2)~ REPLY @10 GOTO MontyLotusTake1-1
+IF ~~ THEN DO ~SetGlobal("MontyBlackLotus","LOCALS",2)~ REPLY @11 GOTO MontyLotusTake1-2
 END
 
 IF ~~ THEN BEGIN MontyLotusTake1-2
@@ -171,16 +167,13 @@ END
 
 IF ~~ THEN BEGIN MontyLotusTake1-16
 SAY @64
-IF ~~ THEN DO ~SetGlobal("MontyRomanceActive","GLOBAL",2)
-SetGlobal("PCMontyFlirts","GLOBAL",3)SetGlobal("MontyLovetalks","GLOBAL",4)RestParty()~ EXIT
+IF ~~ THEN DO ~SetGlobal("MontyRomanceActive","GLOBAL",2)SetGlobal("PCMontyFlirts","GLOBAL",3)RestParty()~ EXIT
 END
 
 IF ~~ THEN BEGIN MontyLotusTake1-17
 SAY @65
-IF ~PartyGoldGT(19)~ THEN REPLY @66 DO ~SetGlobal("PCMontyFlirts","GLOBAL",3)
-SetGlobal("MontyLovetalks","GLOBAL",4)TakePartyGold(20)~ GOTO MontyLotusTake1-18
-IF ~~ THEN REPLY @67 DO ~SetGlobal("PCMontyFlirts","GLOBAL",3)
-SetGlobal("MontyLovetalks","GLOBAL",4)~ GOTO MontyLotusTake1-18
+IF ~PartyGoldGT(19)~ THEN REPLY @66 DO ~SetGlobal("PCMontyFlirts","GLOBAL",3)TakePartyGold(20)~ GOTO MontyLotusTake1-18
+IF ~~ THEN REPLY @67 DO ~SetGlobal("PCMontyFlirts","GLOBAL",3)~ GOTO MontyLotusTake1-18
 END
 
 IF ~~ THEN BEGIN MontyLotusTake1-18
@@ -190,15 +183,15 @@ END
 
 
 IF ~IsGabber(Player1)Global("MontyRomanceActive","GLOBAL",0)Global("PCMontyFlirts","GLOBAL",0)Gender(Player1,FEMALE)
- !StateCheck(Player1,STATE_SLEEPING)
- !StateCheck(Player1,STATE_STUNNED)
-CombatCounter(0)~ THEN BEGIN PCintiatedRomanceFlirts0
+!StateCheck("7XMONT",CD_STATE_NOTVALID) !StateCheck(Player1,CD_STATE_NOTVALID)
+CombatCounter(0) 
+Global("PCMontyFirstTalk","LOCALS",0)~ THEN BEGIN PCintiatedRomanceFlirts0
 SAY @69
-+ ~~ + @70  + PCintiatedRomanceFlirts0-1
-+ ~~ + @71  + PCintiatedRomanceFlirts0-1
-+ ~~ + @72  + PCintiatedRomanceFlirts0-1
-+ ~~ + @73  + PCintiatedRomanceFlirts0-2
-+ ~~ + @74  + PCintiatedRomanceFlirts0-2
+IF ~~ THEN DO ~RealSetGlobalTimer("7XMontyTalkTimer1","GLOBAL",900) SetGlobal("PCMontyFirstTalk","LOCALS",1)~ REPLY @70  + PCintiatedRomanceFlirts0-1
+IF ~~ THEN DO ~RealSetGlobalTimer("7XMontyTalkTimer1","GLOBAL",900) SetGlobal("PCMontyFirstTalk","LOCALS",1)~ REPLY @71  + PCintiatedRomanceFlirts0-1
+IF ~~ THEN DO ~RealSetGlobalTimer("7XMontyTalkTimer1","GLOBAL",900) SetGlobal("PCMontyFirstTalk","LOCALS",1)~ REPLY @72  + PCintiatedRomanceFlirts0-1
+IF ~~ THEN DO ~RealSetGlobalTimer("7XMontyTalkTimer1","GLOBAL",900) SetGlobal("PCMontyFirstTalk","LOCALS",1)~ REPLY @73  + PCintiatedRomanceFlirts0-2
+IF ~~ THEN DO ~RealSetGlobalTimer("7XMontyTalkTimer1","GLOBAL",900) SetGlobal("PCMontyFirstTalk","LOCALS",1)~ REPLY @74  + PCintiatedRomanceFlirts0-2
 END
 
 IF ~~ THEN BEGIN PCintiatedRomanceFlirts0-1
@@ -211,10 +204,9 @@ SAY @76
 IF ~~ THEN EXIT
 END
 
-IF ~IsGabber(Player1)Global("MontyRomanceActive","GLOBAL",1)Global("PCMontyFlirts","GLOBAL",0)Gender(Player1,FEMALE)
- !StateCheck(Player1,STATE_SLEEPING)
- !StateCheck(Player1,STATE_STUNNED)
-CombatCounter(0)~ THEN BEGIN PCintiatedRomanceFlirts1
+IF ~IsGabber(Player1)Global("MontyRomanceActive","GLOBAL",0)Global("PCMontyFlirts","GLOBAL",0)Gender(Player1,FEMALE)
+!StateCheck("7XMONT",CD_STATE_NOTVALID) !StateCheck(Player1,CD_STATE_NOTVALID)
+CombatCounter(0) RealGlobalTimerExpired("7XMontyTalkTimer1","GLOBAL")~ THEN BEGIN PCintiatedRomanceFlirts1
 SAY @77
 =
 @78
@@ -302,7 +294,7 @@ IF ~~ THEN BEGIN PCintiatedRomanceFlirts1-10
 SAY @107
 =
 @108
-IF ~~ THEN REPLY @109 GOTO PCintiatedRomanceFlirts1-11
+IF ~~ THEN DO ~PlaySong(0)~ REPLY @109 GOTO PCintiatedRomanceFlirts1-11
 END
 
 IF ~~ THEN BEGIN PCintiatedRomanceFlirts1-11
@@ -336,28 +328,27 @@ END
 
 IF ~~ THEN BEGIN PCintiatedRomanceFlirts1-12
 SAY @126
-IF ~~ THEN DO ~SetGlobal("PCMontyFlirts","GLOBAL",1)~ EXIT
+IF ~~ THEN DO ~SetGlobal("PCMontyFlirts","GLOBAL",1) RealSetGlobalTimer("7XMontyTalkTimer2","GLOBAL",500)~ EXIT
 END
 
 IF ~~ THEN BEGIN PCintiatedRomanceFlirts1-13
 SAY @127
-IF ~~ THEN DO ~SetGlobal("PCMontyFlirts","GLOBAL",1)~ EXIT
+IF ~~ THEN DO ~SetGlobal("PCMontyFlirts","GLOBAL",1) RealSetGlobalTimer("7XMontyTalkTimer2","GLOBAL",500)~ EXIT
 END
 
 IF ~~ THEN BEGIN PCintiatedRomanceFlirts1-14
 SAY @128
-IF ~~ THEN DO ~SetGlobal("PCMontyFlirts","GLOBAL",1)~ EXIT
+IF ~~ THEN DO ~SetGlobal("PCMontyFlirts","GLOBAL",1) RealSetGlobalTimer("7XMontyTalkTimer2","GLOBAL",500)~ EXIT
 END
 
 IF ~~ THEN BEGIN PCintiatedRomanceFlirts1-15
 SAY @129
-IF ~~ THEN DO ~SetGlobal("PCMontyFlirts","GLOBAL",1)~ EXIT
+IF ~~ THEN DO ~SetGlobal("PCMontyFlirts","GLOBAL",1) RealSetGlobalTimer("7XMontyTalkTimer2","GLOBAL",500)~ EXIT
 END
 
-IF ~IsGabber(Player1)Global("MontyRomanceActive","GLOBAL",1)Global("PCMontyFlirts","GLOBAL",1)Gender(Player1,FEMALE)
- !StateCheck(Player1,STATE_SLEEPING)
- !StateCheck(Player1,STATE_STUNNED)
-CombatCounter(0)~ THEN BEGIN PCintiatedRomanceFlirts2
+IF ~IsGabber(Player1)Global("MontyRomanceActive","GLOBAL",0)Global("PCMontyFlirts","GLOBAL",1)Gender(Player1,FEMALE)
+!StateCheck("7XMONT",CD_STATE_NOTVALID) !StateCheck(Player1,CD_STATE_NOTVALID)
+CombatCounter(0) RealGlobalTimerExpired("7XMontyTalkTimer2","GLOBAL")~ THEN BEGIN PCintiatedRomanceFlirts2
 SAY @130
 =
 @131
@@ -407,7 +398,7 @@ END
 
 IF ~~ THEN BEGIN PCintiatedRomanceFlirts2-3a
 SAY @152
-+ ~~ + @153 DO ~SetGlobal("PCMontyFlirts","GLOBAL",2)~ EXIT
++ ~~ + @153 DO ~RealSetGlobalTimer("MontyBlackLotusTimer","GLOBAL",2000) SetGlobal("PCMontyFlirts","GLOBAL",2)~ EXIT
 + ~~ + @137  + PCintiatedRomanceFlirts2-4
 + ~~ + @138  + PCintiatedRomanceFlirts2-5
 END
@@ -430,7 +421,7 @@ SAY @159
 @161
 =
 @162
-+ ~~ + @153 DO ~SetGlobal("PCMontyFlirts","GLOBAL",2)~ EXIT
++ ~~ + @153 DO ~RealSetGlobalTimer("MontyBlackLotusTimer","GLOBAL",2000) SetGlobal("PCMontyFlirts","GLOBAL",2)~ EXIT
 + ~~ + @136  + PCintiatedRomanceFlirts2-3
 + ~~ + @137  + PCintiatedRomanceFlirts2-4
 END
@@ -440,7 +431,7 @@ SAY @163
 =
 @164
 + ~~ + @136  + PCintiatedRomanceFlirts2-3
-+ ~~ + @153 DO ~SetGlobal("PCMontyFlirts","GLOBAL",2)~ EXIT
++ ~~ + @153 DO ~RealSetGlobalTimer("MontyBlackLotusTimer","GLOBAL",2000) SetGlobal("PCMontyFlirts","GLOBAL",2)~ EXIT
 + ~~ + @138  + PCintiatedRomanceFlirts2-5
 END
 
@@ -453,7 +444,7 @@ SAY @165
 =
 @167
 + ~~ + @136  + PCintiatedRomanceFlirts2-3
-+ ~~ + @153 DO ~SetGlobal("PCMontyFlirts","GLOBAL",2)~ EXIT
++ ~~ + @153 DO ~RealSetGlobalTimer("MontyBlackLotusTimer","GLOBAL",2000) SetGlobal("PCMontyFlirts","GLOBAL",2)~ EXIT
 + ~~ + @138  + PCintiatedRomanceFlirts2-5
 END
 

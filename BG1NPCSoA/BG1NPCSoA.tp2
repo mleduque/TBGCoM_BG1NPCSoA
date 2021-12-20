@@ -1,6 +1,6 @@
 BACKUP ~BG1NPCSoA/backup~
 SUPPORT ~http://www.baldursgatemods.com/forums/index.php?board=133.0~
-VERSION ~13~
+VERSION ~13.1~
 
 AUTO_TRA ~BG1NPCSoA/tra/%s~
 
@@ -8406,6 +8406,12 @@ INCLUDE ~%MOD_FOLDER%/lib/standardold.tph~
 END
 END	
 
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+COPY ~BG1NPCSoA/portraits/Faldorn/EE-portraits/~ ~override~
+END ELSE BEGIN
+COPY ~BG1NPCSoA/portraits/Faldorn/vanilla-portraits~ ~override~
+END
+
 
 COPY ~BG1NPCSoA/cre/FALDORN/7xcreee.CRE~ ~override/7xcreee.cre~
 SAY NAME1 @1439
@@ -8729,6 +8735,7 @@ APPEND ~interdia.2da~
   COPY_EXISTING ~7XCRE74.cre~ ~override~
     WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~7XMONT~ #8
   BUT_ONLY_IF_IT_CHANGES
+
 
 // XZAR
 ACTION_IF FILE_EXISTS_IN_GAME ~xzar13.cre~ BEGIN

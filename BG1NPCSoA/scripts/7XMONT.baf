@@ -142,3 +142,17 @@ THEN
   RESPONSE #100
     StartDialogNoSet(Player1)
 END
+
+// Black Lotus Cake (romance)
+IF
+InParty("7XMONT")!StateCheck("7XMONT",CD_STATE_NOTVALID)
+Global("PCMontyFlirts","GLOBAL",2) 
+Global("MontyRomanceActive","GLOBAL",0)
+Global("MontyBlackLotus","LOCALS",0)
+RealGlobalTimerExpired("MontyBlackLotusTimer","GLOBAL") 
+
+THEN
+  RESPONSE #100
+    SetGlobal("MontyBlackLotus","LOCALS",1)
+    StartDialogNoSet(Player1)
+END

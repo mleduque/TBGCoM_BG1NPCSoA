@@ -23,7 +23,7 @@
 @22   = ~Oh really?~
 @23   = ~Well, I'm sure the authorities are goin' ta be interested in talkin' ta you as well, seeing as we know each other from way back.~
 @24   = ~In fact, ye will probably be held as an accomplice after the fact and be strung up and hung!~
-@25   = ~Now yer talkin'!~
+@25   = ~Now yer talkin'!~ [MONTROM]
 @26   = ~Here! Take these, chew on the real slow like, and swallow yer spit every now and again.~
 @27   = ~...~
 @28   = ~Hahahaha! Ye starting to feel that?~
@@ -60,7 +60,7 @@
 @59   = ~You'd be bloody surprised what ye can manage when ye got one pointed at you though.~
 @60   = ~Lay down?! For fuck's sake, are you ever bloody lame!~
 @61   = ~I shouldna ever wasted good lotus on a lush like yerself!~
-@62   = ~And what fuckin' sensation are ye talkin about?~ [MONTY07]
+@62   = ~And what fuckin' sensation are ye talkin about?~
 @63   = ~Come over here and I'll show you, big boy.~
 @64   = ~Well, fuck me sideways! Come over here then, wench!~
 @65   = ~I don't want yer fuckin' thanks! Hand over twenty gold pieces and we'll call it even!~
@@ -109,7 +109,7 @@
 @108  = ~Well, I had ye pegged as the stright arrow. Guess I was wrong.~
 @109  = ~Tell me about your parents, Montaron.~
 @110  = ~My parents? Bwhahahahahaharharhar!~
-@111  = ~What, are ye are expectin' some sappy tale bout hard workin' parents that worked hard provide for their children, but couldna save a wayward wretch like myself from a life filled with vice?~
+@111  = ~What, are ye are expectin' some sappy tale bout hard workin' parents that worked hard provide for their children, but couldna save a wayward wretch like myself from a life filled with vice?~ [MONTROM]
 @112  = ~Hahahahaharhar! My mother was a fuckin' lotus head!~
 @113  = ~My father? Who fuckin' knows! My mum, had a dozen bastard children from a number of different men. It coulda been any one of 'em.~
 @114  = ~When I was young, she would spin me these tales about him being some rich traveling salesman that was passing though town, but who fuck knows! She was so fuckin' high half of the time, she could hardly tell up from down, let alone provide a decent life for her twelve children!~
@@ -132,7 +132,7 @@
 @131  = ~For fuck's sake! Cannae a poor bastard enjoy his dream mist without some daft cunt tryin' ta hound him ta death?~
 @132  = ~I was wondering if you would mind if we talked again?~
 @133  = ~Must you always use that foul language?~
-@134  = ~Ask me what ye will..~
+@134  = ~Ask me what ye will..~ [MONTROM]
 @135  = ~That way we can go back ta ignoring one another again in peace.~
 @136  = ~You mentioned that you had two half brothers before, what ever became of them?~
 @137  = ~Where do you get you dream mist from?~

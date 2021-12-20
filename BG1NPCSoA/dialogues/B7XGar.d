@@ -747,13 +747,6 @@ CHAIN IF WEIGHT #-10 ~Global("GarrickNaliaEveningTalk","GLOBAL",1)~ THEN ~B7XGar
 == B7XGar @431
 == BNALIA @432
 == B7XGar @433
-== BNALIA @434
-== B7XGar @435
-=@436
-=@437
-=@438
-== BNALIA @439
-== B7XGar @440
 == BNALIA @441
 EXIT
 
