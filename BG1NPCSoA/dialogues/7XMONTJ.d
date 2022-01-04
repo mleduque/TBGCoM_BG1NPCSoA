@@ -1,18 +1,20 @@
 APPEND ~7XMONTJ~
 
 IF ~Global("PCMontyFlirts","GLOBAL",3) Global("MontyRomanceActive","GLOBAL",2)~
-THEN BEGIN RomanceBuzzKill1
-SAY @0
-=
-@1
-IF ~~ THEN REPLY @2 DO ~SetGlobal("PCMontyFlirts","GLOBAL",4)~ GOTO RomanceBuzzKill4
-IF ~~ THEN REPLY @3 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)SetGlobal("PCMontyFlirts","GLOBAL",4)~ GOTO RomanceBuzzKill3
-IF ~~ THEN REPLY @4 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)SetGlobal("PCMontyFlirts","GLOBAL",4)~ GOTO RomanceBuzzKill2
+THEN BEGIN RomanceTalkFirst
+SAY @796
+IF ~~ THEN REPLY @797 GOTO RomanceTalk1
+IF ~~ THEN REPLY @798 GOTO RomanceTalk2
+IF ~~ THEN REPLY @799 GOTO RomanceTalk3
+IF ~~ THEN REPLY @800 GOTO RomanceTalk4
+IF ~~ THEN REPLY @2 GOTO RomanceTalk5
+IF ~~ THEN REPLY @3 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill3
+IF ~~ THEN REPLY @4 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill2
 END
 
 IF ~~ THEN BEGIN RomanceBuzzKill2
 SAY @5
-IF ~~ THEN GOTO RomanceBuzzKill4
+IF ~~ THEN GOTO RomanceTalk5
 END
 
 IF ~~ THEN BEGIN RomanceBuzzKill3
@@ -20,11 +22,124 @@ SAY @6
 IF ~~ THEN DO ~LeaveParty()EscapeAreaMove("AR0407",270,433,11)SetGlobal("MONTIInParty","LOCALS",0)~EXIT
 END
 
-IF ~~ THEN BEGIN RomanceBuzzKill4
+IF ~~ THEN BEGIN RomanceTalk2
+SAY @802
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN RomanceTalk3
+SAY @801
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN RomanceTalk5
 SAY @7
 IF ~~ THEN EXIT
 END
 
+IF ~~ THEN BEGIN RomanceTalk1
+SAY @808
+IF ~~ THEN REPLY @809 GOTO RomanceTalk1-1
+IF ~~ THEN REPLY @810 GOTO RomanceTalk1-1
+IF ~~ THEN REPLY @811 GOTO RomanceTalk1-2
+IF ~~ THEN REPLY @812 GOTO RomanceTalk1-3
+IF ~~ THEN REPLY @813 GOTO RomanceTalk1-4
+IF ~~ THEN REPLY @814 GOTO RomanceTalk1-5
+IF ~~ THEN REPLY @815 GOTO RomanceTalk1-6
+IF ~~ THEN REPLY @816 GOTO RomanceTalk1-7
+IF ~~ THEN REPLY @817 GOTO RomanceTalk1-8
+IF ~~ THEN REPLY @818 GOTO RomanceTalk1-9
+IF ~~ THEN REPLY @819 GOTO RomanceTalk1-10
+IF ~~ THEN REPLY @820 GOTO RomanceTalk1-11
+IF ~~ THEN REPLY @824 GOTO RomanceTalk1-12
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-1
+SAY @825
+IF ~OR(3) !InParty("7XELDOT")StateCheck("7XELDOT",CD_STATE_NOTVALID) !InMyArea("7XELDOT")~ THEN REPLY @826 GOTO RomanceTalk1-1-1
+IF ~OR(3) !InParty("7XELDOT")StateCheck("7XELDOT",CD_STATE_NOTVALID) !InMyArea("7XELDOT")~ THEN REPLY @827 GOTO RomanceTalk1-1-2
+IF ~OR(3) !InParty("7XELDOT")StateCheck("7XELDOT",CD_STATE_NOTVALID) !InMyArea("7XELDOT")~ THEN REPLY @3 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill3
+IF ~OR(3) !InParty("7XELDOT")StateCheck("7XELDOT",CD_STATE_NOTVALID) !InMyArea("7XELDOT")~ THEN REPLY @4 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill2
+IF ~InParty("7XELDOT")!StateCheck("7XELDOT",CD_STATE_NOTVALID) InMyArea("7XELDOT")~ THEN EXTERN IF_FILE_EXISTS 7XEldoJ RomanceTalk1-1-Eldoth
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-1-1
+SAY @828
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-1-2
+SAY @829
+IF ~~ THEN REPLY @826 GOTO RomanceTalk1-1-1
+IF ~~ THEN REPLY @3 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill3
+IF ~~ THEN REPLY @4 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill2
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-2
+SAY @829
+IF ~~ THEN REPLY @826 GOTO RomanceTalk1-1-1
+IF ~~ THEN REPLY @3 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill3
+IF ~~ THEN REPLY @4 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill2
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-3
+SAY @360
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-4
+SAY @829
+IF ~~ THEN REPLY @826 GOTO RomanceTalk1-1-1
+IF ~~ THEN REPLY @3 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill3
+IF ~~ THEN REPLY @4 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill2
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-5
+SAY @361
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-6
+SAY @830
+IF ~~ THEN REPLY @826 GOTO RomanceTalk1-1-1
+IF ~~ THEN REPLY @3 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill3
+IF ~~ THEN REPLY @4 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ GOTO RomanceBuzzKill2
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-7
+SAY @831
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-8
+SAY @384
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-9
+SAY @832
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-10
+SAY @833
+=@834
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-11
+SAY @835
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN RomanceTalk1-12
+SAY @0
+=@1
+IF ~~ THEN EXIT
+END
+
+
+// Black Lotus Talk
 
 IF ~Global("PCMontyFlirts","GLOBAL",2) Global("MontyRomanceActive","GLOBAL",0) RealGlobalTimerExpired("MontyBlackLotusTimer","GLOBAL") Global("MontyBlackLotus","LOCALS",1)~ THEN BEGIN MontyLotusTake1
 SAY @8
@@ -1299,4 +1414,105 @@ IF ~~ THEN DO ~SetGlobal("MontyDrunkTalk1","GLOBAL",1)ForceSpell(Myself,WIZARD_F
 ~ EXIT
 END
 
+END
+
+CHAIN 7XMONTJ RomanceTalk4
+@803
+== JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @804
+== IMOEN2J IF ~InParty("Imoen2") InMyArea("Imoen2") !StateCheck("Imoen2",CD_STATE_NOTVALID)~ THEN @805
+== KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN @806
+== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @807
+== KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN @821
+== EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @822
+== CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN @823
+== VALYGARJ IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID) OR(3) !InParty("Cernd") !InMyArea("Cernd") StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN @823
+EXIT
+
+// Romance conflicts
+
+// Anomen
+APPEND ANOMENJ
+IF WEIGHT #-10 ~Global("AnomenRomanceActive","GLOBAL",1) Global("MontyRomanceActive","GLOBAL",2) Global("MontyRomanceAnomenTalk","LOCALS",1)~ BEGIN MontyRomanceAnomen
+  SAY @836
+IF ~~ THEN DO ~SetGlobal("MontyRomanceAnomenTalk","LOCALS",2) SetGlobal("AnomenRomanceActive","GLOBAL",3)~ REPLY @852 GOTO MontyRomanceAnomen_1
+IF ~~ THEN DO ~SetGlobal("MontyRomanceAnomenTalk","LOCALS",2) SetGlobal("AnomenRomanceActive","GLOBAL",3)~ REPLY @855 GOTO MontyRomanceAnomen_2
+IF ~~ THEN DO ~SetGlobal("MontyRomanceAnomenTalk","LOCALS",2) SetGlobal("AnomenRomanceActive","GLOBAL",3)~ REPLY @853 GOTO MontyRomanceAnomen_2
+END
+
+IF WEIGHT #-10 ~Global("AnomenRomanceActive","GLOBAL",2) Global("MontyRomanceActive","GLOBAL",2) Global("MontyRomanceAnomenTalk","LOCALS",1)~ BEGIN MontyRomanceAnomen
+  SAY @837
+IF ~~ THEN DO ~SetGlobal("MontyRomanceAnomenTalk","LOCALS",2) SetGlobal("AnomenRomanceActive","GLOBAL",3)~ REPLY @838 GOTO MontyRomanceAnomen_1
+IF ~~ THEN DO ~SetGlobal("MontyRomanceAnomenTalk","LOCALS",2) SetGlobal("AnomenRomanceActive","GLOBAL",3)~ REPLY @839 GOTO MontyRomanceAnomen_2
+IF ~~ THEN DO ~SetGlobal("MontyRomanceAnomenTalk","LOCALS",2) SetGlobal("AnomenRomanceActive","GLOBAL",3)~ REPLY @840 GOTO MontyRomanceAnomen_2
+END
+
+IF ~~ BEGIN MontyRomanceAnomen_1
+  SAY @841
+IF ~~ THEN EXIT
+END
+
+IF ~~ BEGIN MontyRomanceAnomen_2
+  SAY @842
+IF ~~ THEN EXIT
+END
+END
+
+// Rasaad
+APPEND IF_FILE_EXISTS RASAADJ
+IF WEIGHT #-10 ~Global("RasaadRomanceActive","GLOBAL",1) Global("MontyRomanceActive","GLOBAL",2) Global("MontyRomanceRasaadTalk","LOCALS",1)~ BEGIN MontyRomanceRasaad
+  SAY @843
+IF ~~ THEN DO ~SetGlobal("MontyRomanceRasaadTalk","LOCALS",2) SetGlobal("RasaadRomanceActive","GLOBAL",3)~ REPLY @852 GOTO MontyRomanceRasaad_1
+IF ~~ THEN DO ~SetGlobal("MontyRomanceRasaadTalk","LOCALS",2) SetGlobal("RasaadRomanceActive","GLOBAL",3)~ REPLY @855 GOTO MontyRomanceRasaad_2
+IF ~~ THEN DO ~SetGlobal("MontyRomanceRasaadTalk","LOCALS",2) SetGlobal("RasaadRomanceActive","GLOBAL",3)~ REPLY @853 GOTO MontyRomanceRasaad_2
+END
+
+IF WEIGHT #-10 ~Global("RasaadRomanceActive","GLOBAL",2) Global("MontyRomanceActive","GLOBAL",2) Global("MontyRomanceRasaadTalk","LOCALS",1)~ BEGIN MontyRomanceRasaad
+  SAY @844
+IF ~~ THEN DO ~SetGlobal("MontyRomanceRasaadTalk","LOCALS",2) SetGlobal("RasaadRomanceActive","GLOBAL",3)~ REPLY @838 GOTO MontyRomanceRasaad_1
+IF ~~ THEN DO ~SetGlobal("MontyRomanceRasaadTalk","LOCALS",2) SetGlobal("RasaadRomanceActive","GLOBAL",3)~ REPLY @839 GOTO MontyRomanceRasaad_2
+IF ~~ THEN DO ~SetGlobal("MontyRomanceRasaadTalk","LOCALS",2) SetGlobal("RasaadRomanceActive","GLOBAL",3)~ REPLY @840 GOTO MontyRomanceRasaad_2
+END
+
+IF ~~ BEGIN MontyRomanceRasaad_1
+  SAY @845
+IF ~~ THEN EXIT
+END
+
+IF ~~ BEGIN MontyRomanceRasaad_2
+  SAY @846
+IF ~~ THEN EXIT
+END
+END
+
+// Dorn
+APPEND IF_FILE_EXISTS DORNJ
+IF WEIGHT #-10 ~Global("DornRomanceActive","GLOBAL",2) Global("MontyRomanceActive","GLOBAL",2) Global("MontyRomanceDornTalk","LOCALS",1)~ BEGIN MontyRomanceDorn
+  SAY @847
+IF ~~ THEN DO ~SetGlobal("MontyRomanceDornTalk","LOCALS",2) SetGlobal("DornRomanceActive","GLOBAL",3)~ REPLY @838 GOTO MontyRomanceDorn_1
+IF ~~ THEN DO ~SetGlobal("MontyRomanceDornTalk","LOCALS",2) SetGlobal("DornRomanceActive","GLOBAL",3)~ REPLY @839 GOTO MontyRomanceDorn_2
+IF ~~ THEN DO ~SetGlobal("MontyRomanceDornTalk","LOCALS",2) SetGlobal("DornRomanceActive","GLOBAL",3)~ REPLY @854 GOTO MontyRomanceDorn_2
+END
+
+IF ~~ BEGIN MontyRomanceDorn_1
+  SAY @848
+=@850   
+IF ~~ THEN EXIT
+END
+
+IF ~~ BEGIN MontyRomanceDorn_2
+  SAY @849
+=@850  
+IF ~~ THEN EXIT
+END
+END
+
+// Other
+APPEND IF_FILE_EXISTS 7XEldoJ 
+IF ~~ BEGIN RomanceTalk1-1-Eldoth
+  SAY @851
+IF ~~ THEN REPLY @826 EXTERN 7XMONTJ RomanceTalk1-1-1
+IF ~~ THEN REPLY @827 EXTERN 7XMONTJ RomanceTalk1-1-2
+IF ~~ THEN REPLY @3 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ EXTERN 7XMONTJ RomanceBuzzKill3
+IF ~~ THEN REPLY @4 DO ~SetGlobal("MontyRomanceActive","GLOBAL",3)~ EXTERN 7XMONTJ RomanceBuzzKill2
+END
 END

@@ -1,6 +1,6 @@
 @0    = ~Ugh! Fer fuck's sake! Now what do ye want?~ [MONTY16]
 @1    = ~Cannae a poor bastard stratch his arse without ye buttin' yer nose to see what he's bloody doin?~
-@2    = ~MONTY! I was hoping that after our splendiferous time together, that we could spend more quality time together. Ooooh! We could go quilt shopping at the Promenade! Yay!~
+@2    = ~MONTY! I was hoping that after our splendiferous time together, that we could spend more quality time together. Ooooh! We could go quilt shopping at the Promenade! Wouldn't that be great!?~
 @3    = ~Ugh! What was I thinking when I hooked up with you? Get out of my sight, you slime!~
 @4    = ~I don't need this crap in my life. Consider us done.~
 @5    = ~Like I give a fuck!~ [MONTY28]
@@ -359,8 +359,8 @@
 @357  = ~Aye! Ye are right there, lass! But so long as there are people like me around, there are goin' ta be women that are goin' ta take off their clothes for coin! It is the Faerûnian way!~ [MONTY42]
 @358  = ~I find it less stressful to undergo a quest after I have had my wand properly polished.~
 @359  = ~Nah! The joy I find is in holding a knife at their throat after the deed is done and takin' my coin back, plus extra! Can't do that here though.. Too many guards!~
-@360  = ~Don't be jealous, sweet-tits! I'll find time for a quick shag with ye as well!~
-@361  = ~Ye are a fuckin' dirty bird, aren't ya! I'll 'ave ta keep an eye on ya, I will!~
+@360  = ~Don't be jealous, my 'sweetie-pie' I'll find time for a quick shag with ye as well!~
+@361  = ~Yer an interesting lass, aren't ya!? I'll 'ave ta keep that in mind, I will!~
 @362  = ~Ugh! Don't be such a fuckin' prude!~
 @363  = ~Ya know something, <CHARNAME>, ye look a wee bit like this courtesan I used ta frequent back in Baldur's Gate.~
 @364  = ~The most beuatiful wench ye have ever seen! Would cost me a satchel in gold ta have her fer a night, but she was worth every coin.~
@@ -799,3 +799,68 @@
 @793 = ~That was the only knight I respected, dammit! Great guy!~ [MONTR36]
 @794 = ~And the rivers run red!~ [MONTY03]
 @795 = ~I haven't killed anyone like you yet, dammit! The new experience will be useful for my career in Zhentarim.~ [MONTY19]
+
+// NEW (v.13.2)
+@796 = ~*You are looking at your love, Montaron. He looks grim, as always.* ~ [MONTY41]
+@797 = ~Monty, we need to talk! ~
+@798 = ~*Hug Montaron* ~
+@799 = ~*Kiss Montaron* ~
+@800 = ~I want you Montaron!~
+@801 = ~Want to cuddle up, girl? Wait until evening, I have no time now! ~
+@802 = ~Can't you see I'm busy? Know your place, woman! ~
+@803 = ~Come here, baby! *Roughly drags you away from the others and throws you to the ground, ripping off your clothes*~ [MONTROM]
+@804 = ~*Jaheira is visibly annoyed and shakes her head with her hand to her face * ~
+@805 = ~Get a room, you two!~
+@806 = ~As much as I can acknowledge true love <CHARNAME>, can't this wait? We have more pressing matters that must be attended to.~
+@807 = ~Yuck, how disgusting! You are like wild animals!~
+@808 = ~What do you want? Make it quick.~ [MONTY17]
+@809 = ~What do you think of marriage? I'm not suggesting getting married right now, I'm just curious. ~
+@810 = ~What do you think of marriage? I can't wait to get married! I even chose a pretty white dress for myself! ~
+@811 = ~Why aren't you paying attention to me at all, Monty? When was the last time you gave me flowers?!~
+@812 = ~I saw you staring at the waitress in the hotel! How is she better than me? ~
+@813 = ~I saw you staring at the waitress in the hotel! If I see something like that again, we will have to part!~
+@814 = ~I saw you staring at the waitress in the hotel! Do you want two women at the same time? I don't mind. ~
+@815 = ~Other men appreciate and love their women, and you are always rude to me!~
+@816 = ~Do you remember the first time we met? I didn't think then that we would be together, but then I fell in love. I don't know why myself.~
+@817 = ~You are so handsome and courageous, Monty! How lucky I am to be with you! ~
+@818 = ~Tell me about how you became associated with the Zhentarim.~
+@819 = ~Tell me what you plan to do in the future, when this is all over.~
+@820 = ~I noticed that You argue with Xzar all the time, but you seem to be very friendly with him.~
+@821 = ~Har-har! And ye, <CHARNAME>, are a good looking lass with temperament! I respect that!~
+@822 = ~Great, those baboons are back at it again! (What do they think this is? Some sort of low end brothel? Bah, imbeciles!)~
+@823 = ~Love is a high feeling... but not in this case.~
+@824 = ~Where did you go last night? You were gone for two whole hours, I saw! ~
+@825 = ~I'd rather die than do that! When there are so many juicy women around, why limit yourself to one?~
+@826 = ~Okay Monty, I get it. As you wish. The main thing for me is that you are near.~
+@827 = ~How is it that, Monty? Don't you love me?! If you love me, then you will only be with me!~
+@828 = ~Yer a good lass, one that learns quick. Now leave me alone! I need to sharpen my knife, and I'm busy!~
+@829 = ~I live how I want! If you don't like how I do things, then look for someone who will lay down under your boot!~ [MONTY41]
+@830 = ~I'm don't have time for coddling! If you don't like how I do things, then look for someone who will lay down under your boot!~
+@831 = ~Yes, I'm so charming that women fall at my feet! You are not the first and you will not be the last!~ [MONTY42]
+@832 = ~Maybe I should write another memoir dammit. Oh, in case you didn't get what I meant by that: It's none of your business!~ [MONTY16]
+@833 = ~I have one task to complete first, and then we'll see, and no, I won't tell you what it is.~
+@834 = ~Maybe then I will return to Athkatla, I will continue to catch "rabbits" for Xzar, while having fun and killing. Or maybe not. Time will tell.~
+@835 = ~He's insane, but he has... an unconventional approach to killing. I respect that kind of thing. Just don't try to tell him about it!~
+
+// Romance conflicts
+// Anomen
+@836 = ~My lady! I know I shouldn't interfere, but the fact that you were sharing a bed with that rude assassin of a rogue, Montaron, shocked me.~
+@837 = ~My lady! I thought you loved me, but now I see that you shared the bed with that rude killer and rogue! That was low on your part. It's all over now between us.~
+@838 = ~No! You misunderstood everything. It's just an affair for me, but in fact, my feelings are only for you.~
+@839 = ~I'm sorry I didn't tell the truth right away. We really should break up.~
+@840 = ~He is very assertive and courageous, I like men like that. You're just not my type.~
+@841 = ~Sorry, but I can't put up with this. I'd be better off as friends with you, my lady.~
+@842 = ~Then you've made your choice. I can only say that I'm sorry. You deserve the best and I wish you well.~
+@843 = ~I know I shouldn't interfere, but the fact that you shared a bed with that rude assassin and rogue, Montaron, has shocked me.~
+@844 = ~I thought there was a serious connection between us, but now I see that you preferred this murderer and rogue who constantly humiliates you than to being with me.~
+@845 = ~My apologies, but this goes against who I am. It would seem for the better of us to remain comrades instead.~
+@846 = ~If that is how you truly feel then I will not interfere anymore. I apologize for my actions, and I hope your new connection makes you happy.~
+@847 = ~So you chose this little bastard halfling over other men, <CHARNAME>? So be it. I suppose you were never suited to someone of my "size"!~
+@848 = ~Ha! I'm not blind. I cannot be fooled by your feminine tricks. Step back and don't bother me. ~
+@849 = ~I'm disappointed in you <CHARNAME>, although I suppose it is better that you told me the truth now as apposed to later, who knows what fury I would have possessed if this lingered on for too long.~
+@850 = ~Bah! So be it. Although don’t be surprised if he cuts your throat in your sleep if he gets bored.~
+@851 = ~You're right, Montaron! Anyone who gets married is a complete idiot. The only exception is if you marry a rich woman to get your hands on her money. It makes at least some sense.~
+@852 = ~No! You misunderstood everything. It's just an affair for me.~
+@853 = ~He is very assertive and courageous, I like men like that.~
+@854 = ~Although you are very assertive and courageous, I like my men... smaller. You're just not my type.~
+@855 = ~I'm sorry I didn't tell the truth right away and gave you false hope.~

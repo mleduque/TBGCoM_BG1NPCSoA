@@ -1,6 +1,6 @@
 BACKUP ~BG1NPCSoA/backup~
 SUPPORT ~http://www.baldursgatemods.com/forums/index.php?board=133.0~
-VERSION ~13.1~
+VERSION ~13.2~
 
 AUTO_TRA ~BG1NPCSoA/tra/%s~
 
@@ -8724,6 +8724,13 @@ COMPILE ~BG1NPCSoA/scripts/7XMONT.baf~
 
 EXTEND_TOP ~AR0407.bcs~ ~BG1NPCSoA/scripts/AR0407.baf~
 
+EXTEND_TOP ~Anomen.bcs~ ~BG1NPCSoA/scripts/AnomenRomConf.baf~
+
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+EXTEND_TOP ~Rasaad.bcs~ ~BG1NPCSoA/scripts/RasaadRomConf.baf~
+EXTEND_TOP ~Dorn.bcs~ ~BG1NPCSoA/scripts/DornRomConf.baf~
+END
+
 APPEND ~pdialog.2da~
 ~7XMONT	7XMONTP	7XMONTJ	7XMONTD 7XMON25P 7XMON25J 7XMON25D 7XMON25~
 UNLESS ~7XMONT~
@@ -11001,4 +11008,13 @@ END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~BDEEKIN.dlg~ AND FILE_EXISTS_IN_GAME ~7XMONTB.dlg~ BEGIN
 COMPILE ~%MOD_FOLDER%/crossbanter/montaron-deekin.d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~7XTIAXB.dlg~ AND FILE_EXISTS_IN_GAME ~7XMONTB.dlg~ BEGIN
+COMPILE ~%MOD_FOLDER%/crossbanter/montaron-tiax.d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
+END
+
+// Smiling Imp's Montaron - Kulyok's Tiax
+ACTION_IF FILE_EXISTS_IN_GAME ~BO#TIAX.dlg~ AND FILE_EXISTS_IN_GAME ~7XMONTB.dlg~ BEGIN
+COMPILE ~%MOD_FOLDER%/crossbanter/montaron-tiax(kulyok's).d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
 END
