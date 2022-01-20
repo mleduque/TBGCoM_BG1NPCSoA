@@ -7,7 +7,9 @@ Global("DEEKINSummonedToB","GLOBAL",0)~ THEN
     DO ~CreateVisualEffect("SPPORTAL",[1999.1218])
 Wait(2)
 CreateCreature("7XCRE9",[1999.1218],0)
-SetGlobal("DEEKINSummonedToB","GLOBAL",1)~ GOTO 8
+SetGlobal("DEEKINSummonedToB","GLOBAL",1)
+SmallWait(10) 
+ActionOverride("DEEKIN",StartDialogNoSet([PC]))~ GOTO 8
 END
 
 BEGIN ~DEEK25P~
@@ -206,7 +208,7 @@ IF ~~ THEN BEGIN DEEKINToB1
 END
 
 IF ~~ THEN BEGIN DEEKINToB3 
-  SAY @5
+  SAY @84
   IF ~~ THEN REPLY @31 DO ~JoinParty()~ GOTO DEEKINToB8
   IF ~~ THEN REPLY @32 DO ~SetGlobal("DEEKINSummonedToB","GLOBAL",2)~GOTO DEEKINToB7
 END
@@ -235,4 +237,35 @@ IF ~~ THEN BEGIN DEEKINToB8
 END
 END
 
+INTERJECT_COPY_TRANS GORSAL 9 DeekinGORSAL-9
+== DEEK25J IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%) InParty("DEEKIN") InMyArea("DEEKIN") !StateCheck("DEEKIN",CD_STATE_NOTVALID)~ THEN @65
+== GORODR1 @66
+== DEEK25J @67
+== GORODR1 @68
+=@69
+END
 
+BEGIN ysgp03
+
+CHAIN IF ~Global("DeekinTibitTalk","AR5200",1)~THEN ysgp03 DeekinTibit_ToB
+@71 DO ~SetGlobal("DeekinTibitTalk","AR5200",2)~
+== DEEK25J @72
+== ysgp03 @73
+== JAHEI25J IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @74
+== NALIA25J IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID) OR(3) !InParty("Jaheira") !InMyArea("Jaheira") StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @74
+EXIT
+
+INTERJECT_COPY_TRANS ABAZIGAL 1 DeekinABAZIGAL-1
+== DEEK25J IF ~InParty("DEEKIN") InMyArea("DEEKIN") !StateCheck("DEEKIN",CD_STATE_NOTVALID)~ THEN @75
+== ABAZIGAL @76
+END
+
+INTERJECT_COPY_TRANS FINMEL01 1 DeekinFINMEL01-1
+== FINMEL01 IF ~InParty("DEEKIN") InMyArea("DEEKIN") !StateCheck("DEEKIN",CD_STATE_NOTVALID)~ THEN @77
+== DEEK25J IF ~InParty("DEEKIN") InMyArea("DEEKIN") !StateCheck("DEEKIN",CD_STATE_NOTVALID)~ THEN @78
+== FINMEL01 @79
+=@80
+== DEEK25J @81
+=@82
+== FINMEL01 @83
+END

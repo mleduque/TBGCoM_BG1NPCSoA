@@ -1,6 +1,6 @@
 BACKUP ~BG1NPCSoA/backup~
 SUPPORT ~http://www.baldursgatemods.com/forums/index.php?board=133.0~
-VERSION ~13.2~
+VERSION ~13.3~
 
 AUTO_TRA ~BG1NPCSoA/tra/%s~
 
@@ -160,8 +160,28 @@ END
 COPY ~BG1NPCSoA/store/DEEKIN.sto~ ~override~
 SAY NAME2 @230
 
-COMPILE ~BG1NPCSoA/dialogues/DEEKIN.d~ 
-COMPILE ~BG1NPCSoA/dialogues/DEEKINToB.d~
+COMPILE ~BG1NPCSoA/dialogues/DEEKIN.d~ EVALUATE_BUFFER
+COMPILE ~BG1NPCSoA/dialogues/DEEKINToB.d~ EVALUATE_BUFFER
+
+// Add dialog file to Tibit
+COPY_EXISTING ~YSGP03.CRE~ ~override~
+	SPRINT ~new_dialog~ ~%SOURCE_RES%~
+	READ_ASCII 0x2cc dlg (8) NULL
+	PATCH_IF ( ~%dlg%~ STR_CMP ~~ ) AND ( FILE_EXISTS_IN_GAME ~%dlg%.dlg~ ) BEGIN
+		SPRINT EVAL ~%new_dialog%_DLG~ ~%dlg%~ //если диалог существует и прописан в cre-файле, назначаем его в переменную
+	END ELSE BEGIN
+		WRITE_EVALUATED_ASCII 0x2cc ~%new_dialog%~ (8) //если диалог пустой, прописываем в cre-файл диалог
+		SPRINT EVAL ~%new_dialog%_DLG~ ~%new_dialog%~  //и назначаем его в переменную
+		PATCH_IF ( NOT FILE_EXISTS_IN_GAME ~%new_dialog%.dlg~) BEGIN
+			INNER_ACTION BEGIN
+				COMPILE ~YSGP03.d~ EVALUATE_BUFFER // если такого диалога нет в игре, создаем его
+			END
+		END
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
+COMPILE ~BG1NPCSoA/scripts/DEEKIN.baf~ 
+COMPILE ~BG1NPCSoA/scripts/DEEK25.baf~ 
 
 APPEND ~pdialog.2da~
 ~DEEKIN	DEEKINP	DEEKINJ	DEEKIND DEEK25P DEEK25J DEEK25D DEEK25~
@@ -170,10 +190,6 @@ APPEND ~interdia.2da~
   ~DEEKIN BDEEKIN BDEEK25~
   UNLESS ~DEEKIN~
 
-
-  COPY_EXISTING ~7XCRE9.cre~ ~override~
-    WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~7XDEEK~ #8
-  BUT_ONLY_IF_IT_CHANGES
 
 // Deekin's Epilogue
 EXTEND_TOP ~AR6200.bcs~ ~BG1NPCSoA/epilogues/Deekin/AR6200.baf~
@@ -4417,7 +4433,7 @@ END
 
 
 ////////////
-BEGIN @1703 DESIGNATED 15
+BEGIN @1703 /*DESIGNATED 15*/ INSTALL_BY_DEFAULT
 GROUP ~Main Mod~
 REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ ~ToB Is Required to Install This Component~
 
@@ -9328,14 +9344,6 @@ BUT_ONLY
 
 END
 
-COPY ~BG1NPCSoA/cre/TIAX-QUAYLE/KSLAVE02.cre~ ~override/KSLAVE02.cre~
-SAY NAME1 @1636
-SAY NAME2 @1636
-
-COPY ~BG1NPCSoA/cre/TIAX-QUAYLE/TQCRE1.cre~ ~override/TQCRE1.cre~
-SAY NAME1 @1637
-SAY NAME2 @1637
-
 COPY ~BG1NPCSoA/cre/TIAX-QUAYLE/TQCRE2.cre~ ~override/TQCRE2.cre~
 SAY NAME1 @1638
 SAY NAME2 @1638
@@ -9557,26 +9565,6 @@ COPY ~BG1NPCSoA/Spells/calguar.SPL~ ~Override/calguar.SPL~
 SAY NAME1  @431
  SAY UNIDENTIFIED_DESC @432
 
-COPY ~BG1NPCSoA/scripts/TIAX-QUAYLE/ICELORD.bcs~ ~override/ICELORD.bcs~
-
-COPY ~BG1NPCSoA/Items/tqkey1.itm~ ~Override/tqkey1.itm~
-SAY NAME1 @1664
-SAY NAME2 @1665
-SAY UNIDENTIFIED_DESC @1665
-SAY DESC @1666
-
-COPY ~BG1NPCSoA/Items/tqkey2.itm~ ~Override/tqkey2.itm~
-SAY NAME1 @1664
-SAY NAME2 @1667
-SAY UNIDENTIFIED_DESC @1667
-SAY DESC @1668
-
-COPY ~BG1NPCSoA/Items/tqkey3.itm~ ~Override/tqkey3.itm~
-SAY NAME1 @1664
-SAY NAME2 @1669
-SAY UNIDENTIFIED_DESC @1669
-SAY DESC @1670
-
 COPY ~BG1NPCSoA/Items/MISCA4.itm~ ~Override/MISCA4.itm~
 SAY NAME1 @1671
 SAY NAME2 @1671
@@ -9625,10 +9613,10 @@ APPEND ~interdia.2da~
 COMPILE ~BG1NPCSoA/dialogues/7XTIAXB.d~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~7XTIAXJ.dlg~ BEGIN
-COMPILE ~BG1NPCSoA/dialogues/7XTIAXJ.d~
+COMPILE ~BG1NPCSoA/dialogues/7XTIAXJ.d~ EVALUATE_BUFFER
 END ELSE BEGIN
 COMPILE ~BG1NPCSoA/dialogues/7XTIAXJ-Begin.d~
-COMPILE ~BG1NPCSoA/dialogues/7XTIAXJ.d~
+COMPILE ~BG1NPCSoA/dialogues/7XTIAXJ.d~ EVALUATE_BUFFER
 END
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XQUAYJ.dlg~ BEGIN
@@ -9647,19 +9635,7 @@ EXTEND_TOP ~AR1700.bcs~ ~BG1NPCSoA/scripts/TIAX-QUAYLE/AR1700.baf~
 EXTEND_TOP ~AR0700.bcs~ ~BG1NPCSoA/scripts/AR0700.baf~
 EXTEND_TOP ~AR0607.bcs~ ~BG1NPCSoA/scripts/TIAX-QUAYLE/AR0607.baf~
 COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/TQCRE1.d~
-COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/TQCRE3.d~
-COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.are~ ~override~
-COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQHT.bmp~ ~override~
-COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQLM.bmp~ ~override~
-COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQSR.bmp~ ~override~
-COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.wed~ ~override~
-COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.slh~ ~override~
-COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/KSLAVE02.d~
-COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/kgenie2.d~
-COMPILE ~BG1NPCSoA/scripts/TIAX-QUAYLE/KALAH1.BAF~
-COMPILE ~BG1NPCSoA/scripts/TIAX-QUAYLE/KALAH2.BAF~ 
 COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/OSWALD.d~
-COMPILE ~BG1NPCSoA/scripts/TIAX-QUAYLE/AR00TQ.BAF~
 COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/BG1X25.d~
 EXTEND_TOP ~AR0400.bcs~ ~BG1NPCSoA/scripts/TIAX-QUAYLE/AR0400.baf~
 EXTEND_TOP ~AR0402.bcs~ ~BG1NPCSoA/scripts/TIAX-QUAYLE/AR0402.baf~
@@ -9710,14 +9686,10 @@ COMPILE EVALUATE_BUFFER ~BG1NPCSoA/crossbanter/ICT/ICT_quayle-faldorn.d~ USING ~
 END 
 
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
-  // Enhanced Edition game detectedCOPY ~BG1NPCSoA/areas/TIAX-QUAYLE/EE-tis~ ~override~ // Copy TIS files for EE version
-END ELSE BEGIN  // GAME_IS ~bg2 tob tutu bgt~
-  // vanilla Infinity Engine game detected
-
-  // simply copy over MOS and TIS files
-COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR01TQ.tis~ ~override~
+  COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/EE-tis~ ~override~ // Copy TIS files for EE version
+END ELSE BEGIN  
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/Vanilla-tis~ ~override~ // Copy TIS files for vanilla version  
 COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/mos/AR01TQ.MOS~ ~override~
-COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.tis~ ~override~
 COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/mos/AR00TQ.MOS~ ~override~
 END
 
@@ -9767,7 +9739,7 @@ END ELSE BEGIN
 END
 END
 
-COMPILE ~BG1NPCSoA/dialogues/Tiax-QuayleTOB.d~
+COMPILE ~BG1NPCSoA/dialogues/Tiax-QuayleTOB.d~ EVALUATE_BUFFER
 
 // Tiax's Epilogue
 ACTION_IF FILE_EXISTS_IN_GAME ~7XCRE77.cre~ BEGIN
@@ -9862,14 +9834,103 @@ END
 
 
 // Optional component 
+// Variant 1
 BEGIN @2000 DESIGNATED 55
 GROUP ~Main Mod~
 REQUIRE_COMPONENT ~BG1NPCSoA.tp2~ ~50~ @2001
+SUBCOMPONENT @1999
+
+COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/Alternate/TQCRE3.d~
+COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/KSLAVE02.d~
+COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/kgenie2.d~
+
+COMPILE ~BG1NPCSoA/scripts/TIAX-QUAYLE/AR00TQ.BAF~
+COMPILE ~BG1NPCSoA/scripts/TIAX-QUAYLE/KALAH1.BAF~
+COMPILE ~BG1NPCSoA/scripts/TIAX-QUAYLE/KALAH2.BAF~ 
+
+COPY ~BG1NPCSoA/scripts/TIAX-QUAYLE/ICELORD.bcs~ ~override/ICELORD.bcs~
+
+COPY ~BG1NPCSoA/Items/tqkey1.itm~ ~Override/tqkey1.itm~
+SAY NAME1 @1664
+SAY NAME2 @1665
+SAY UNIDENTIFIED_DESC @1665
+SAY DESC @1666
+
+COPY ~BG1NPCSoA/Items/tqkey2.itm~ ~Override/tqkey2.itm~
+SAY NAME1 @1664
+SAY NAME2 @1667
+SAY UNIDENTIFIED_DESC @1667
+SAY DESC @1668
+
+COPY ~BG1NPCSoA/Items/tqkey3.itm~ ~Override/tqkey3.itm~
+SAY NAME1 @1664
+SAY NAME2 @1669
+SAY UNIDENTIFIED_DESC @1669
+SAY DESC @1670
+
+COPY ~BG1NPCSoA/cre/TIAX-QUAYLE/Alternate/TQCRE1.cre~ ~override/TQCRE1.cre~
+SAY NAME1 @1637
+SAY NAME2 @1637
+
+COPY ~BG1NPCSoA/cre/TIAX-QUAYLE/KSLAVE02.cre~ ~override/KSLAVE02.cre~
+SAY NAME1 @1636
+SAY NAME2 @1636
 
 COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/Alternate/ar00tq.are~ ~override/ar00tq.are~
-COPY ~BG1NPCSoA/dialogues/TIAX-QUAYLE/Alternate/TQCRE3.dlg~ ~override/TQCRE3.dlg~
-COPY ~BG1NPCSoA/cre/TIAX-QUAYLE/Alternate/TQCRE1.cre~ ~override/TQCRE1.cre~
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQHT.bmp~ ~override~
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQLM.bmp~ ~override~
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQSR.bmp~ ~override~
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.wed~ ~override~
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.slh~ ~override~
 
+// Variant 2
+BEGIN @2003 DESIGNATED 56
+GROUP ~Main Mod~
+REQUIRE_COMPONENT ~BG1NPCSoA.tp2~ ~50~ @2001
+SUBCOMPONENT @1999
+
+COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/TQCRE3.d~
+COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/KSLAVE02.d~
+COMPILE ~BG1NPCSoA/dialogues/TIAX-QUAYLE/kgenie2.d~
+
+COMPILE ~BG1NPCSoA/scripts/TIAX-QUAYLE/AR00TQ.BAF~
+COMPILE ~BG1NPCSoA/scripts/TIAX-QUAYLE/KALAH1.BAF~
+COMPILE ~BG1NPCSoA/scripts/TIAX-QUAYLE/KALAH2.BAF~ 
+
+COPY ~BG1NPCSoA/scripts/TIAX-QUAYLE/ICELORD.bcs~ ~override/ICELORD.bcs~
+
+COPY ~BG1NPCSoA/Items/tqkey1.itm~ ~Override/tqkey1.itm~
+SAY NAME1 @1664
+SAY NAME2 @1665
+SAY UNIDENTIFIED_DESC @1665
+SAY DESC @1666
+
+COPY ~BG1NPCSoA/Items/tqkey2.itm~ ~Override/tqkey2.itm~
+SAY NAME1 @1664
+SAY NAME2 @1667
+SAY UNIDENTIFIED_DESC @1667
+SAY DESC @1668
+
+COPY ~BG1NPCSoA/Items/tqkey3.itm~ ~Override/tqkey3.itm~
+SAY NAME1 @1664
+SAY NAME2 @1669
+SAY UNIDENTIFIED_DESC @1669
+SAY DESC @1670
+
+COPY ~BG1NPCSoA/cre/TIAX-QUAYLE/TQCRE1.cre~ ~override/TQCRE1.cre~
+SAY NAME1 @1637
+SAY NAME2 @1637
+
+COPY ~BG1NPCSoA/cre/TIAX-QUAYLE/KSLAVE02.cre~ ~override/KSLAVE02.cre~
+SAY NAME1 @1636
+SAY NAME2 @1636
+
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/ar00tq.are~ ~override/ar00tq.are~
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQHT.bmp~ ~override~
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQLM.bmp~ ~override~
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQSR.bmp~ ~override~
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.wed~ ~override~
+COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.slh~ ~override~
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -11016,5 +11077,5 @@ END
 
 // Smiling Imp's Montaron - Kulyok's Tiax
 ACTION_IF FILE_EXISTS_IN_GAME ~BO#TIAX.dlg~ AND FILE_EXISTS_IN_GAME ~7XMONTB.dlg~ BEGIN
-COMPILE ~%MOD_FOLDER%/crossbanter/montaron-tiax(kulyok's).d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
+COMPILE ~%MOD_FOLDER%/crossbanter/Kulyok's Tiax/montaron-tiax(kulyok's).d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
 END

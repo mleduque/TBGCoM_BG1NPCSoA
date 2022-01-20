@@ -1674,48 +1674,49 @@ Arcane Material Component: Несколько перьев или щепотка помета орла. ~
 @823  = ~Платиновая монета
 
 Платиновые монеты - разновидность валюты. Эти монеты оказались непрактичными: платина напоминает многие менее дорогие металлы, и, в отличие от более мягкого герцогского серебра и золота, с ней очень трудно работать. Но торговцы ценят платиновые монеты, потому что они не плавятся в огне, как золото или серебро.~
-@824  = ~Large Shield~
-@825  = ~Griffin Battle Shield~
-@826  = ~Griffin Battle Shield
+@824 = ~Большой щит~
+@825 = ~Боевой щит Грифона~
+@826 = ~Боевой щит Грифона
 
-These shields are made for warriors in regions where griffins are a constant threat. A steel shield with a griffin crest etched in the front, it has leather loops on the back for easy handling.~
+Эти щиты используют воины в тех регионах, где грифоны представляют постоянную угрозу. Стальной щит с выгравированным на передней части гербом грифона и кожаными петлями сзади, для удобства.~
 @827  = ~Шлем~
-@828  = ~Skullcap of the Lich-King~
-@829  = ~Skullcap of the Lich-King
+@828 = ~Тюбетейка Короля-лича~
+@829 = ~Тюбетейка Короля-лича
 
-This Helmet once belonged to Gornash the Rotting and is said to still hold terrible powers as well as a terrible curse.~
-@830  = ~Oran Faerie Blade~
-@831  = ~Oran Faerie Blade
+Этот головной убор когда-то принадлежал Горнашу Гниющему и, говорят, до сих пор обладает ужасной силой, но и ужасным проклятием.~
+@830 = ~Оранский Клинок Феи~
+@831 = ~Оранский волшебный клинок
 
-These short swords were created by gnomes for Oran, the Green Lord of the Feywild, in order to fight against the Summer Queen Tiandra, but they were sold off when the two of them resolved their disagreement and became lovers once more.~
-@832  = ~Thri-Kreen Helmet~
-@833  = ~Thri-Kreen Helmet
+Эти короткие мечи были созданы гномами для Орана, Зеленого Лорда Страны Фей, чтобы тот мог сражаться против Летней Королевы Тиандры. Но когда они разрешили свои разногласия и снова стали любовниками, мечи продали.~
+@832 = ~Три-Кринский шлем~
+@833 = ~Шлем Три-Крин
 
-These helmets, made from the head-capsule of the Thri-Kreen, are widley used by the desert warriors from the world of Athas, where metal is scarce.~
-@834  = ~Ogre Buster~
-@835  = ~Ogre Buster
+Эти шлемы, сделанные из головной капсулы три-кринов, широко используются воинами пустыни из мира Атас, где мало металла.~
+@834 = ~Охотник на огров~
+@835 = ~Охотник на огров
 
-This sword was created by a dwarf smith named Dirun Goldhammer who had a problem with ogres looting his wares.~
-@836  = ~Sylvan Long Sword~
-@837  = ~Sylvan Long Sword
+Этот меч был создан дварфом-кузнецом по имени Дирун Голдхаммер, у которого были проблемы с грабящим его ограми.~
+@836 = ~Длинный меч Сильвана~
+@837 = ~Длинный меч Сильвана
 
-These long swords are made smelted in an Elven forge using Elven steel. Graceful oak leaves framing three acorns form a curving hilt on this sword. The pommel also has two curving oak leaves embracing a marble gem.~
-@838  = ~Jousting Shield~
-@839  = ~Jousting Shield
+Эти длинные мечи выплавлены в эльфийской кузнице из эльфийской стали. Изящные дубовые листья, обрамляющие три желудя, образуют изогнутую рукоять этого меча. На навершии - два изогнутых дубовых листа, охватывающих мраморный драгоценный камень.~
+@838 = ~Рыцарский щит~
+@839 = ~Рыцарский щит
 
-These shields are engraved with the image of the noble family that commissioned them. They are light-weight shields that are curved to deflect lance blows, which is why they are known as "lance deflectors". They have a heavily flanged borders that turn back toward the opponent all around the edge, to control glancing blows by bouncing them away as they slide off the surface of the shield. Most important the main body of the shield is pounded out like a turtle shell giving it depth and considerable impact resistance.~
-@840  = ~Excalibanana~
-@841  = ~Excalibanana
+На этих щитах выгравировано изображение дворянской семьи, заказавшей их. Это легкие щиты, изогнутые для отражения ударов копья, поэтому они известны как «сминатели копий». У них сильно изогнутые края, которые поворачиваются к противнику по всему краю, чтобы контролировать скользящие удары, отскакивая от поверхности щита. Самое главное – что основная часть щита имеет форму панциря черепахи, что придает ему глубину и сильную ударопрочность.~
+@840 = ~Экскалибанана~
+@841 = ~Экскалибанана
 
-This yellow-hued sword is legendary among the native people of Frosgard. They claim that it was the weapon used by Eric the Unready, who it seemed was never prepared for battle. It is supposed to have surfaced from a lake when Eric cried out, "Yoohoo!". It is said that whoever wields this weapon wonders why they bought it in the first place.~
-@842  = ~Auril's Winterkiss~
-@843  = ~Auril's Winterkiss
+Об этом желтом мече ходят легенды среди коренных жителей Фросгарда. Говорят, что это было оружие Эрика Неготового, который, похоже, никогда не был готов к бою. Кажется, он всплыл со дна озера, когда Эрик крикнул: «Ю-ху!». Молва гласит:  тот, кто владеет этим оружием, сам не может понять, зачем он вообще его купил.~
+@842 = ~Зимний поцелуй Аурил~
+@843 = ~Зимний поцелуй Аурил
 
-This is the fabled weapon that legend claims, was given to the people of Great Dale to use in battle against an army from the Endless Wastes. It has great powers that can defeat almost any opponent but also extracts an unholy toll on the user.~
-@844  = ~Feytouched Armor~
-@845  = ~Feytouched Armor
+Легендарное оружие, согласно легенде, было дано жителям Великой Долины для использования в битвах с армией из Бесконечных Пустошей. Оно обладает огромной силой, которая может победить практически любого противника, но в то же время наносит урон своему обладателю.~
+@844 = ~Доспехи прикосновения фей~
+@845 = ~Доспехи прикосновения фей
 
-Materials from the Feywild are worked into this armor, improving your reflexes and allowing you to disappear briefly.~
+В этой броне используются материалы из Страны Фей, улучшая ваши рефлексы и позволяя вам ненадолго исчезнуть.~
+
 @846  = ~Сила ветра~
 @847  = ~Сила ветра
 Кто-то очень хорошо поработал над сапогами скорости, так что теперь можно не только быстрее преодолевать значительные расстояния с меньшим риском, но и попробовать вступить с этим риском в бой.
@@ -1729,17 +1730,17 @@ Materials from the Feywild are worked into this armor, improving your reflexes a
 – Удваивают скорость передвижения
 
 Вес: 3~
-@848  = ~Duck Boots~
-@849  = ~Duck Boots
+@848 = ~Утиные сапоги~
+@849 = ~Утиные сапоги
 
-Few people know how or why these enchanted boots are created, but they have become quite popular in recent times all the same. 
+Мало кто знает, как и для чего созданы эти заколдованные сапоги, но в последнее время они все равно стали довольно популярными.
 
-STATISTICS:
+ПАРАМЕТРЫ:
 
-Movement Modifier +1
-Electricity resistance:  +75%
+Бонус к скорости +1
+Сопротивление электричеству: +75%
 
-Weight:  4~
+Вес: 4~
 @850  = ~Сапоги драконида~
 @851  = ~Сапоги драконида
 Такую обувь обычно используют дракониды с планеты Кринн. Этот предмет является очередным подтверждением слухов о существовании неких врат, соединяющих северный регион Меча в Анаурохской пустыне на Ториле с неустановленным местом на Кринне.
@@ -1750,16 +1751,16 @@ Weight:  4~
 – Удваивают скорость передвижения
 
 Вес: 4~
-@852  = ~Imperial Centurion Helmet~
-@853  = ~Imperial Centurion Helmet
+@852 = ~Шлем имперского центуриона~
+@853 = ~Шлем имперского центуриона
 
-These Imperial Centurion helmet was the choice of officers who led the mighty imperial armies. The flamboyant crest actually served a purpose, it made the officer more visible to his men while offering the illusion of height that helped him appear more commanding. This helmet is made in polished steel. The centurion was a prominent person on the battlefield, and his attire upheld him as such.
+Эти шлемы носили офицеры, возглавлявшие могучие имперские армии. Яркий гребень на самом деле служил определенной цели: он делал офицера более заметным для своих людей, создавая иллюзию высокого роста, которая помогала ему казаться более властным. Этот шлем изготовлен из полированной стали. Сотник был заметной фигурой на поле боя, и его одежда играла в этом свою роль.
 
-STATISTICS:
+ПАРАМЕТРЫ:
 
-+1 Armor Class Bonus
-Protection from Morale Break
-Protection from Conusion~
++1 бонус класса брони
+Защита от провала морали
+Защита от растерянности~
 @854  = ~Рыцарский шлем~
 @855  = ~Рыцарский шлем
 Этот шлем был разработан с целью обеспечить максимальную защиту благодаря эффектному лицевому щитку и куполообразному верху, который идеально подходил для отражения рубящих ударов. Искусно спроектированный, этот шлем был создан из цельного куска железа. Когда шлем не используется, его можно сдвинуть назад, за голову.
@@ -1783,42 +1784,42 @@ Protection from Conusion~
 
 +1 бонус к классу брони
 Защита от слабоумия~
-@859  = ~Dragon Knight Helmet~
-@860  = ~Dragon Knight Helmet
+@859 = ~Шлем Рыцаря-Дракона~
+@860 = ~Шлем Рыцаря-Дракона
 
-These helmets, made from the scales of a dragon, are fashioned for the Dragon Knights from the world of Krynn. The downward slope of the scales helps deflect blows away from the head.~
-@861  = ~Rapier~
-@862  = ~Rapier +2~
-@863  = ~Rapier +2
+Эти шлемы, сделанные из чешуи дракона, созданы для рыцарей-драконов из мира Кринн. Нисходящий наклон чешуи помогает отражать удары от головы.~
+@861 = ~Рапира~
+@862 = ~Рапира +2~
+@863 = ~Рапира +2
 
-A rapier is a slender, sharply pointed thin sword, ideally used for thrusting attacks and characterized by a complex hilt which is constructed to provide protection for the hand wielding it. While the blade might be broad enough to cut to some degree, the strength of the rapier is its ability as a thrusting weapon. The blade might be sharpened along its entire length, sharpened only from the centre to the tip, or completely without a cutting edge~
-@864  = ~The Slicer~
-@865  = ~The Slicer
+Рапира — это тонкий, остроконечный меч, идеально подходящий для колющих атак и отличающийся сложной рукоятью, которая сконструирована таким образом, чтобы обеспечить защиту руки, держащей его. Хотя лезвие может быть достаточно широким, сила рапиры заключается в ее свойствах как колющего оружия. Лезвие может быть заточено по всей длине, только от центра к острию или совсем без режущей кромки.~
+@864 = ~Резак~
+@865 = ~Резак
 
-This wonderful weapon was saved from the Magan Underworld of Dilmun in the world of Oceana.~
-@866  = ~Viper Mage Armor~
-@867  = ~Viper Mage Armor
+Это замечательное оружие было спасено из Подземного мира Магана Дилмуна в мире Океании.~
+@866 = ~Доспехи Змеиного Мага~
+@867 = ~Доспехи Змеиного Мага
 
-This armor is made from treated blue viper hide for the use of spellcasters. It is light and flexible, giving maximum protection while not hindering mobility. Another benefit is that the user is completely immune to any form of venom. 
+Этот доспех сделан из обработанной шкуры синей гадюки для использования заклинателями. Он легкий и гибкий, обеспечивает максимальную защиту, не ограничивая подвижность. Еще одним преимуществом является то, что владелец полностью невосприимчив к любой форме яда.
 
-Statistics :
+ПАРАМЕТРЫ:
 
-Quickens spell casting time
-Makes user immune to poison
-Increases magic resistance~
-@868  = ~Phantom Armor~
-@869  = ~Phantom Armor
+Сокращает время произнесения заклинаний
+Делает пользователя невосприимчивым к яду
+Увеличивает сопротивление магии~
+@868 = ~Призрачная броня~
+@869 = ~Призрачная броня
 
-This armor was allegedly made from the chains some ghosts carry with them. Whether it is true or not, it certainly has some ghostly properties. It weighs nearly nothing at all, and carries with it a foreboding cloud. It also seems to make the same sound as the poor souls who are chained to the place of their death.~
+Эта броня якобы была сделана из цепей, которые носят некоторые призраки. Правда это или нет, но у него явно есть какие-то призрачные свойства. Он почти ничего не весит и навевает целое облако предчувствий. Кажется, он издает тот же звук, что и бедные души, прикованные к месту своей смерти.~
 @870  = ~Кольчуга~
-@871  = ~Resplendent Chain Mail~
-@872  = ~Resplendent Chain Mail
+@871 = ~Великолепная кольчуга~
+@872 = ~Великолепная кольчуга
 
-A distinctive suit of armor meant to aid recognition of officers during battle.  Besides just looking good, the armor is amongst the lightest, most supple chain mail available.~
-@873  = ~Royal Leather Armor~
-@874  = ~Royal Leather Armor
+Приметные доспехи, специально сделанные такими для распознавания офицеров во время боя. Эта броня не только хорошо выглядит, но и является одной из самых легких и гибких кольчуг.~
+@873 = ~Королевский кожаный доспех~
+@874 = ~Королевский кожаный доспех
 
-Only a few suits like this one have been made, and all were special orders for members of the royal family of Erathia -- the Gryphonhearts. This one had to come from one of three places: Stolen from the palace armory, taken on the battlefield, or robbed from a grave. Buckles and straps are adjustable to fits various sizes.~
+Было сделано всего несколько таких костюмов, и все они были сделаны по специальному заказу для членов королевской семьи Эрафии — Грифонхардов. Этот был добыт в каком-то из трех мест: украден из арсенала дворца, взят на поле боя или вытащен из могилы. Пряжки и ремни регулируются, чтобы подходить под любой размер.~
 @875  = ~Hammer of Kharas~
 @876  = ~Hammer of Kharas
 
@@ -1910,14 +1911,14 @@ Hawkmail's prime attraction is its high Cold Resist and its ability to counterac
 Special:
 Cold Resist
 Faster Run/Walk~
-@887  = ~Boots of Magical Defense~
-@888  = ~Boots of Magical Defense
+@887 = ~Сапоги магической защиты~
+@888 = ~Сапоги магической защиты
 
-Grants the user magic resistance.~
-@889  = ~Avenger Guard~
-@890  = ~Avenger Guard
+Дают их владельцу дополнительное сопротивление магии.~
+@889 = ~Страж - Мститель~
+@890 = ~Страж - Мстителеь
 
-The Avenger Guard is a Normal barbarian helmet.~
+Это обычный шлем варвара.~
 @891  = ~Полный доспех~
 @892  = ~Heavenly Garb~
 @893  = ~Heavenly Garb
@@ -1935,27 +1936,27 @@ Forged by the Cyclops with the rare titanium they find in the mountains, this to
 Special:
 +10 Hit Point Max
 +2 STR Bonus~
-@898  = ~Druidic Axe~
-@899  = ~Druidic Axe
+@898 = ~Топор Друида~
+@899 = ~Топор Друида
 
-These weapons are a heavy weapon to use, and very unstable. It would be used to chop down enemies to size in battlefields.~
-@900  = ~Hydra Armor~
-@901  = ~Hydra Armor
+Это оружие тяжелое в использовании и очень нестабильное. Его можно использовать для измельчения врагов на полях сражений.~
+@900 = ~Броня Гидры~
+@901 = ~Броня Гидры
 
-Made from the skin of a hydra, this armor grants regeneration to whoever wears it.~
-@902  = ~Shark Sword~
-@903  = ~Shark Sword
+Эта броня, сделанная из кожи гидры, дарует регенерацию тому, кто ее носит.~
+@902 = ~Акулий меч~
+@903 = ~Акулий меч
 
-This sword is made from a Saw-fish's beak bone while the handle is wrapped in beautiful shark skin. With a total of fifty four Great White Shark teeth on the blade, the Shark Sword can cut metal when used by a master.~
+Этот меч сделан из клюва рыбы-пилы, а рукоять обтянута красивой акульей кожей. В общей сложности на лезвии пятьдесят четыре зуба большой белой акулы, и в руках мастера такой меч может резать металл.~
 @904  = ~Звуковой меч~
 @905  = ~Звуковой меч
 
 Этот меч может создавать звуковые удары, которые оглушают врагов и отбрасывают их назад.~
 @906  = ~Двуручный меч~
-@907  = ~B. F. Sword~
-@908  = ~B. F. Sword
+@907 = ~Б.Ф. Меч~
+@908 = ~Б.Ф. Меч
 
-Forged in the fiery depths of Mount Gargantuan, its razor edge honed on the volcanic rock of Humongous Island, the B. F. Sword is the largest of its kind. Only those warriors with truly immense palms can wield such a blade in battle. In the right hands, this beast of a weapon can slice through multiple minions with just a single stroke.~
+Выкованное в огненных глубинах Горы Гаргантюан, лезвие этого меча заточено на вулканической скале острова Хамонгус. Это один из самых больших мечей. Только воины с поистине огромными ладонями могут справиться с таким клинком в бою. В умелых руках это зверское оружие может разрезать нескольких врагов одним ударом.~
 @909  = ~Шлем мага~
 @910  = ~Магический шлем
 
@@ -4264,7 +4265,7 @@ THAC0: +1
 @1702 = ~Маска снов Вичларан
 
 Эта специальная маска не только позволяет одевшему ее превращаться в гепарда, но и защищает владельца в мире грез.~
-@1703 = ~Shar-Teel, Yeslick, Garrick, Branwen, Skie & Eldoth (ToB)~
+@1703 = ~ToB-part for Shar-Teel or/and Yeslick, Garrick, Branwen, Skie, Eldoth~
 
 @1705 = ~ToB Is Required to Install This Component~
 @1706 = ~Ланари~
@@ -4681,9 +4682,11 @@ THAC0: +1
 @1926    = ~Make Safana a Swashbuckler~
 @1927    = ~Make Skie a Shadowdancer~
 
-@2000 = ~RECOMMENDED: No super difficult battles in cirqus (Standard difficulty)~
+@1999 = ~Expanded cirqus quest~
+@2000 = ~Expanded cirqus quest (Standard difficulty)~
 @2001 = ~This component requires the Tiax-Quayle component installed!~
-@2002  = ~Kagain already found; skipping to next NPC...~
+@2002 = ~Kagain already found; skipping to next NPC...~
+@2003 = ~Expanded cirqus quest - VERY difficult battles in circus (EXTREME difficulty)~
 
 @8000  = ~После завершения истории потомка Баала гном Тиакс продолжил странствия в одиночку. Он так и не стал править всем Фаэруном. Цирик не собирался наделять его такой властью, он даже не знал о существовании Тиакса до той их встречи в Карманном Плане. Планы Цирика были слишком грандиозны, чтобы в них нашлось место маленькому гному. Да и как можно верить Принцу Лжи и не быть обманутым? 
 
@@ -4759,9 +4762,13 @@ THAC0: +1
 
 @8017  = ~Расставшись с <CHARNAME>, Гаррик и Налия еще долго странствовали по дорогам Фаэруна, творя добрые дела, набираясь опыта и совершенствуясь при этом каждый в своем мастерстве. Когда, в конце концов, они вернулись в Аткатлу, им уже было что предъявить этому избалованному роскошью и властью городу. Мечта Гаррика сбылась – он стал весьма известным писателем и поэтом. Его книга, на удивление правдиво (не без влияния Налии) описывающая приключения дитя Баала, пользовалась огромным успехом. Не менее популярными были сонеты Гаррика, в которых он, наконец-то овладев искусством настоящей любовной поэзии, искренне и вдохновенно воспевал свою возлюбленную Налию д`Арнис. Сама Налия к тому времени стала сильным магом, приобрела уважение и вес в обществе и занялась политикой. Но наивысшее счастье эти влюбленные по-прежнему находили в обществе друг друга. Они жили долго и счастливо.~
 
-@8018 = ~Когда путешествие Дикина с Порождением Баала закончилось, он получил дневниковые записи, в которых <CHARNAME> рассказывает обо всех своих приключениях – с той роковой ночи у Кэндлкипа до финальной битвы у Трона Баала. Дикин использовал этот манускрипт, чтобы увековечить историю об этих путешествиях в виде серии книг, подробно описывающих их многочисленные приключения.
+@8018 = ~Дикин... Кем же он был на самом деле, этот маленький наивный кобольд-бард, кобольд-убийца богов. Стерлись ли уже из его памяти все события вокруг Трона Баала или он никогда ничего и не забывал? Мало кто знает правду и теперь.
 
-Оставив старый дневник в залах Кэндлкипа, Дикин отправился на север, в город Невервинтер, где основал небольшой магазин, продавал начинающим искателям приключений свои книги и товары, собранные во время многочисленных путешествий. Именно в этой роли Дикин познакомился с молодым капитаном Крепости Перекрестка и пережил события Войны Теней, которая вскоре последовала. Однако это было последнее приключение Дикина. Теперь пожилой кобольд пополнил список погибших во время атаки Короля теней как на Крепость и на следующий город. Как и у многих бардов, баллады Дикина переживут его самого, а его книги будут храниться в библиотеках по всему Фаэруну, где будущие ученые будут их изучать. Говорят, что одна из его работ хранится в спальне некоего бывшего жителя Кэндлкипа. Даже в смерти Дикин на стороне своего босса.~
+Когда путешествие Дикина с Порождением Баала закончилось, он получил дневниковые записи, в которых <CHARNAME> рассказывает обо всех своих приключениях – с той роковой ночи у Кэндлкипа до финальной битвы у Трона Баала. Дикин использовал этот манускрипт, чтобы увековечить историю об этих путешествиях в виде серии книг, подробно описывающих их многочисленные приключения.
+
+Оставив старый дневник в залах Кэндлкипа, Дикин отправился на север, в город Невервинтер, где основал небольшой магазин, продавал начинающим искателям приключений свои книги и товары, собранные во время многочисленных путешествий. Именно в этой роли Дикин познакомился с молодым капитаном Крепости Перекрестка и пережил события Войны Теней, которая вскоре последовала. Однако это было последнее приключение Дикина. Теперь пожилой кобольд пополнил список погибших во время атаки Короля теней как на Крепость и на следующий город. 
+
+Как и у многих бардов, баллады Дикина переживут его самого, а его книги будут храниться в библиотеках по всему Фаэруну, где будущие ученые будут их изучать. Говорят, что одна из его работ хранится в спальне некоего бывшего жителя Кэндлкипа. Даже в смерти Дикин на стороне своего босса.~
 
 @9000  = ~Эй, что за шутки? Куда он пропал?~
 

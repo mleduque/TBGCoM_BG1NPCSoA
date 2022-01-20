@@ -3337,7 +3337,7 @@ Polymorphs the drinker into a swift, mischievous squirrel.~
 @1702 = ~Wychlaran Dream Mask
 
 This special mask not only allows the user to change into a cheetah, it protects the wearer while in the dream world.~
-@1703 = ~Shar-Teel, Yeslick, Garrick, Branwen, Skie & Eldoth (ToB)~
+@1703 = ~ToB-part for Shar-Teel or/and Yeslick, Garrick, Branwen, Skie, Eldoth~
 @1705 = ~ToB Is Required to Install This Component~
 @1706 = ~Lanari~
 @1715 = ~Nightbringer~
@@ -3750,9 +3750,11 @@ Weight: 0~
 @1927    = ~Make Skie a Shadowdancer~
 
 // NEW (v.10)
-@2000 = ~RECOMMENDED: No super difficult battles in cirqus (Standard difficulty)~
+@1999 = ~Expanded cirqus quest~
+@2000 = ~Expanded cirqus quest (Standard difficulty)~
 @2001 = ~This component requires the Tiax-Quayle component installed!~
-@2002  = ~Kagain already found; skipping to next NPC...~
+@2002 = ~Kagain already found; skipping to next NPC...~
+@2003 = ~Expanded cirqus quest - VERY difficult battles in circus (EXTREME difficulty)~
 
 // NEW (v.11)
 @8000 = ~After completing the story of the Child of Bhaal, the gnome Tiax continued his travels alone. He never came to rule all of Faerun. Cyric was not going to endow him with such power, he did not even know about the existence of Tiax before that meeting in the Pocket Plane. Cyric's plans were too grand for the little gnome to find a place in them. How could you trust the Prince of Lies and not be deceived?
@@ -3833,9 +3835,13 @@ Many adventures lay ahead of her, but traveling with <CHARNAME> hardened her cha
 
 @8017 = ~After parting with <CHARNAME>, Garrick and Nalia wandered the roads of Faerun for a long time, doing good deeds, gaining experience, and improving each one in their skills. When, in the end, they returned to Athkatla, they already had something to present to this spoiled city of luxury and power. Garrick's dream came true; he became a very famous writer and poet. His book, surprisingly truthful (Not without the influence of Nalia) describing the adventures of the Child of Bhaal, was a huge success. No less popular were Garrick's sonnets, in which he, having finally mastered the art of real love poetry, sincerely and with inspiration sang to his beloved Nalia d'Arnise. Nalia herself by that time had become a strong magician, gained respect and weight in society and took up politics. Yet, these lovers still found the greatest happiness in each other's company. They lived happily ever after.~
 
-@8018  = ~With Deekin's travel with the Bhaalspawn finished, he was gifted <CHARNAME>'s journal entries of all their adventures from that one fateful night outside Candlekeep to the final battle at the Throne of Bhaal. Deekin would use this manuscript to ensure that tale of the Bhaalspawn and companions would go down in history in a set of books detailing their many adventures. 
+@8018  = ~Deekin... What was he really, this little naive kobold-bard, kobold-killer of gods? Have all the events around the Throne of Bhaal already been erased from his memory, or has he never forgotten anything? Few people know the truth even now.
 
-After leaving the original Journal in the halls of Candlekeep, Deekin traveled north to the city of Neverwinter were he would set up a small store selling both his books and wares collected from his numerous journeys to aspiring adventurers. It was in this role Deekin would meet the young captain of Crossroad Keep and experience the events of the war of Shadows the would follow. This would however be Deekin's last adventure as the now elderly kobold was listed amongst the dead during the King of Shadows attack on both Keep and the city that followed. Like many bards Deekins works would far out live him and his works would be preserved in libraries all over Faerun for future scholars to study over. One set of his works is said to be displayed in a bedroom of certain former resident of Candlekeep. Even in death at his boss's side.~
+With Deekin's travel with the Bhaalspawn finished, he was gifted <CHARNAME>'s journal entries of all their adventures from that one fateful night outside Candlekeep to the final battle at the Throne of Bhaal. Deekin would use this manuscript to ensure that tale of the Bhaalspawn and companions would go down in history in a set of books detailing their many adventures. 
+
+After leaving the original Journal in the halls of Candlekeep, Deekin traveled north to the city of Neverwinter were he would set up a small store selling both his books and wares collected from his numerous journeys to aspiring adventurers. It was in this role Deekin would meet the young captain of Crossroad Keep and experience the events of the war of Shadows the would follow. This would however be Deekin's last adventure as the now elderly kobold was listed amongst the dead during the King of Shadows attack on both Keep and the city that followed. 
+
+Like many bards Deekins works would far out live him and his works would be preserved in libraries all over Faerun for future scholars to study over. One set of his works is said to be displayed in a bedroom of certain former resident of Candlekeep. Even in death at his boss's side.~
 
 @9000  = ~Hey, what's the joke? Where did he go?~
 

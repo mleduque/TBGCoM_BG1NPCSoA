@@ -177,7 +177,7 @@ END
 CHAIN
 IF ~Global("XZARMONTI","GLOBAL",0)
     InParty("7XXZAR")!StateCheck("7XXZAR",CD_STATE_NOTVALID)
-     InParty("7XMONT")!StateCheck("7XMONT",CD_STATE_NOTVALID)~ THEN 7XXZARB MONTIBANTER1
+     InParty("7XMONT")!StateCheck("7XMONT",CD_STATE_NOTVALID) CombatCounter(0) See("7XMONT")~ THEN 7XXZARB MONTIBANTER1
 @96 
 DO ~SetGlobal("XZARMONTI","GLOBAL",1)~
 == 7XXZARB @97
@@ -208,7 +208,7 @@ EXIT
 CHAIN
 IF ~Global("XZARMONTI","GLOBAL",2)
     InParty("7XXZAR")!StateCheck("7XXZAR",CD_STATE_NOTVALID)
-     InParty("7XMONT")!StateCheck("7XMONT",CD_STATE_NOTVALID)~ THEN 7XXZARB MONTIBANTER3
+     InParty("7XMONT")!StateCheck("7XMONT",CD_STATE_NOTVALID) CombatCounter(0) See("7XMONT")~ THEN 7XXZARB MONTIBANTER3
 @113
 DO ~SetGlobal("XZARMONTI","GLOBAL",3)~
 == 7XMONTB @114
@@ -224,7 +224,7 @@ EXIT
 CHAIN
 IF ~Global("XZARMONTI","GLOBAL",1)
    InParty("7XXZAR")!StateCheck("7XXZAR",CD_STATE_NOTVALID)
-     InParty("7XMONT")!StateCheck("7XMONT",CD_STATE_NOTVALID)~ THEN 7XMONTB MONTIBANTER2
+     InParty("7XMONT")!StateCheck("7XMONT",CD_STATE_NOTVALID) CombatCounter(0) See("7XXZAR")~ THEN 7XMONTB MONTIBANTER2
 @121 
 DO ~SetGlobal("XZARMONTI","GLOBAL",2)~ 
 == 7XXZARB @122
@@ -241,10 +241,11 @@ DO ~SetGlobal("XZARMONTI","GLOBAL",2)~
 EXIT
 
 CHAIN
-IF ~InParty("Imoen2")
-IsValidForPartyDialog("Imoen2")InParty("7XXZAR")!StateCheck("7XXZAR",CD_STATE_NOTVALID)
+IF ~InParty("Imoen2") !StateCheck("Imoen2",CD_STATE_NOTVALID)
+InParty("7XXZAR")!StateCheck("7XXZAR",CD_STATE_NOTVALID)
 CombatCounter(0)
 !See([ENEMY])
+See("Imoen2")
 Global("XzarImoen2","GLOBAL",0)~ THEN 7XXZARB XzarImoen1
 @130 DO ~SetGlobal("XzarImoen2","GLOBAL",1)~
 =
@@ -277,10 +278,9 @@ EXIT
 
 CHAIN IF
 ~InParty("Anomen")
-See("Anomen")IsValidForPartyDialog("Anomen")
-!StateCheck("Anomen",CD_STATE_NOTVALID)
+See("Anomen")!StateCheck("Anomen",CD_STATE_NOTVALID)
 !StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("XzarAno","GLOBAL",0)~ THEN 7XXZARB anomentalk
+Global("XzarAno","GLOBAL",0) CombatCounter(0)~ THEN 7XXZARB anomentalk
 @150
 == BANOMEN @151
 == 7XXZARB @152
@@ -381,7 +381,7 @@ EXIT
 CHAIN IF
 ~InParty("Aerie")
 See("Aerie")!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-!StateCheck("Aerie",CD_STATE_NOTVALID)Global("XzarAerie","GLOBAL",0)~ THEN 7XXZARB Avariel1
+!StateCheck("Aerie",CD_STATE_NOTVALID)Global("XzarAerie","GLOBAL",0) CombatCounter(0)~ THEN 7XXZARB Avariel1
 @202
 =
 @203
@@ -416,9 +416,9 @@ DO ~SetGlobal("XzarYoshimo1","GLOBAL",1)~
 == 7XXZARB @218
 EXIT
 
-CHAIN IF ~InParty("Cernd")IsValidForPartyDialog("Cernd")
+CHAIN IF ~InParty("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)
 !StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("XZARCerndTalk","GLOBAL",0)~ THEN 7XXZARB Xzar-Cernd1
+Global("XZARCerndTalk","GLOBAL",0) CombatCounter(0)~ THEN 7XXZARB Xzar-Cernd1
 @219 
 =
 @220
@@ -439,7 +439,7 @@ CHAIN
 IF ~InParty("Minsc")
 See("Minsc")
 !StateCheck("Minsc",CD_STATE_NOTVALID)!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("MinscXzarTalk","GLOBAL",0)~ THEN 7XXZARB MinscXzar01
+Global("MinscXzarTalk","GLOBAL",0) CombatCounter(0)~ THEN 7XXZARB MinscXzar01
 @226
 DO ~SetGlobal("MinscXzarTalk","GLOBAL",1)~
 == BMINSC @227
@@ -465,7 +465,7 @@ CHAIN
 IF ~InParty("HaerDalis")
 See("HaerDalis")
 !StateCheck("HaerDalis",CD_STATE_NOTVALID)!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("HaerdaXzarTalk","GLOBAL",0)~ THEN 7XXZARB DalisXzar01
+Global("HaerdaXzarTalk","GLOBAL",0) CombatCounter(0)~ THEN 7XXZARB DalisXzar01
 @239
 =
 @240
@@ -486,9 +486,8 @@ CHAIN
 IF ~InParty("Jan")
 See("Jan")
 !StateCheck("Jan",CD_STATE_NOTVALID)!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("JanXzarTalk","GLOBAL",0)~ THEN 7XXZARB JanXzar01
-@246
-DO ~SetGlobal("JanXzarTalk","GLOBAL",1)~
+Global("JanXzarTalk","GLOBAL",0) CombatCounter(0)~ THEN 7XXZARB JanXzar01
+@246 DO ~SetGlobal("JanXzarTalk","GLOBAL",1)~
 == BJAN
 @247
 == 7XXZARB
@@ -521,7 +520,7 @@ CHAIN
 IF ~InParty("Keldorn")
 See("Keldorn")
 !StateCheck("Keldorn",CD_STATE_NOTVALID)!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("KeldornXzarTalk","GLOBAL",0)~ THEN 7XXZARB Keldornxzar01
+Global("KeldornXzarTalk","GLOBAL",0) CombatCounter(0)~ THEN 7XXZARB Keldornxzar01
 @264
 =
 @265
@@ -540,7 +539,7 @@ EXIT
 
 CHAIN IF
 ~Global("XzarViconia","GLOBAL",0)InParty("Viconia")See("Viconia")!StateCheck("Viconia",CD_STATE_NOTVALID)
-!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")~ THEN 7XXZARB XzarViconia1
+!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR") CombatCounter(0)~ THEN 7XXZARB XzarViconia1
 @271
 DO ~SetGlobal("XzarViconia","GLOBAL",1)~
 == BVICONI @272
@@ -587,7 +586,7 @@ CHAIN
 IF ~InParty("7XXZAR")
 See("7XXZAR")
 !StateCheck("7XXZAR",CD_STATE_NOTVALID)
-Global("JaheiraXzar1", "GLOBAL",0)~ THEN BJAHEIR JaheiraXzar01
+Global("JaheiraXzar1", "GLOBAL",0) CombatCounter(0)~ THEN BJAHEIR JaheiraXzar01
 @291 DO ~SetGlobal("JaheiraXzar1", "GLOBAL",1)~
 == 7XXZARB @292
 == BJAHEIR @293
@@ -631,7 +630,7 @@ EXIT
 CHAIN IF ~InParty("HaerDalis")
 See("HaerDalis")
 !StateCheck("HaerDalis",CD_STATE_NOTVALID)!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("HaerdaXzarTalk","GLOBAL",1)~ THEN ~BHAERDA~ DalisXzar02
+Global("HaerdaXzarTalk","GLOBAL",1) CombatCounter(0)~ THEN ~BHAERDA~ DalisXzar02
 @317
 DO ~SetGlobal("HaerdaXzarTalk","GLOBAL",2)~
 == 7XXZARB
@@ -651,7 +650,7 @@ EXIT
 CHAIN IF
 ~InParty("Aerie")
 See("Aerie")!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-!StateCheck("Aerie",CD_STATE_NOTVALID)Global("XzarAerie","GLOBAL",1)~ THEN 7XXZARB Avariel2
+!StateCheck("Aerie",CD_STATE_NOTVALID)Global("XzarAerie","GLOBAL",1) CombatCounter(0)~ THEN 7XXZARB Avariel2
 @326
 DO ~SetGlobal("XzarAerie","GLOBAL",2)~
 == BAERIE @327 
@@ -666,7 +665,7 @@ CHAIN
 IF ~InParty("Jaheira") 
 See("Jaheira")
 !StateCheck("Jaheira",CD_STATE_NOTVALID)!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("JaheiraXzar1","GLOBAL",1)~ THEN 7XXZARB JaheiraXzar02
+Global("JaheiraXzar1","GLOBAL",1) CombatCounter(0)~ THEN 7XXZARB JaheiraXzar02
 @331
 DO ~SetGlobal("JaheiraXzar1","GLOBAL",2)~
 == BJAHEIR
@@ -693,7 +692,7 @@ EXIT
 
 CHAIN IF ~InParty("Keldorn")See("Keldorn")
 !StateCheck("Keldorn",CD_STATE_NOTVALID)!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("KeldornXzarTalk","GLOBAL",1)~ THEN 7XXZARB Keldornxzar02
+Global("KeldornXzarTalk","GLOBAL",1) CombatCounter(0)~ THEN 7XXZARB Keldornxzar02
 @342
 DO ~SetGlobal("KeldornXzarTalk","GLOBAL",2)~
 == BKELDOR
@@ -753,7 +752,7 @@ EXIT
 
 CHAIN IF
 ~Global("XzarViconia","GLOBAL",1)InParty("Viconia")See("Viconia")!StateCheck("Viconia",CD_STATE_NOTVALID)
-!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")~ THEN 7XXZARB XzarViconia2
+!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR") CombatCounter(0)~ THEN 7XXZARB XzarViconia2
 @366 
 DO ~SetGlobal("XzarViconia","GLOBAL",2)~
 == BVICONI @367
@@ -769,7 +768,7 @@ CHAIN
 IF ~InParty("Jaheira") 
 See("Jaheira")
 !StateCheck("Jaheira",CD_STATE_NOTVALID)!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("JaheiraXzar1","GLOBAL",2)~ THEN ~BJAHEIR~ JaheiraXzar03
+Global("JaheiraXzar1","GLOBAL",2) CombatCounter(0)~ THEN ~BJAHEIR~ JaheiraXzar03
 @372
 =
 @373
@@ -805,7 +804,7 @@ EXIT
 CHAIN IF
 ~Global("XzarViconia","GLOBAL",2)InParty("Viconia")
 See("Viconia")!StateCheck("Viconia",CD_STATE_NOTVALID)
-!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")~ THEN 7XXZARB XzarViconia3
+!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR") CombatCounter(0)~ THEN 7XXZARB XzarViconia3
 @387
 =
 @388 
@@ -861,7 +860,7 @@ CHAIN
 IF ~InParty("Jaheira") 
 See("Jaheira")HPPercentGT("7XXZAR",40)
 !StateCheck("Jaheira",CD_STATE_NOTVALID)!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")
-Global("JaheiraXzar1","GLOBAL",3)~ THEN ~7XXZARB~ JaheiraXzar04
+Global("JaheiraXzar1","GLOBAL",3) CombatCounter(0)~ THEN ~7XXZARB~ JaheiraXzar04
 @414
 DO ~SetGlobal("JaheiraXzar1","GLOBAL",4)~
 == BJAHEIR @415
@@ -896,7 +895,7 @@ EXIT
 
 CHAIN IF
 ~Global("XzarViconia","GLOBAL",3)InParty("Viconia")See("Viconia")!StateCheck("Viconia",CD_STATE_NOTVALID)
-!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR")~ THEN 7XXZARB XzarViconia4
+!StateCheck("7XXZAR",CD_STATE_NOTVALID)InParty("7XXZAR") CombatCounter(0)~ THEN 7XXZARB XzarViconia4
 @429 
 DO ~SetGlobal("XzarViconia","GLOBAL",4)~
 == BVICONI @430
@@ -920,7 +919,9 @@ END
 CHAIN
 IF ~Global("XZARMONTI","GLOBAL",3)
     InParty("7XXZAR")!StateCheck("7XXZAR",CD_STATE_NOTVALID)
-     InParty("7XMONT")!StateCheck("7XMONT",CD_STATE_NOTVALID)~ THEN 7XXZARB MONTIBANTER4
+     InParty("7XMONT")!StateCheck("7XMONT",CD_STATE_NOTVALID)
+	 CombatCounter(0)
+	 See("7XMONT")~ THEN 7XXZARB MONTIBANTER4
 @553
 DO ~SetGlobal("XZARMONTI","GLOBAL",4)~
 == 7XMONTB @554
@@ -928,4 +929,36 @@ DO ~SetGlobal("XZARMONTI","GLOBAL",4)~
 == 7XMONTB @556
 == 7XXZARB @557
 == 7XMONTB @558
+EXIT
+
+CHAIN
+IF ~Global("XZARmazzy","LOCALS",0)
+    InParty("7XXZAR")!StateCheck("7XXZAR",CD_STATE_NOTVALID)
+     InParty("Mazzy")!StateCheck("Mazzy",CD_STATE_NOTVALID)
+	 CombatCounter(0)
+	 See("7XXZAR")~ THEN BMAZZY XzarMazzyBANTER1
+@573 DO ~SetGlobal("XZARmazzy","LOCALS",1)~
+== 7XXZARB @574 
+== BMAZZY @575
+== 7XXZARB @576
+== BMAZZY @577
+== 7XXZARB @578
+== BMAZZY @579
+== 7XXZARB @580
+== BMAZZY @581
+== 7XXZARB @582
+== BMAZZY @583
+EXIT
+
+CHAIN
+IF ~Global("XZARRasaad","LOCALS",0)
+    InParty("7XXZAR")!StateCheck("7XXZAR",CD_STATE_NOTVALID)
+     InParty("Rasaad")!StateCheck("Rasaad",CD_STATE_NOTVALID)
+	 CombatCounter(0)
+	 See("Rasaad")~ THEN 7XXZARB XzarRasaadBANTER1
+@584 DO ~SetGlobal("XZARRasaad","LOCALS",1)~
+== IF_FILE_EXISTS BRASAAD @585
+== 7XXZARB @586
+== IF_FILE_EXISTS BRASAAD @587
+== 7XXZARB @588
 EXIT

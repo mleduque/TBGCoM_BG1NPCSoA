@@ -20,7 +20,7 @@
 @19   = ~You have returned, just as Cyric foretold that you would. Let us not waste any further time! You need my expertise and I need a hired goon to carry heavy things for me until I rule all!~
 @20   = ~I think you should take some time off to rethink your life.~
 @21   = ~Grab your equipment and let's go.~
-@22   = ~Tiax the Wise knows his destiny, Bhaalspawn! Do you have any idea as to yours?~
+@22   = ~Tiax the Wise knows his destiny, Bhaalspawn! Do you have any idea as to yours?~ [TIAXX35]
 @23   = ~HA! Tiax can foresee, that without his considerable powers, your destiny will run into a tragic ending.~ [tiax4]
 @24   = ~Almighty Tiax is not some baggage boy, to be ordered around by serfs and peasants! The Prince of Lies has proclaimed that Tiax will rule all, and so it shall be!!~
 @25   = ~Wait, oh merciful Lord of Three Crowns! I must have a word with you!~
@@ -266,7 +266,7 @@
 @259 = ~Woman, tell Gromnir that Tiax the Conqueror himself has come to Saradush and demands an audience with him. After that, Gromnir will come running here himself, trembling with fear.~
 @260 = ~I doubt Gromnir will see you, he doesn't accept anyone.~
 @261 = ~Then this worthless madman deserves punishment for disobeying Tiax!~
-@263 = ~Tiax the Great wants a red carpet to be laid in front of him before he is greeted!~
+@263 = ~Tiax the Great wants a red carpet to be laid in front of him before he is greeted!~ [PPTIAX14]
 @264 = ~What? Sorry, I was not talking to you, but to your leader.~
 @265 = ~Oh gods! Shut up, you fool!!~
 
@@ -290,3 +290,17 @@
 @282 = ~Ahahahahaha!!! I haven't laughed like that for a long time! Bravo, <CHARNAME>! ~
 @283 = ~<CHARNAME>, you helped Tiax defeat the minions of this scoundrel who pretends to be Cyric. For this, you will be honored to continue serving Tiax.~ [TIAX3]
 @284 = ~Now about you, gnome... ~
+
+// NEW (v.13.3)
+@285 = ~My wonderful brain tells me that this Melissan is keeping quiet about a scheme she is concocting, since she hasn't said anything about her role in the rise of Balthazar. No need to thank me. I know you would never have guessed yourself!~
+@286 = ~Bah! Tiax will have a thousand times more children than this pathetic Bhaal! And those who are not children of Tiax will be forced to pay a heavy tax!~ [TIAXA]
+@287 = ~Of course <PRO_HESHE> was not ready for the power, you unknown angel! Because it will not be <PRO_HESHE> that will rule, but Tiax! So Cyric decided!~ [PPTIAX09]
+@288 = ~I know who you are, Tiax the gnome. I know who you were before and how you became who you are. However, I am not talking to you now.~
+@289 = ~No matter what place it is, Tiax will still rule it!~ [PPTIAX02]
+@290 = ~Who would have thought that this idiotic gnome would live and that *I* would die and become a shadow of my former self? In such moments, you begin to ponder that fate is laughing at us and punishing us for our pride.~
+@291 = ~Why didn't you prepare properly for the arrival of Tiax the Great, foolish old man?~ [PPTIAX15]
+@292 = ~Tiax the who...? I don't believe I have ever heard of someone with such a title before.~
+@293 = ~Such insolence! All know who Tiax is! Tiax's greatness flows through the lands... even the planes themselves! Tiax is destined to rule all!~ [PPTIAX14]
+@294 = ~Oh... a... sorry your "lordship", I had no idea... (Seriously, who is this nut case?)~
+@295 = ~Very well then book keeper, you are pardoned for now and Tiax will accept your apology, but make that mistake again and you will face the consequences of Tiax the great!~ [TIAX2]
+@296 = ~Very well my lord... I, uh, thank you for your generosity...?~

@@ -564,3 +564,44 @@
 @556 = ~I've never served you, fool, and I don't need your services. Just shut up or else ye might be taking the dirt nap sooner than ye thought!~ [MONTY22]
 @557 = ~We will all perish sooner or later. Death is a continuation of life, while it may be the end for some, it can be the beginning of something new for others? Hmm...~ [XZAR39]
 @558 = ~Grrrrr! I've no patience for your nonsense today, just leave me be.~ [MONTY41]
+
+// NEW (v.13.3)
+// Interjections
+@559 = ~Oh, what a delightful creature you are, a mixture of monster and something... beautiful. You would have made a magnificent... specimen.~
+@560 = ~Hmm? Are you some sort of crazed necromancer? Can your arcane powers even comprehend with who you are dealing with human?~
+@561 = ~Indeed I do my lady of death. It would honor me greatly to be immortalized in my vessel by your... talents, to keep my powers for millions of eternities!~
+@562 = ~You may be honored to have my bite wizard, but you don't deserve it, besides I don't want to run the risk of whatever sickness you may possess even if I did turn you. <CHARNAME>, silence your crazy companion. If it weren't for my interest in you, there wouldn't even be anything left of him that could be placed in his vessel.~
+@563 = ~*Sigh* It seems that once again no one can understand the magnificence I'm offering, no one - except Mommy, of course. If it weren't for her, I would have gone crazy a long time ago.~
+@564 = ~*Crawls under Firkraag and examines his paws*~
+@565 = ~*Surprised* Hmm...?! What are you up to small one?~
+@566 = ~Are ye sick ya dolt? No, of course you are sick, but this crosses all boundaries. Someone knock him out and put him in a bag and gag him!~
+@567 = ~Surprisingly, I observe no evidence of rabbits here, although there is a dragon. Hmm, it should be noted that this dragon has claws instead of paws, but where is the wool... and the size? Something is not right here...~
+@568 = ~*Sigh* <CHARNAME>, you keep strange company... Let me just say this intuitive one; I heard that eating insane necromancers causes permanent poisoning for several days. Which means if you are struggling to understand the metaphor; It's a rare chance for you to just forget this awkward situation and walk away alive.~
+@569 = ~I don't understand... For deeper research, I must study 5 more dragons and 10... no, 15 rabbits! <CHARNAME>, are you listening? 10-15 rabbits and exactly 5 dragons! There's something wrong here and I must solve this conundrum.~ [XZAR33]
+@570 = ~Enough!~
+@571 = ~Leaving already? But we haven't become better acquainted yet my mistress!~ [XZAR39]
+@572 = ~You have nothing of interest to me wizard, begone insane one.~
+
+// Xzar - Mazzy
+@573 = ~So, Xzar, you're into necromancy, right?~
+@574 = ~That's right. Would you like me to teach you the basics of the art?~
+@575 = ~No. In fact, I want to warn you that it is my duty to guard dead bodies from all unnatural abuse. Meaning I will not stand for you to continue your twisted "experiments" upon them~
+@576 = ~Oh? Is that so? What about you, my baby? If you perish in combat, you don't want me to resurrect you?~
+@577 = ~No. If the gods send me death, I will accept it with dignity, and I do not need your vile services! And stop referring me to as baby!~
+@578 = ~Hahahaha! Think you can face death with dignity? I remember once a knight fell into my hands - he was still alive and also spoke some nonsense about nobility, just like you.~
+@579 = ~What are you on about? What did you do with him?~
+@580 = ~As soon as I took out my knifes and instruments, he began to weep in fear! All his courage apparently disappeared to another plane of existence while he whimpered like a frightened child. Calling for the help of the gods, but not a single god helped him, imagine! I laughed out loud then! Ah, good memories of good times.~
+@581 = ~You are a coward and a scoundrel! When <CHARNAME> finally kicks you out of this group, I will personally see to it that you are arrested and executed - as punishment for all your evil deeds!~
+@582 = ~Punish me? On what terms? Word of mouth? Small one, if you wish to bring me to *justice* you will need more than what I've said to bring me to a prison. Although... Incarceration with villains, thugs, lunatics, evil-doers... So many possible subjects I could practice on while I'm there...~
+@583 = ~Argh! Forget that I said anything wizard, and just keep your hands to yourself and stay away from me! Seriously <CHARNAME> I continue to ponder why we have this maniac travelling with us.~
+
+// Xzar - Rasaad
+@584 = ~Hey Rasaad! With your brother being deceased, if his body survived, I could revive him if you wish.~
+@585 = ~For him to become an undead? No, Xzar. Despite mourning for my brother, I wouldn't want that fate for him.~
+@586 = ~Well, that's a pity. I could use an undead servant to carry my pack and bring slippers, buahahahaha!!! Could you imagine the convenience that would bring?~
+@587 = ~It's a pity really. Here I thought you really wanted to help... you really are a talented wizard. Most likely, the gift of the gods drove you crazy, becoming your curse.~
+@588 = ~HA! You think talent breeds madness, monk? Negative, in fact, madness breeds talent. Talent is the lifeline that madmen hold onto to keep their sanity.~
+
+// Interjections
+@589 = ~Oh, how interesting! As a child, I also loved to play such games! Can't wait to experience the climax, let's start soon!~ [XZAR18]
+@590 = ~I appreciate your enthusiasm, necromancer. I hope <CHARNAME> will be happy with the end result as well.~
