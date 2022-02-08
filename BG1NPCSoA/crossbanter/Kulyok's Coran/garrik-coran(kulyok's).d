@@ -1,6 +1,7 @@
 CHAIN
 IF ~InParty("7XGAR")
 See("7XGAR")!StateCheck("7XGAR",CD_STATE_NOTVALID)
+InParty("O#Coran")!StateCheck("O#Coran",CD_STATE_NOTVALID)
 !Global("GarrickNaliaRomance","GLOBAL",2)
 Global("CoranGarrick1","GLOBAL",0)~ THEN ~BO#CORAN~ GarrickCoranBanter1
 @239

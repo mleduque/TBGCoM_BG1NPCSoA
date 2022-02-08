@@ -3372,6 +3372,9 @@ Weapon: sling
 
 Weight: 0~
 
+@1727 = ~Borivyk~
+@1728 = ~Maid~
+
 @1737 = ~Inter Component Banter Pack~
 
 @1738 = ~Do these golden pantaloons make me look fat?~
@@ -3749,14 +3752,18 @@ Weight: 0~
 @1926    = ~Make Safana a Swashbuckler~
 @1927    = ~Make Skie a Shadowdancer~
 
-// NEW (v.10)
+@1928 = ~Rabbit Marcel~
+@1929 = ~This rabbit maintains a serene equanimity even when the battle rages around. Sometimes one look at this fluffy miracle helps to regain lost composure and put in order scattered thoughts.
+
+STATISTICS:
+Once a day, Marsel will help relieve the stupefaction.~
+
 @1999 = ~Expanded cirqus quest~
 @2000 = ~Expanded cirqus quest (Standard difficulty)~
 @2001 = ~This component requires the Tiax-Quayle component installed!~
 @2002 = ~Kagain already found; skipping to next NPC...~
 @2003 = ~Expanded cirqus quest - VERY difficult battles in circus (EXTREME difficulty)~
 
-// NEW (v.11)
 @8000 = ~After completing the story of the Child of Bhaal, the gnome Tiax continued his travels alone. He never came to rule all of Faerun. Cyric was not going to endow him with such power, he did not even know about the existence of Tiax before that meeting in the Pocket Plane. Cyric's plans were too grand for the little gnome to find a place in them. How could you trust the Prince of Lies and not be deceived?
 
 Despite that, fate turned out to be merciful to Tiax. For a long time he wandered through the forests and cities that he so dreamed of ruling, trying to figure out what to do next. He eventually returned to Athkatla to visit the circus he knew, hoping that the legendary flying white elephants would finally appear there. There he ran into his old acquaintance, the merchant Jan Jansen, who invited Tiax to tea. The little cleric of Cyric was so hungry that he did not even argue and agreed. While there, sipping turnip tea and eating turnip cakes, he met Jan's cousin, it was a dwarf girl named Clotilde. When Tiax saw her, he was confused, because he felt something that he had never experienced before. Also she, too, was happy that she met a famous hero and companion of the Child of Bhaal. So the story of their love began, which deserves a separate chronicle. They soon got married and settled in a small house in the Slums area, next to Jan's.
@@ -3825,8 +3832,6 @@ Many adventures lay ahead of her, but traveling with <CHARNAME> hardened her cha
 
 @8013 = ~After all her adventures with the Child of Bhaal, Branwen was summoned to the Temple of Tempus in Easthaven for a gathering of the Arch-Clerics. There she was asked to explain about everything that happened and how <CHARNAME>, with her help, managed to stop the revival of an ancient evil on the Throne of Bhaal. Branwen told the Arch-Clerics about everything, while without exaggerating her merits, she spoke simply and with respect. Even the elders were impressed by both her deeds and nobility and her humility. Few of the men have proven themselves as worthy as she. Therefore, the priests, after consulting, decided that from that moment Branwen could fulfill her old dream - To become a priestess and serve Tempus in her homeland. This was an unprecedented event, for there had never been a female priestess on the Moonshae Isles of Norheim. So Branwen helped everyone to revise old ideas about the world and open hearts and minds to a new one. With that, they managed to do this largely thanks to the hero named <CHARNAME>.~
 
-// NEW (v.11.5)
-
 @8014  = ~Alora did not leave Edwin after the completion of their wanderings. Remaining, as she said, his devoted friend. After the Thayvian 's infamous duel with Elminster, the halfling hired herself in his tavern and now helps the mage in all matters. In the evenings, the aged couple likes to sit by the fireplace for a long time and remember the old days. Sometimes, in the dim twilight of the room, Alora sees a smile flickering on Edwina's face, and then she smiles happily and joyfully in return.~
 
 @8015  = ~Alora never returned to Iraebor, where her relatives lived. She continued her wanderings after parting with the Child of Bhaal. The spirit of adventure led her deeper and deeper into the continent, to wild and little-explored places. She was last seen in Vaasa, where the halfling offered her services to a small group of adventurers, who soon vanished without a trace in the endless forests of this inhospitable land.~
@@ -3837,11 +3842,15 @@ Many adventures lay ahead of her, but traveling with <CHARNAME> hardened her cha
 
 @8018  = ~Deekin... What was he really, this little naive kobold-bard, kobold-killer of gods? Have all the events around the Throne of Bhaal already been erased from his memory, or has he never forgotten anything? Few people know the truth even now.
 
-With Deekin's travel with the Bhaalspawn finished, he was gifted <CHARNAME>'s journal entries of all their adventures from that one fateful night outside Candlekeep to the final battle at the Throne of Bhaal. Deekin would use this manuscript to ensure that tale of the Bhaalspawn and companions would go down in history in a set of books detailing their many adventures. 
+With Deekin's travel with the Bhaalspawn finished, he was gifted <CHARNAME>'s journal entries of all their adventures from that one fateful night outside Candlekeep to the final battle at the Throne of Bhaal. Deekin returned north to his native land. It was not the best decision in his life - the white dragon Timofarrar, to whom the Deekin tribe obeyed, spotted an unusual bard and made him something like his personal jester. Entertaining the owner with songs and tales, the kobold was afraid to tell the dragon that he traveled with the strongest of the offspring of the god of Murder and preferred not to mention it at all. He soon gained his freedom through an unusual encounter... and once again set out on an adventure as the helper of a brave hero who was destined to leave a mark on history. About the bright events experienced during the new wanderings, Deekin wrote two books.
 
-After leaving the original Journal in the halls of Candlekeep, Deekin traveled north to the city of Neverwinter were he would set up a small store selling both his books and wares collected from his numerous journeys to aspiring adventurers. It was in this role Deekin would meet the young captain of Crossroad Keep and experience the events of the war of Shadows the would follow. This would however be Deekin's last adventure as the now elderly kobold was listed amongst the dead during the King of Shadows attack on both Keep and the city that followed. 
+He also managed to visit the leader and shaman of his tribe, strengthened his relationship with people. But the kobold bard wanted adventure, and Deekin traveled north to the city of Neverwinter were he would set up a small store selling both his books and wares collected from his numerous journeys to aspiring adventurers. It was in this role Deekin would meet the young captain of Crossroad Keep and experience the events of the war of Shadows the would follow. This would however be Deekin's last adventure as the now elderly kobold was listed amongst the dead during the King of Shadows attack on both Keep and the city that followed. 
 
-Like many bards Deekins works would far out live him and his works would be preserved in libraries all over Faerun for future scholars to study over. One set of his works is said to be displayed in a bedroom of certain former resident of Candlekeep. Even in death at his boss's side.~
+Like many bards Deekin's works would far out live him and his works would be preserved in libraries all over Faerun for future scholars to study over. One set of his works is said to be displayed in a bedroom of certain former resident of Candlekeep. Even in death at his boss's side.~
+
+@8019 = ~Ajantis Ilvastar returned to Athkatla after leaving <CHARNAME>. Wanderings with the child of Bhaal tempered his character, but did not harden his heart. Kindness and sincere compassion attracted people to him more than his courage and military prowess. Over the years, Ajantis realized that the Most Noble Order of the Radiant Heart, which he so admired in his youth, was not as perfect as he thought. Being naturally soft-spoken, unable to fight corruption, Ajantis now tried to stay as far away from the order as possible, spending more and more time on campaigns and wanderings. Even through all his tribulations, Ajantis's devotion to Helm did not weaken at all. 
+
+Ajantis married late, to a simple kind woman, ready to wait as long as she wanted for her husband from the next campaign. Although in the eyes of his relatives this marriage was a misalliance, but the paladin found his happiness; he now had someone to return to.~
 
 @9000  = ~Hey, what's the joke? Where did he go?~
 

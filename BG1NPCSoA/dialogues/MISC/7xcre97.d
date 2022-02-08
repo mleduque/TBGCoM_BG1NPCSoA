@@ -310,7 +310,7 @@ IF ~Global("7xcre98","GLOBAL",0)Global("7xcre99","GLOBAL",0)~ TALK1
 SAY @91
 =
 @92
-IF ~NumItemsPartyGT("Platnum",29999)~ THEN REPLY @93 DO ~TakePartyItemNum("Platnum",30000)DestroyItem("Platnum")~ GOTO CONDO
+IF ~NumItemsPartyGT("Platnum",9999)~ THEN REPLY @93 DO ~TakePartyItemNum("Platnum",10000)DestroyItem("Platnum")~ GOTO CONDO
 IF ~~ THEN REPLY @94 GOTO MONEY
 IF ~~ THEN REPLY @95 GOTO WASTE
 END

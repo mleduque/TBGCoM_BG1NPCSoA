@@ -1,6 +1,6 @@
 BACKUP ~BG1NPCSoA/backup~
 SUPPORT ~http://www.baldursgatemods.com/forums/index.php?board=133.0~
-VERSION ~13.3~
+VERSION ~13.4~
 
 AUTO_TRA ~BG1NPCSoA/tra/%s~
 
@@ -2824,6 +2824,14 @@ END ELSE BEGIN
 END
 END
 
+/*
+// Optional component 
+// Delete Deekin
+BEGIN ~Delete Deekin from Water Gardens~ DESIGNATED 100
+GROUP ~Main Mod~
+REQUIRE_COMPONENT ~BG1NPCSoA.tp2~ ~0~ ~Water Gardens not installed~
+EXTEND_TOP ~ARBGX4.bcs~~BG1NPCSoA/scripts/MISC/DeekinDelete.baf~
+*/
 
 BEGIN @1902 DESIGNATED 2
 GROUP ~Main Mod~
@@ -9213,6 +9221,10 @@ OUTER_SPRINT ~tob_override~ ~7XMON25~
 OUTER_SPRINT ~tob_var~ ~MONTISummonedTOB~
 END
 
+/////////////////////////
+// Tiax & Quayle
+//////////////////////
+
 
 BEGIN @1594 DESIGNATED 50
 GROUP ~Main Mod~
@@ -9932,6 +9944,194 @@ COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQSR.bmp~ ~override~
 COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.wed~ ~override~
 COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.slh~ ~override~
 
+////////////////////////////////////
+// Ajantis
+/////////////////////////////////////
+
+BEGIN @745 DESIGNATED 60
+GROUP ~Main Mod~
+REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee eet~ ~Not support game~
+REQUIRE_PREDICATE ((NOT FILE_EXISTS_IN_GAME ~c#ajan08.cre~) AND
+                   (NOT FILE_EXISTS_IN_GAME ~c#ajan09.cre~) AND
+                   (NOT FILE_EXISTS_IN_GAME ~c#ajan10.cre~) AND
+                   (NOT FILE_EXISTS_IN_GAME ~c#ajan12.cre~) AND
+                   (NOT FILE_EXISTS_IN_GAME ~c#ajan14.cre~) AND 
+                   (NOT FILE_EXISTS_IN_GAME ~c#ajan16.cre~) AND
+                   (NOT FILE_EXISTS_IN_GAME ~ajantis.cre~)) @795
+
+COPY_EXISTING ~sw1h01.itm~ ~override/7xbg1n.mrk~ // This file helps to determine if at least one component is installed - to disable the installation of the audio component and cross-banters if none of the main components is installed.
+
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+UNLESS ~CD_STATE_NOTVALID~
+
+
+COPY ~BG1NPCSoA/Cre/7XCRE70.cre~ ~override/7XCRE70.cre~
+SAY NAME1 @7450
+SAY NAME2 @746
+SAY BIO @747
+SAY INITIAL_MEETING ~~ 
+  SAY MORALE ~~ 
+  SAY HAPPY @748 
+  SAY UNHAPPY_ANNOYED @749 
+  SAY UNHAPPY_SERIOUS @750 
+  SAY UNHAPPY_BREAKING @751
+  SAY LEADER @752
+  SAY TIRED ~~ [ajantisc]
+  SAY BORED ~~ [ajantisd]
+  SAY BATTLE_CRY1 @755
+  SAY BATTLE_CRY2 @756
+  SAY BATTLE_CRY3 ~~ [ajantis9] 
+  SAY BATTLE_CRY4 ~~ [ajantisa]
+  SAY BATTLE_CRY5 @759
+  SAY DAMAGE ~~ [ajantisl]
+  SAY DYING @761
+  SAY HURT ~~ [ajantise]  
+  SAY AREA_FOREST @763
+  SAY AREA_CITY @764
+  SAY AREA_DUNGEON @765
+  SAY AREA_DAY ~~ [ajantisq]
+  SAY AREA_NIGHT ~~ [ajantisr] 
+  SAY SELECT_COMMON1  @768
+  SAY SELECT_COMMON2 @769
+  SAY SELECT_COMMON3 @770
+  SAY SELECT_COMMON4 @771
+  SAY SELECT_COMMON5 ~~ [ajantis0] 
+  SAY SELECT_COMMON6 ~~ [ajantisf]
+  SAY SELECT_ACTION1 @774 
+  SAY SELECT_ACTION2 ~~ [ajantisj] 
+  SAY SELECT_ACTION3 @776 
+  SAY SELECT_ACTION4  ~~ [ajantisj]
+  SAY SELECT_ACTION5 ~~ [ajantist]
+  SAY SELECT_ACTION6 ~~ [ajantisu] 
+  SAY SELECT_ACTION7 ~~ [ajantisv]
+  SAY SELECT_RARE1 ~~ [ajantisx]
+  SAY SELECT_RARE2 ~~ [Ajantisy]
+  SAY CRITICAL_HIT ~~ [ajantisz]
+  SAY CRITICAL_MISS ~~ [ajantis1]
+  SAY TARGET_IMMUNE ~~ [ajantis2]
+  SAY INVENTORY_FULL ~~ [ajantis3]
+  SAY PICKED_POCKET ~~ [ajantis4]
+  SAY HIDDEN_IN_SHADOWS ~~ [ajantis5] 
+  SAY SPELL_DISRUPTED ~~ [ajantis6]
+  SAY SET_A_TRAP ~~ [ajantis7]
+ SAY REACT_TO_DIE_GENERAL @790 
+  SAY INTERACTION3 ~~ 
+  SAY COMPLIMENT1 ~~ 
+PATCH_IF GAME_IS ~bg2ee eet~ BEGIN
+	LPF ADD_CRE_EFFECT
+		INT_VAR
+			opcode = 360 //Ignore reputation
+			timing = 9 //Permanent
+			target = 1 //Self
+			resist_dispel = 0 //Not dispellable + bypass resistance
+	END
+END
+
+LAF HANDLE_AUDIO STR_VAR audio_path = "BG1NPCSoA/sounds/Ajantis" oggdec_path = "BG1NPCSoA/sounds" END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~IMOEN!.wav~ BEGIN
+LAF HANDLE_AUDIO STR_VAR audio_path = "BG1NPCSoA/sounds/Imoen" oggdec_path = "BG1NPCSoA/sounds" END
+END
+
+COPY ~BG1NPCSoA/Items/bgnpc1.itm~ ~Override/bgnpc1.itm~
+SAY NAME1 @791
+SAY NAME2 @791
+SAY UNIDENTIFIED_DESC @791
+SAY DESC @791
+
+COPY ~BG1NPCSoA/Items/bg1AJA.itm~ ~Override/bg1AJA.itm~
+SAY NAME1 @792
+SAY NAME2 @793
+SAY UNIDENTIFIED_DESC @792
+LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@794" END
+
+
+EXTEND_TOP ~AR1202.bcs~ ~BG1NPCSoA/scripts/Ajantis/AR1202.baf~
+EXTEND_TOP ~AR4000.bcs~ ~BG1NPCSoA/scripts/Ajantis/AR4000Ajan.baf~
+EXTEND_TOP ~AR4500.bcs~ ~BG1NPCSoA/scripts/Ajantis/AR4500Ajan.baf~
+COMPILE ~BG1NPCSoA/scripts/Ajantis/7XAjan.baf~ EVALUATE_BUFFER
+COMPILE ~BG1NPCSoA/scripts/Ajantis/7XAjan25.baf~ EVALUATE_BUFFER
+
+COPY ~BG1NPCSoA/BAM/BG1NPC1.bam~ ~override/BG1NPC1.bam~
+
+COMPILE ~BG1NPCSoA/dialogues/7XAJAN.d~ 
+COMPILE ~BG1NPCSoA/dialogues/AjantisTOB.d~
+
+
+APPEND ~pdialog.2da~
+~7XAJAN 7XAJANP 7XAJANJ 7XAJAND 7XAJA25P 7XAJA25J 7XAJA25D 7XAJAN25~
+UNLESS ~7XAJAN~
+APPEND ~interdia.2da~
+  ~7XAJAN     7XAJANB   B7XAJA25~
+  UNLESS ~7XAJAN~
+
+
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~override/bimoen2.dlg~ THEN BEGIN
+  <<<<<<<< BG1NPCSoA/dialogues/MISC/BIMOEN2.d
+  BEGIN BIMOEN2
+  >>>>>>>>
+  COMPILE ~BG1NPCSoA/dialogues/MISC/BIMOEN2.d~
+END
+
+
+//Giving Imoen a banter file if the Fixpack isn't installed
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~cdbehbla.pro~ //makes sure the fixpack isn't already installed
+THEN BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~saradush.mve~ THEN BEGIN
+  COPY_EXISTING ~interdia.2da~ ~override~
+    SET_2DA_ENTRY 17 1 2 ~BIMOEN2~ // fixes ToB version
+    BUT_ONLY_IF_IT_CHANGES
+END ELSE BEGIN
+  APPEND ~interdia.2da~ ~IMOEN       BIMOEN2~ // fixes SoA version
+    UNLESS ~BIMOEN2~
+END
+END
+
+
+// EET Fate Spirit Ajantis
+
+ACTION_IF (GAME_IS ~eet~) BEGIN
+INCLUDE ~EET/other/EET_functions.tph~ // functions from EET mod
+
+// remove duplication in the call dialog with the option of the original EET
+<<<<<<<< AJAN_fix.baf
+IF
+	!Global("AjantisSummoned","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("AjantisSummoned","GLOBAL",2)
+		Continue()
+END
+>>>>>>>>
+EXTEND_BOTTOM ~AR4000.bcs~ ~AJAN_fix.baf~
+
+
+LAF ~EET_NPC_TRANSITION~
+INT_VAR
+type = 2 // NPC is summon-able if met before
+default_ToB = 1
+STR_VAR
+dv = "7XAJAN" // death variable
+override_SoA = "7XAJAN" // override script (SoA)
+override_ToB = "7XAJAN25" // override script (ToB)
+cre_ToB = "7XCRE70"
+dialog_ToB = "7XAJAN" // joining dialogue for ToB
+traFile = EVAL "BG1NPCSoA/tra/%LANGUAGE%/AjantisTOB.tra"
+string = "@0"
+stringPosDV = "Alora"
+END
+OUTER_SPRINT ~tob_override~ ~7XAJAN25~
+OUTER_SPRINT ~tob_var~ ~AjantisSummonedToB~
+EXTEND_TOP ~7XAJAN.bcs~ ~fix_tob_script.baf~ EVALUATE_BUFFER
+END
+
+// Ajantis's Epilogue
+EXTEND_TOP ~AR6200.bcs~ ~BG1NPCSoA/epilogues/Ajantis/AR6200.baf~
+COPY ~BG1NPCSoA/epilogues/Ajantis/AjanEp.2da~ ~override/AjanEp.2da~
+REPLACE ~99999~ @8019
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //
@@ -9946,7 +10146,7 @@ COPY ~BG1NPCSoA/areas/TIAX-QUAYLE/AR00TQ.slh~ ~override~
 //
 //
 
-BEGIN @1678 DESIGNATED 60
+BEGIN @1678 DESIGNATED 65
 GROUP @1900
 REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee eet~ ~Not support game~
 REQUIRE_PREDICATE (NOT FILE_EXISTS_IN_GAME ~DYNA10.cre~) @1679
@@ -10040,207 +10240,6 @@ UNLESS ~7XDYNA~
 APPEND ~interdia.2da~
   ~7XDYNA    7XDYNAB B7XDYN25~
   UNLESS ~7XDYNA~
-
-
-BEGIN @745 DESIGNATED 65
-GROUP @1900
-REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee eet~ ~Not support game~
-REQUIRE_PREDICATE ((NOT FILE_EXISTS_IN_GAME ~c#ajan08.cre~) AND
-                   (NOT FILE_EXISTS_IN_GAME ~c#ajan09.cre~) AND
-                   (NOT FILE_EXISTS_IN_GAME ~c#ajan10.cre~) AND
-                   (NOT FILE_EXISTS_IN_GAME ~c#ajan12.cre~) AND
-                   (NOT FILE_EXISTS_IN_GAME ~c#ajan14.cre~) AND 
-                   (NOT FILE_EXISTS_IN_GAME ~c#ajan16.cre~) AND
-                   (NOT FILE_EXISTS_IN_GAME ~ajantis.cre~)) @795
-
-COPY_EXISTING ~sw1h01.itm~ ~override/7xbg1n.mrk~
-
-APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
-UNLESS ~CD_STATE_NOTVALID~
-
-
-COPY ~BG1NPCSoA/Cre/7XCRE70.cre~ ~override/7XCRE70.cre~
-SAY NAME1 @7450
-SAY NAME2 @746
-SAY BIO @747
-SAY INITIAL_MEETING ~~ 
-  SAY MORALE ~~ 
-  SAY HAPPY @748 
-  SAY UNHAPPY_ANNOYED @749 
-  SAY UNHAPPY_SERIOUS @750 
-  SAY UNHAPPY_BREAKING @751
-  SAY LEADER @752
-  SAY TIRED ~~ [ajantisc]
-  SAY BORED ~~ [ajantisd]
-  SAY BATTLE_CRY1 @755
-  SAY BATTLE_CRY2 @756
-  SAY BATTLE_CRY3 ~~ [ajantis9] 
-  SAY BATTLE_CRY4 ~~ [ajantisa]
-  SAY BATTLE_CRY5 @759
-  SAY DAMAGE ~~ [ajantisl]
-  SAY DYING @761
-  SAY HURT ~~ [ajantise]  
-  SAY AREA_FOREST @763
-  SAY AREA_CITY @764
-  SAY AREA_DUNGEON @765
-  SAY AREA_DAY ~~ [ajantisq]
-  SAY AREA_NIGHT ~~ [ajantisr] 
-  SAY SELECT_COMMON1  @768
-  SAY SELECT_COMMON2 @769
-  SAY SELECT_COMMON3 @770
-  SAY SELECT_COMMON4 @771
-  SAY SELECT_COMMON5 ~~ [ajantis0] 
-  SAY SELECT_COMMON6 ~~ [ajantisf]
-  SAY SELECT_ACTION1 @774 
-  SAY SELECT_ACTION2 ~~ [ajantisj] 
-  SAY SELECT_ACTION3 @776 
-  SAY SELECT_ACTION4  ~~ [ajantisj]
-  SAY SELECT_ACTION5 ~~ [ajantist]
-  SAY SELECT_ACTION6 ~~ [ajantisu] 
-  SAY SELECT_ACTION7 ~~ [ajantisv]
-  SAY SELECT_RARE1 ~~ [ajantisx]
-  SAY SELECT_RARE2 ~~ [Ajantisy]
-  SAY CRITICAL_HIT ~~ [ajantisz]
-  SAY CRITICAL_MISS ~~ [ajantis1]
-  SAY TARGET_IMMUNE ~~ [ajantis2]
-  SAY INVENTORY_FULL ~~ [ajantis3]
-  SAY PICKED_POCKET ~~ [ajantis4]
-  SAY HIDDEN_IN_SHADOWS ~~ [ajantis5] 
-  SAY SPELL_DISRUPTED ~~ [ajantis6]
-  SAY SET_A_TRAP ~~ [ajantis7]
- SAY REACT_TO_DIE_GENERAL @790 
-  SAY INTERACTION3 ~~ 
-  SAY COMPLIMENT1 ~~ 
-PATCH_IF GAME_IS ~bg2ee eet~ BEGIN
-	LPF ADD_CRE_EFFECT
-		INT_VAR
-			opcode = 360 //Ignore reputation
-			timing = 9 //Permanent
-			target = 1 //Self
-			resist_dispel = 0 //Not dispellable + bypass resistance
-	END
-END
-
-LAF HANDLE_AUDIO STR_VAR audio_path = "BG1NPCSoA/sounds/Ajantis" oggdec_path = "BG1NPCSoA/sounds" END
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~IMOEN!.wav~ BEGIN
-LAF HANDLE_AUDIO STR_VAR audio_path = "BG1NPCSoA/sounds/Imoen" oggdec_path = "BG1NPCSoA/sounds" END
-END
-
-COPY ~BG1NPCSoA/Items/bgnpc1.itm~ ~Override/bgnpc1.itm~
-SAY NAME1 @791
-SAY NAME2 @791
-SAY UNIDENTIFIED_DESC @791
-SAY DESC @791
-
-COPY ~BG1NPCSoA/Items/bg1AJA.itm~ ~Override/bg1AJA.itm~
-SAY NAME1 @792
-SAY NAME2 @793
-SAY UNIDENTIFIED_DESC @792
-LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@794" END
-
-
-EXTEND_TOP ~AR1202.bcs~ ~BG1NPCSoA/scripts/Ajantis/AR1202.baf~
-
-COPY ~BG1NPCSoA/BAM/BG1NPC1.bam~ ~override/BG1NPC1.bam~
-COMPILE ~BG1NPCSoA/dialogues/7XAJAN.d~ 
-
-
-APPEND ~pdialog.2da~
-~7XAJAN 7XAJANP 7XAJANJ 7XAJAND 7XAJA25P 7XAJA25J 7XAJA25D 7XAJAN25~
-UNLESS ~7XAJAN~
-APPEND ~interdia.2da~
-  ~7XAJAN     7XAJANB   B7XAJA25~
-  UNLESS ~7XAJAN~
-
-// Ajantis
-ACTION_IF FILE_EXISTS_IN_GAME ~7XCRE70.cre~ BEGIN
-  COPY_EXISTING ~7XCRE70.cre~ ~override~
-    WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~7XAJAN~ #8
-  BUT_ONLY_IF_IT_CHANGES
-END
-
-
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~override/bimoen2.dlg~ THEN BEGIN
-  <<<<<<<< BG1NPCSoA/dialogues/MISC/BIMOEN2.d
-  BEGIN BIMOEN2
-  >>>>>>>>
-  COMPILE ~BG1NPCSoA/dialogues/MISC/BIMOEN2.d~
-END
-
-
-//Giving Imoen a banter file if the Fixpack isn't installed
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~cdbehbla.pro~ //makes sure the fixpack isn't already installed
-THEN BEGIN
-ACTION_IF FILE_EXISTS_IN_GAME ~saradush.mve~ THEN BEGIN
-  COPY_EXISTING ~interdia.2da~ ~override~
-    SET_2DA_ENTRY 17 1 2 ~BIMOEN2~ // fixes ToB version
-    BUT_ONLY_IF_IT_CHANGES
-END ELSE BEGIN
-  APPEND ~interdia.2da~ ~IMOEN       BIMOEN2~ // fixes SoA version
-    UNLESS ~BIMOEN2~
-END
-END
-
-COMPILE ~BG1NPCSoA/dialogues/AjantisTOB.d~
-
-// EET Fate Spirit Ajantis
-
-ACTION_IF (GAME_IS ~eet~) BEGIN
-INCLUDE ~EET/other/EET_functions.tph~ // functions from EET mod
-
-// remove duplication in the call dialog with the option of the original EET
-<<<<<<<< AJAN_fix.baf
-IF
-	!Global("AjantisSummoned","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("AjantisSummoned","GLOBAL",2)
-		Continue()
-END
->>>>>>>>
-EXTEND_BOTTOM ~AR4000.bcs~ ~AJAN_fix.baf~
-
-//// Create and install a missing ToB-script file to avoid installation errors and not to use a script from the BG1&SOA
-ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/scripts/7XAJAN.baf~ BEGIN
-	COMPILE ~%MOD_FOLDER%/scripts/7XAJAN.baf~
-END ELSE BEGIN
-<<<<<<<<7XAJAN.baf
->>>>>>>>
-	COMPILE ~7XAJAN.baf~
-END
-
-ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/scripts/MISC/7XAJAN25.baf~ BEGIN
-	COMPILE ~%MOD_FOLDER%/scripts/MISC/7XAJAN25.baf~ END
-ELSE BEGIN
-<<<<<<<<7XAJAN25.baf
->>>>>>>>
-COMPILE ~7XAJAN25.baf~
-END
-
-
-LAF ~EET_NPC_TRANSITION~
-INT_VAR
-type = 2 // NPC is summon-able if met before
-default_ToB = 1
-STR_VAR
-dv = "7XAJAN" // death variable
-override_SoA = "7XAJAN" // override script (SoA)
-override_ToB = "7XAJAN25" // override script (ToB)
-cre_ToB = "7XCRE70"
-dialog_ToB = "7XAJAN" // joining dialogue for ToB
-traFile = EVAL "BG1NPCSoA/tra/%LANGUAGE%/AjantisTOB.tra"
-string = "@0"
-stringPosDV = "Alora"
-END
-OUTER_SPRINT ~tob_override~ ~7XAJAN25~
-OUTER_SPRINT ~tob_var~ ~AjantisSummonedToB~
-EXTEND_TOP ~7XAJAN.bcs~ ~fix_tob_script.baf~ EVALUATE_BUFFER
-END
-
-
 
 
 BEGIN @1469 DESIGNATED 70
@@ -11078,4 +11077,17 @@ END
 // Smiling Imp's Montaron - Kulyok's Tiax
 ACTION_IF FILE_EXISTS_IN_GAME ~BO#TIAX.dlg~ AND FILE_EXISTS_IN_GAME ~7XMONTB.dlg~ BEGIN
 COMPILE ~%MOD_FOLDER%/crossbanter/Kulyok's Tiax/montaron-tiax(kulyok's).d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~7XAJANB.dlg~ AND FILE_EXISTS_IN_GAME ~BDEEKIN.dlg~ BEGIN
+COMPILE ~%MOD_FOLDER%/crossbanter/ajantis-deekin.d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~7XAJANB.dlg~ AND FILE_EXISTS_IN_GAME ~B7XCoran.dlg~ BEGIN
+COMPILE ~%MOD_FOLDER%/crossbanter/ajantis-coran.d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
+END
+
+// Smiling Imp's Ajantis - Kulyok's Coran
+ACTION_IF FILE_EXISTS_IN_GAME ~7XAJANB.dlg~ AND FILE_EXISTS_IN_GAME ~BO#CORAN.dlg~ BEGIN
+COMPILE ~%MOD_FOLDER%/crossbanter/Kulyok's Coran/ajantis-coran(kulyok's).d~ USING ~%MOD_FOLDER%/tra/%LANGUAGE%/crossbanter.tra~
 END
