@@ -3570,6 +3570,30 @@ In the Five Flagons tavern we found Thomas Ritch, the bard who was blackmailing 
 
 We found and freed Garrick. This epic story has come to an end.~
 
+@1812 = ~Monkey Trouble
+
+Borivyk, an animal dealer from the Water Gardens, asked us to get medicine for his monkey named Pepper. The medicine can be prepared by the priestess of the Water Garden Temple, her name is D'nala Shalandalan.~
+
+@1813 = ~Monkey Trouble
+
+We spoke to the priestess D'nala Shalandalan and she gave us the cure. It should be taken to Borivyk, the animal dealer in the Water Gardens, to heal his monkey.~
+
+@1814 = ~Monkey Trouble
+
+It was a rather strange task, but as a result, we still managed to cure Pepper, the monkey from the Water Gardens! This deed will not be sung by bards in taverns, but the soul is calmer now.~
+
+@1815 = ~Bear Trouble
+
+Borivyk, an animal dealer from the Water Gardens, asked us to find someone to look after the pet she-bear. Perhaps one of the rangers or druids would fit the role. But you should definitely not look in Athkatla.~
+
+@1816 = ~Bear Trouble
+
+We found a ranger who agreed to look after the she-bear. I hope they get along and my task is done.~
+
+@1817  = ~Bear Trouble
+
+We found a ranger who agreed to look after the she-bear. Now I can return to Borivyk.~
+
 @1820 = ~Bidding Manager~
 @1821 = ~Madame Rosalind~
 @1822 = ~Sir Berwin~
@@ -3753,10 +3777,39 @@ Weight: 0~
 @1927    = ~Make Skie a Shadowdancer~
 
 @1928 = ~Rabbit Marcel~
-@1929 = ~This rabbit maintains a serene equanimity even when the battle rages around. Sometimes one look at this fluffy miracle helps to regain lost composure and put in order scattered thoughts.
+@1929 = ~This rabbit maintains a serene equanimity even when battle rages around. Sometimes one look at this fluffy miracle helps to regain lost composure and help put in order scattered thoughts.
 
 STATISTICS:
-Once a day, Marsel will help relieve the stupefaction.~
+Once per day, Marsel will help Remove Paralysis.
+
+Weight: 5~
+
+@1930    = ~She-bear~
+@1931    = ~Ranger~
+@1932    = ~Ilimaris~
+@1933    = ~This is Tiax's pet dragon, currently curled up and safe within his backpack. Once per day, he can exhale fire and injure enemies.
+
+STATISTICS:
+
+Charge abilities:
+– Missile Blast
+Damage: 6d6 fire (Save vs. Spell for half)
+Range: 50 ft.
+Area of Effect: 15-ft. radius
+
+Weight: 1~
+
+@1934 = ~Layla~
+@1935 = ~A charming bird from a distant land. Her beautiful singing leaves no one indifferent. Your opponents may suddenly hear it in the middle of a battle, forgetting everything except those wonderful trills... even their hatred of you.
+
+STATISTICS:
+Can cast Charm Person on the enemy once per day.~
+
+@1936 = ~Pong~
+@1937 = ~Pong is a lively and inquisitive ferret. He does not cause much trouble, but sometimes, looking at him, you involuntarily fill yourself with cheerfulness.
+
+STATISTICS:
+1 time per day can apply Haste on its owner.~
 
 @1999 = ~Expanded cirqus quest~
 @2000 = ~Expanded cirqus quest (Standard difficulty)~

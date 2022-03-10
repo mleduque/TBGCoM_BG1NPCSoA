@@ -1694,41 +1694,54 @@ END
 BEGIN ~BG1X14~
 
 
-IF ~NumtimesTalkedTo(0)~ THEN BEGIN INTRO1
+IF ~NumtimesTalkedTo(0)~ THEN BEGIN 7xINTRO1
 SAY @556 
 =
 @557 
-IF ~~ THEN REPLY @558 DO ~SetGlobal("BG1X14","GLOBAL",2)StartStore("bg1npc4",LastTalkedToBy())~ EXIT
-IF ~~ THEN REPLY @559 DO ~SetGlobal("BG1X14","GLOBAL",2)~EXIT
+IF ~Global("7xBorivykMonkeyQuest","GLOBAL",1)~ THEN REPLY @978 DO ~SetGlobal("BG1X14","ARBGXX",2)~ GOTO 7xMonkey
+IF ~~ THEN REPLY @558 DO ~SetGlobal("BG1X14","ARBGXX",2)StartStore("bg1npc4",LastTalkedToBy())~ EXIT
+IF ~~ THEN REPLY @559 DO ~SetGlobal("BG1X14","ARBGXX",2)~EXIT
 END
 
-IF WEIGHT #-20~Global("BG1X14","GLOBAL",2)~ THEN BEGIN Talk2
+IF WEIGHT #-20~Global("BG1X14","ARBGXX",2)~ THEN BEGIN 7xTalk2
 SAY @560 
-IF ~~ THEN REPLY @561 GOTO moonbow
-IF ~~ THEN REPLY @562 GOTO myth
+IF ~Global("7xBorivykMonkeyQuest","GLOBAL",1)~ THEN REPLY @978 DO ~SetGlobal("BG1X14","ARBGXX",2)~ GOTO 7xMonkey
+IF ~~ THEN REPLY @561 GOTO 7xmoonbow
+IF ~~ THEN REPLY @562 GOTO 7xmyth
 IF ~~ THEN REPLY @558 DO ~StartStore("bg1npc4",LastTalkedToBy())~ EXIT
 IF ~~ THEN REPLY @559 EXIT
 END
 
-IF ~~ THEN BEGIN myth
+IF ~~ THEN BEGIN 7xmyth
 SAY @563
 =
 @564
-IF ~~ THEN REPLY @561 GOTO moonbow
+IF ~~ THEN REPLY @561 GOTO 7xmoonbow
 IF ~~ THEN REPLY @558 DO ~StartStore("bg1npc4",LastTalkedToBy())~ EXIT
 IF ~~ THEN REPLY @559 EXIT
 END
 
 
-IF ~~ THEN BEGIN moonbow
+IF ~~ THEN BEGIN 7xmoonbow
 SAY @565
 =
 @566
-IF ~~ THEN REPLY @562 GOTO myth
+IF ~~ THEN REPLY @562 GOTO 7xmyth
 IF ~~ THEN REPLY @558 DO ~StartStore("bg1npc4",LastTalkedToBy())~ EXIT
 IF ~~ THEN REPLY @559 EXIT
 END
 
+IF ~~ THEN BEGIN 7xMonkey
+SAY @979
+IF ~~ THEN DO ~SetGlobal("7xBorivykMonkeyQuest","GLOBAL",2) AddJournalEntry(@1813,QUEST)~ REPLY @980 GOTO 7xMonkey1
+END
+
+IF ~~ THEN BEGIN 7xMonkey1
+SAY @981
+=@982
+=@983
+IF ~~ THEN EXIT
+END
 
 BEGIN ~BG1X15~
 

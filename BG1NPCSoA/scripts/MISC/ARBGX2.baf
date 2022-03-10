@@ -11,12 +11,12 @@ CreateCreature("7XCRE30",[250.717],0)
 END 
 
 IF
-Global("7xcre99","GLOBAL",1)
+Global("WaterGardensCondominium","GLOBAL",1)
 
 THEN
 RESPONSE #100
 CreateCreatureDoor("7XCRE99",[350.1063],4)
-SetGlobal("7xcre99","GLOBAL",2)
+SetGlobal("WaterGardensCondominium","GLOBAL",2)
 END
 
 IF

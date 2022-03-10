@@ -1,6 +1,6 @@
 BACKUP ~BG1NPCSoA/backup~
 SUPPORT ~http://www.baldursgatemods.com/forums/index.php?board=133.0~
-VERSION ~13.4~
+VERSION ~13.5~
 
 AUTO_TRA ~BG1NPCSoA/tra/%s~
 
@@ -57,12 +57,6 @@ THEN
 
 END
 
- ACTION_IF GAME_IS "bg2ee eet" BEGIN
-
-  // If a EE-version is installed, change the journal entries to adapt it 
-  ADD_JOURNAL @1773 @1774 @1775 @1776 @1777 @1778 @1779 @1780 @1781 @1782 @1783 @1784 @1785 @1786 @1787 @1788 @1789 @1790 @1791 @1792 @1793 @1794 @1795 @1796 @1797 @1798 @1799 @1800 @1801 @1802 @1803 @1804 @1805 @1806 @1807
-END  
-
 END
 
 // Translations
@@ -85,6 +79,12 @@ APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
 UNLESS ~CD_STATE_NOTVALID~
 
 APPEND ~gtimes.ids~ ~7200 ONE_DAY~ UNLESS ~ONE_DAY~
+
+ ACTION_IF GAME_IS "bg2ee eet" BEGIN
+
+  // If a EE-version is installed, change the journal entries to adapt it 
+  ADD_JOURNAL @1773 @1778 @1779 @1780 @1781 @1782 @1783 @1784 @1785 @1786 @1787 @1788 @1789 @1790 @1791 @1792 @1793 @1794 @1795 @1796 @1797 @1798 @1812 @1813 @1814 @1815 @1816 @1817
+END  
 
 COPY ~BG1NPCSoA/cre/MISC/7Xcre9.cre~ ~override/7Xcre9.cre~
 SAY NAME1 @210
@@ -320,6 +320,53 @@ SAY UNIDENTIFIED_DESC @255
 SAY DESC @256
 LPF SCIMITAR_AXE_USABILITY STR_VAR itype = "axe" END
 
+
+///////////////////////////////////////////////////////////////////////////////////
+
+// Borivyk
+
+COPY ~BG1NPCSoA/cre/MISC/7XBoriv.cre~ ~override/7XBoriv.cre~
+SAY NAME1 @1727
+SAY NAME2 @1727
+
+COPY ~BG1NPCSoA/cre/MISC/7XMaid.cre~ ~override/7XMaid.cre~
+SAY NAME1 @1728
+SAY NAME2 @1728
+
+COPY ~BG1NPCSoA/cre/MISC/7xBear1.cre~ ~override/7xBear1.cre~
+SAY NAME1 @1930
+SAY NAME2 @1930
+
+COPY ~BG1NPCSoA/cre/MISC/7xRanger.cre~ ~override/7xRanger.cre~
+SAY NAME1 @1931
+SAY NAME2 @1931
+
+COPY ~BG1NPCSoA/Items/Rabb7x.itm~ ~Override/Rabb7x.itm~
+SAY NAME1 @1928
+SAY NAME2 @1928
+SAY UNIDENTIFIED_DESC @1928
+SAY DESC @1929
+
+COPY ~BG1NPCSoA/Items/dragn7x.itm~ ~Override/dragn7x.itm~
+SAY NAME1 @1932
+SAY NAME2 @1932
+SAY UNIDENTIFIED_DESC @1932
+SAY DESC @1933
+
+COPY ~BG1NPCSoA/Items/bird7x.itm~ ~Override/bird7x.itm~
+SAY NAME1 @1934
+SAY NAME2 @1934
+SAY UNIDENTIFIED_DESC @1934
+SAY DESC @1935
+
+COPY ~BG1NPCSoA/Items/ferret7x.itm~ ~Override/ferret7x.itm~
+SAY NAME1 @1936
+SAY NAME2 @1936
+SAY UNIDENTIFIED_DESC @1936
+SAY DESC @1937
+
+EXTEND_BOTTOM ~Aerie.bcs~ ~%MOD_FOLDER%/scripts/MISC/7xAerieWaterGardens.baf~
+EXTEND_BOTTOM ~AR2000.bcs~ ~BG1NPCSoA/scripts/MISC/AR2000.baf~
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -2459,6 +2506,38 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XSKIJ.dlg~ BEGIN
 COMPILE ~BG1NPCSoA/dialogues/7XSKIJ-Begin.d~
 END
 
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XXZARJ.dlg~ BEGIN
+COMPILE ~BG1NPCSoA/dialogues/7XXZARJ-begin.d~
+END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XCoranJ.dlg~ BEGIN
+COMPILE ~BG1NPCSoA/dialogues/7XCoranJ-Begin.d~
+END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XSafaJ.dlg~ BEGIN
+COMPILE ~BG1NPCSoA/dialogues/7XSafaJ-Begin.d~
+END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XTIAXJ.dlg~ BEGIN
+COMPILE ~BG1NPCSoA/dialogues/7XTIAXJ-Begin.d~
+END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XFALDJ.dlg~ BEGIN
+COMPILE ~BG1NPCSoA/dialogues/Faldorn/7XFALD-begin.d~
+END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XMONTJ.dlg~ BEGIN
+COMPILE ~BG1NPCSoA/dialogues/7XMONTJ-begin.d~
+END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XkagaJ.dlg~ BEGIN
+COMPILE ~BG1NPCSoA/dialogues/7XkagaJ-begin.d~
+END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XQUAYJ.dlg~ BEGIN
+COMPILE ~BG1NPCSoA/dialogues/7XQUAYJ-begin.d~
+END
+
 
 /////
 
@@ -2623,40 +2702,11 @@ SAY NAME2 @1876
 SAY UNIDENTIFIED_DESC @1876
 SAY DESC @1877
 
-///
-// We create dialogue files for those NPCs that will speak in Water Gardens 
-//(so that there are no compilation errors if the components of these NPCs are not installed in the future)
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XCoranJ.dlg~ BEGIN
-COMPILE ~BG1NPCSoA/dialogues/7XCoranJ-Begin.d~
-END
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XSafaJ.dlg~ BEGIN
-COMPILE ~BG1NPCSoA/dialogues/7XSafaJ-Begin.d~
-END
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XTIAXJ.dlg~ BEGIN
-COMPILE ~BG1NPCSoA/dialogues/7XTIAXJ-Begin.d~
-END
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XFALDJ.dlg~ BEGIN
-COMPILE ~BG1NPCSoA/dialogues/Faldorn/7XFALD-begin.d~
-END
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XMONTJ.dlg~ BEGIN
-COMPILE ~BG1NPCSoA/dialogues/7XMONTJ-begin.d~
-END
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XkagaJ.dlg~ BEGIN
-COMPILE ~BG1NPCSoA/dialogues/7XkagaJ-begin.d~
-END
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XQUAYJ.dlg~ BEGIN
-COMPILE ~BG1NPCSoA/dialogues/7XQUAYJ-begin.d~
-END
 
 /////
 
-COMPILE ~BG1NPCSoA/dialogues/MISC/BG1X11.d~
+COMPILE ~BG1NPCSoA/dialogues/MISC/BG1X11.d~ // Auction
+COMPILE ~BG1NPCSoA/dialogues/MISC/BG1X12.d~ // Borivyk % his animals
 
 ACTION_IF GAME_IS "bg2ee eet" BEGIN
 OUTER_SPRINT ~baf_string1~ ~DestroyGroundPiles()~
@@ -2689,11 +2739,14 @@ COMPILE ~BG1NPCSoA/scripts/MISC/ARBGX2.baf~
 COMPILE ~BG1NPCSoA/scripts/MISC/ARBGX3.baf~
 COMPILE ~BG1NPCSoA/scripts/MISC/ARBGX4.baf~
 COMPILE ~BG1NPCSoA/scripts/MISC/ARBGX6.baf~
+COMPILE ~BG1NPCSoA/scripts/MISC/ARBGX7.baf~
+COMPILE ~BG1NPCSoA/scripts/MISC/ARBGX9.baf~
 COMPILE ~BG1NPCSoA/scripts/MISC/BG1X1.baf~
 COMPILE ~BG1NPCSoA/scripts/MISC/BG1X8.baf~
 COMPILE ~BG1NPCSoA/scripts/MISC/7XCREHH.baf~
 COMPILE ~BG1NPCSoA/scripts/MISC/PEHLLUS.baf~
 COMPILE ~BG1NPCSoA/scripts/MISC/BNOBLE1.baf~
+COMPILE ~BG1NPCSoA/scripts/MISC/7xNoble8.baf~
 COMPILE ~BG1NPCSoA/scripts/MISC/7xAxHell.baf~
 EXTEND_TOP ~baldur.bcs~ ~BG1NPCSoA/scripts/MISC/baldur.baf~ EVALUATE_BUFFER
 
@@ -3981,6 +4034,10 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XMONTJ.dlg~ BEGIN
 COMPILE ~BG1NPCSoA/dialogues/7XMONTJ-begin.d~
 END
 
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XXZARJ.dlg~ BEGIN
+COMPILE ~BG1NPCSoA/dialogues/7XXZARJ-begin.d~
+END
+
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XQUAYJ.dlg~ BEGIN
 COMPILE ~BG1NPCSoA/dialogues/7XQUAYJ-begin.d~
 END
@@ -5234,6 +5291,11 @@ LAF HANDLE_AUDIO STR_VAR audio_path = "BG1NPCSoA/sounds/Coran-Safana" oggdec_pat
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~IMOEN!.wav~ BEGIN
 LAF HANDLE_AUDIO STR_VAR audio_path = "BG1NPCSoA/sounds/Imoen" oggdec_path = "BG1NPCSoA/sounds" END
 END
+
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+   // If a EE-version is installed, change the journal entries to adapt it 
+  ADD_JOURNAL @1774 @1775 @1804 @1807 USING ~%MOD_FOLDER%/tra/%LANGUAGE%/setup.tra~ 
+END 
 
 COPY ~BG1NPCSoA/Items/BG1NPC8.itm~ ~Override/BG1NPC8.itm~
 SAY NAME1 @692		
@@ -8521,6 +8583,11 @@ END
 
 LAF HANDLE_AUDIO STR_VAR audio_path = "BG1NPCSoA/sounds/Faldorn" oggdec_path = "BG1NPCSoA/sounds" END
 
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+   // If a EE-version is installed, change the journal entries to adapt it 
+  ADD_JOURNAL @1776 @1777 @1778 USING ~%MOD_FOLDER%/tra/%LANGUAGE%/setup.tra~ 
+END 
+
 EXTEND_TOP ~AR2007.bcs~ ~BG1NPCSoA/scripts/FALDORN/AR2007.baf~
 EXTEND_TOP ~AR2008.bcs~ ~BG1NPCSoA/scripts/FALDORN/AR2008.baf~
 EXTEND_TOP ~AR2011.bcs~ ~BG1NPCSoA/scripts/FALDORN/AR2011.baf~
@@ -8972,6 +9039,11 @@ END ELSE BEGIN
 COPY ~BG1NPCSoA/portraits/Xzar/vanilla-portraits~ ~override~
 END
 
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+   // If a EE-version is installed, change the journal entries to adapt it 
+  ADD_JOURNAL @1801 @1802 USING ~%MOD_FOLDER%/tra/%LANGUAGE%/setup.tra~ 
+END 
+
 LAF HANDLE_AUDIO STR_VAR audio_path = "BG1NPCSoA/sounds/Xzar-Montaron" oggdec_path = "BG1NPCSoA/sounds" END
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~IMOEN!.wav~ BEGIN
@@ -9052,6 +9124,11 @@ EXTEND_TOP ~AR0500.bcs~ ~BG1NPCSoA/scripts/XZAR-QUEST/AR0500.baf~
 EXTEND_TOP ~AR1100.bcs~ ~BG1NPCSoA/scripts/XZAR-QUEST/AR1100.baf~
 EXTEND_TOP ~AR1200.bcs~ ~BG1NPCSoA/scripts/XZAR-QUEST/AR1200.baf~
 EXTEND_TOP ~AR1800.bcs~ ~BG1NPCSoA/scripts/XZAR-QUEST/AR1800.baf~
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~7XXZARJ.dlg~ BEGIN
+COMPILE ~BG1NPCSoA/dialogues/7XXZARJ-begin.d~
+END
+
 COMPILE ~BG1NPCSoA/dialogues/7XMONT.d~
 COMPILE ~BG1NPCSoA/dialogues/7XMONTJ.d~ USING ~BG1NPCSoA\tra\%LANGUAGE%\7xmontb.tra~
 COMPILE ~BG1NPCSoA/dialogues/7XMONTB.d~
@@ -9355,6 +9432,11 @@ COPY_EXISTING ~pdialog.2da~ ~override~
 BUT_ONLY
 
 END
+
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+   // If a EE-version is installed, change the journal entries to adapt it 
+  ADD_JOURNAL @1799 @1800 @1803 @1805 @1806 USING ~%MOD_FOLDER%/tra/%LANGUAGE%/setup.tra~ 
+END 
 
 COPY ~BG1NPCSoA/cre/TIAX-QUAYLE/TQCRE2.cre~ ~override/TQCRE2.cre~
 SAY NAME1 @1638

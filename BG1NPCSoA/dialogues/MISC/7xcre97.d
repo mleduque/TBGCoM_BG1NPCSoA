@@ -299,41 +299,41 @@ END
 
 BEGIN ~7xcre98~
 
-IF ~NumTimesTalkedTo(0)~ intro1
+IF ~NumTimesTalkedTo(0)~ 7xintro1
 SAY @89
 =
 @90
 IF ~~ THEN EXIT
 END
 
-IF ~Global("7xcre98","GLOBAL",0)Global("7xcre99","GLOBAL",0)~ TALK1
+IF ~Global("7xcre98","GLOBAL",0)Global("7xcre99","GLOBAL",0)~ 7xTALK1
 SAY @91
 =
 @92
-IF ~NumItemsPartyGT("Platnum",9999)~ THEN REPLY @93 DO ~TakePartyItemNum("Platnum",10000)DestroyItem("Platnum")~ GOTO CONDO
-IF ~~ THEN REPLY @94 GOTO MONEY
-IF ~~ THEN REPLY @95 GOTO WASTE
+IF ~NumItemsPartyGT("Platnum",9999)~ THEN REPLY @93 DO ~TakePartyItemNum("Platnum",10000)DestroyItem("Platnum")~ GOTO 7xCONDO
+IF ~~ THEN REPLY @94 GOTO 7xMONEY
+IF ~~ THEN REPLY @95 GOTO 7xWASTE
 END
 
 
-IF ~~ MONEY
+IF ~~ 7xMONEY
 SAY @96
 IF ~~ THEN EXIT
 END
 
-IF ~~ WASTE
+IF ~~ 7xWASTE
 SAY @97
 IF ~~ THEN EXIT
 END
 
-IF ~~ CONDO
+IF ~~ 7xCONDO
 SAY @98
 =
 @99
-IF ~~ THEN DO ~SetGlobal("7xcre98","GLOBAL",1)SetGlobal("7xcre99","GLOBAL",1)~ EXIT
+IF ~~ THEN DO ~SetGlobal("7xcre98","GLOBAL",1)SetGlobal("WaterGardensCondominium","GLOBAL",1)~ EXIT
 END
 
-IF ~Global("7xcre98","GLOBAL",1)RandomNum(6,6)~ TALK2
+IF ~Global("7xcre98","GLOBAL",1)RandomNum(6,6)~ 7xTALK2
 SAY @100
 IF ~~ THEN EXIT
 END

@@ -1,0 +1,63 @@
+// Bear
+IF 
+Global("WaterGardensBear","GLOBAL",4)
+Global("7xBorivikBearExists","ARBGX7",1)
+THEN
+  RESPONSE #100
+SetGlobal("7xBorivikBearExists","ARBGX7",2)
+ActionOverride("7xBear1",DestroySelf())
+END
+
+// Borivyk
+IF 
+Global("7xBorivikFirstTalk","ARBGX7",0)
+THEN
+  RESPONSE #100
+SetGlobal("7xBorivikFirstTalk","ARBGX7",1)
+Explore()
+CreateCreature("7xNOBLE8",[405.270],7)
+CreateCreature("7xMaid",[433.303],8)
+SmallWait(3)
+ActionOverride("7XNOBLE8",FaceObject("7xBoriv"))
+ActionOverride("7xMaid",FaceObject("7xBoriv")) 
+END
+
+IF 
+Global("NobleBorivykTalk","ARBGX7",3)
+THEN
+  RESPONSE #100
+ActionOverride("7XNOBLE8",EscapeArea()) 
+ActionOverride("7xMaid",EscapeArea()) 
+Wait(2)
+SetGlobal("NobleBorivykTalk","ARBGX7",4)
+ActionOverride("7xBoriv",StartDialogNoSet(Player1))
+END
+
+IF 
+Global("NobleBorivykTalk","ARBGX7",6)
+THEN
+  RESPONSE #100
+ActionOverride("7XNOBLE8",EscapeArea()) 
+ActionOverride("7xMaid",EscapeArea()) 
+Wait(2)
+SetGlobal("NobleBorivykTalk","ARBGX7",7)
+ActionOverride("7xBoriv",StartDialogNoSet(Player1))
+END
+
+// Bear
+IF 
+Global("WaterGardensBear","GLOBAL",1) 
+GlobalTimerExpired("WaterGardensBearTimer","GLOBAL")
+Global("7xBorivikBearExists","ARBGX7",0)
+THEN
+  RESPONSE #100
+SetGlobal("7xBorivikBearExists","ARBGX7",1)
+Explore()
+CreateCreature("7xBear1",[519.241],0)
+SmallWait(3)
+ActionOverride("7xBear1",FaceObject("7xBoriv"))
+END
+
+
+
+

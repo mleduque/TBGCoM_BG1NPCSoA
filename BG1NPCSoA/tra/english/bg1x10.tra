@@ -976,3 +976,11 @@
 @975  = ~Excuse me, <SIRMAAM>, but you do know this is a private area of the city, correct? I am surprised you were allowed to come within these walls. You will find yourself unwelcome here.~
 @976  = ~At any rate, I think it is time that you are leaving.  A good day and good business to you, my <LADYLORD>. And make sure you place your garbage where it belongs while you are here. This is Athkatla, not some barbarian village!~
 @977  = ~I am not certain, but I think this is the man that sold Boo to Minsc. The pointy hat looks very familiar.~ [MINSC03]
+
+// NEW (v.13.5)
+@978 = ~I have a slightly odd request. Could you prepare a cure for... uh, a monkey? The local animal dealer, Borivyk, has a monkey that has fallen ill.~
+@979 = ~This request is really strange, but the gods on whose behalf I speak, do not refuse to help any living beings. What are the symptoms of the illness?~
+@980 = ~The monkey refuses to eat and looks very weak and lethargic. Also he coughs more often than he should, we noticed.~
+@981 = ~Well, I think I get the point. This is a typical illness for such animals when they live in captivity away from their usual living conditions.~
+@982 = ~Now I will prepare the medicine which is to be given to this monkey in the morning and evening. If everything is done correctly, he will recover soon.~
+@983 = ~Now go my friend, I have other services that I need attending to.~
