@@ -239,9 +239,8 @@ IF ~!Dead("7XAlora") InParty("7XAlora")!StateCheck("7XAlora",CD_STATE_NOTVALID)~
 END
 
 INTERJECT_COPY_TRANS ABYDEM01 0 AloraABYDEM
-== 7XAloraJ
-IF ~!Dead("7XAlora") InParty("7XAlora")!StateCheck("7XAlora",CD_STATE_NOTVALID)~ THEN
-@82
+== 7XAloraJ IF ~!Dead("7XAlora") InParty("7XAlora")!StateCheck("7XAlora",CD_STATE_NOTVALID)~ THEN @82
+== ABYDEM01 @128
 END
 
 INTERJECT_COPY_TRANS AMNLEGS 0 AloraAMNLEGS

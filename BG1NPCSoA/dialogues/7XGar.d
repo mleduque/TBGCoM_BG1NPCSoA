@@ -907,12 +907,11 @@ END
 /////////////
 
 APPEND MURDGIRL
-IF WEIGHT #-10 ~InParty("7XGAR")Global("SILKEFight","GLOBAL",0)
-!StateCheck("7XGAR",CD_STATE_NOTVALID)~ THEN BEGIN GarMURDGIRL1
+IF WEIGHT #-10 ~InParty("7XGAR")!StateCheck("7XGAR",CD_STATE_NOTVALID) Global("SILKEFight","GLOBAL",0) Global("7xRoseSilkeTalk","AR0500",0)~ THEN BEGIN GarMURDGIRL1
 SAY @151
 =
 @152
-IF ~~ THEN EXTERN 7XGarJ GarMURDGIRL2
+IF ~~ THEN DO ~SetGlobal("7xRoseSilkeTalk","AR0500",1)~ EXTERN 7XGarJ GarMURDGIRL2
 END
 END
 
@@ -2329,9 +2328,9 @@ APPEND 7XGar
 IF WEIGHT #-22 ~Global("GarrickBardQuest","GLOBAL",11) !Dead("7Xgarib")~ THEN BEGIN GarrickQuestGaribTalkInn
 SAY @617
 =@624
-IF ~OR(3) !InParty("Nalia") !InMyArea("Nalia") StateCheck("Nalia",CD_STATE_NOTVALID) !Global("GarrickNaliaRomance","GLOBAL",2)~ THEN DO ~SetGlobal("GarrickBardQuest","GLOBAL",12)~ REPLY @620 EXTERN 7Xgarib GarrickQuestGaribTalkInn1
-IF ~OR(3) !InParty("Nalia") !InMyArea("Nalia") StateCheck("Nalia",CD_STATE_NOTVALID) !Global("GarrickNaliaRomance","GLOBAL",2)~ THEN DO ~SetGlobal("GarrickBardQuest","GLOBAL",12)~ REPLY @622 EXTERN 7Xgarib GarrickQuestGaribTalkInn1
-IF ~OR(3) !InParty("Nalia") !InMyArea("Nalia") StateCheck("Nalia",CD_STATE_NOTVALID) !Global("GarrickNaliaRomance","GLOBAL",2)~ THEN DO ~SetGlobal("GarrickBardQuest","GLOBAL",14)~ REPLY @623 EXTERN 7Xgarib GarrickQuestGaribTalk3Battle
+IF ~OR(4) !InParty("Nalia") !InMyArea("Nalia") StateCheck("Nalia",CD_STATE_NOTVALID) !Global("GarrickNaliaRomance","GLOBAL",2)~ THEN DO ~SetGlobal("GarrickBardQuest","GLOBAL",12)~ REPLY @620 EXTERN 7Xgarib GarrickQuestGaribTalkInn1
+IF ~OR(4) !InParty("Nalia") !InMyArea("Nalia") StateCheck("Nalia",CD_STATE_NOTVALID) !Global("GarrickNaliaRomance","GLOBAL",2)~ THEN DO ~SetGlobal("GarrickBardQuest","GLOBAL",12)~ REPLY @622 EXTERN 7Xgarib GarrickQuestGaribTalkInn1
+IF ~OR(4) !InParty("Nalia") !InMyArea("Nalia") StateCheck("Nalia",CD_STATE_NOTVALID) !Global("GarrickNaliaRomance","GLOBAL",2)~ THEN DO ~SetGlobal("GarrickBardQuest","GLOBAL",14)~ REPLY @623 EXTERN 7Xgarib GarrickQuestGaribTalk3Battle
 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID) Global("GarrickNaliaRomance","GLOBAL",2)~ THEN DO ~SetGlobal("GarrickBardQuest","GLOBAL",12)~ EXTERN NALIAJ GarrickQuestGaribTalkInnNalia
 END
 

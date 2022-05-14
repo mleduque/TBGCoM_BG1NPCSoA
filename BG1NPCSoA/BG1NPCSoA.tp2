@@ -1,6 +1,6 @@
 BACKUP ~BG1NPCSoA/backup~
 SUPPORT ~http://www.baldursgatemods.com/forums/index.php?board=133.0~
-VERSION ~13.5~
+VERSION ~13.6~
 
 AUTO_TRA ~BG1NPCSoA/tra/%s~
 
@@ -3944,7 +3944,6 @@ END
 COMPILE ~BG1NPCSoA/scripts/7xGARR.BAF~
 COMPILE ~BG1NPCSoA/scripts/7XGarD.BAF~
 COMPILE ~BG1NPCSoA/scripts/misc/7Xnekto.BAF~
-EXTEND_TOP ~Ar0500.bcs~ ~BG1NPCSoA/scripts/AR0500_Garrick.baf~
 EXTEND_TOP ~Ar0511.bcs~ ~BG1NPCSoA/scripts/AR0511.baf~
 EXTEND_TOP ~AR0313.bcs~ ~BG1NPCSoA/scripts/AR0313.baf~
 EXTEND_TOP ~nalia.bcs~ ~BG1NPCSoA/scripts/misc/nalia.baf~
